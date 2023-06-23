@@ -1,0 +1,8 @@
+package-as: CanOpener
+ignore:
+  - release.sh
+  - Changelog.txt
+  - .gitignore
+  - .github
+  - .git
+  - README.md

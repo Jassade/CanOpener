@@ -1,0 +1,7 @@
+## Interface: 100002
+## Title: Can Opener
+## Version: 0.1.0
+## Author: Jassade
+## Notes: Adds a movable button to easily open items in your bag!
+## SavedVariablesPerCharacter: CanOpener
+CanOpener.lua
