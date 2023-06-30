@@ -1,44 +1,43 @@
 local _, CanOpenerGlobal = ...
+local playerEnteredWorld = false;
+local shouldUpdateBags = false;
+local addonName = "Can Opener";
 
 ------------------------------------------------
 -- Debug Methods
 ------------------------------------------------
-local debug = true;
-local function canOut(msg, premsg)
-	if type(message) == "table" then
-		canOutTable(message);
+local canOut;
+local canOutTable;
+
+canOut = function(msg, premsg)
+	premsg = premsg or "[Can Opener]";
+	if type(msg) == "table" then
+		canOutTable(msg, nil, premsg);
 	else
-		premsg = premsg or "[Can Opener]";
-		print("|cC0FFEE69"..premsg.."|r "..msg);
+		print("|cC0FFEE69" .. premsg .. "|r " .. msg);
 	end
 end
 CanOpenerGlobal.CanOut = canOut;
 
-local function canOutTable(table, indent, premsg)
-    indent = indent or 0
-    for key, value in pairs(t) do
-        -- Format the indentation
-        local formatting = string.rep("  ", indent) .. tostring(key) .. ": "
-        
-        -- If the value is a table, recursively call canOutTable
-        if type(value) == "table" then
-            canOut(formatting, premsg)
-            printTable(value, indent + 1)
-        else
-            -- Otherwise, just print the value
-            canOut(formatting .. tostring(value), premsg)
-        end
-    end
+canOutTable = function(table, indent, premsg)
+	indent = indent or 0
+	for key, value in pairs(table) do
+		-- Format the indentation
+		local formatting = string.rep("  ", indent) .. tostring(key) .. ": "
+
+		-- If the value is a table, recursively call canOutTable
+		if type(value) == "table" then
+			canOut(formatting, premsg)
+			canOutTable(value, indent + 1, premsg)
+		else
+			-- Otherwise, just print the value
+			canOut(formatting .. tostring(value), premsg)
+		end
+	end
 end
 
-local function debugLog(message)
-    if debug then
-		if type(message) == "table" then
-			canOutTable(message, nil, "[Can Opener DEBUG]");
-		else
-			canOut(message,"[Can Opener DEBUG]");
-		end
-    end
+local function debugLog(...)
+	if DLAPI then DLAPI.DebugLog(addonName, ...) end
 end
 CanOpenerGlobal.DebugLog = debugLog;
 
@@ -47,15 +46,20 @@ CanOpenerGlobal.DebugLog = debugLog;
 ------------------------------------------------
 local function initSavedVariables()
 	CanOpenerSavedVars = {
-		["enable"] = true,
-		["rousing"] = true
+		enable = true,
+		showRousing = true,
+		position = { "CENTER", "CENTER", 0, 0 },
 	};
 end
 local function resetSavedVariables()
-	CanOpenerGlobal.DebugLog("8 - Reset Called");
+	debugLog(CanOpenerGlobal.Frame);
+	CanOpenerGlobal.DebugLog("resetSavedVariables - Start");
 	initSavedVariables();
-	self.frame:SetPoint('CENTER', UIParent, 'CENTER', 0, 0);
-	self:OnEvent("UPDATE");
+	CanOpenerGlobal.DebugLog(CanOpenerSavedVars);
+	CanOpenerGlobal.Frame:Hide();
+	CanOpenerGlobal.Frame:Show();
+	CanOpenerGlobal.ForceButtonRefresh();
+	CanOpenerGlobal.DebugLog("resetSavedVariables - End");
 end
 CanOpenerGlobal.ResetSavedVariables = resetSavedVariables;
 
@@ -63,36 +67,90 @@ CanOpenerGlobal.ResetSavedVariables = resetSavedVariables;
 -- Event actions
 ------------------------------------------------
 local function addon_Loaded(addOnName)
+	CanOpenerGlobal.DebugLog("resetSavedVariables - Start");
 	if addOnName == "CanOpener" then
 		CanOpenerGlobal.DebugLog("0 - Addon Loaded");
 		CanOpenerGlobal.Frame:UnregisterEvent("ADDON_LOADED");
 		CanOpenerGlobal.SavedVars = CanOpenerSavedVars or initSavedVariables();
 	end
+	CanOpenerGlobal.DebugLog("resetSavedVariables - End");
 end
 
-local function bag_update()
---	CanOpener:updateBag(...);
+local function bag_update(bagID)
+	CanOpenerGlobal.DebugLog("bag_update - Start");
+	CanOpenerGlobal.DebugLog("bag_update - bagID " .. bagID);
+	if(CanOpenerGlobal.BagIndicies.Backpack <= bagID and bagID <= CanOpenerGlobal.BagIndicies.ReagentBag) then
+		shouldUpdateBags = true;
+	end
+	CanOpenerGlobal.DebugLog("bag_update - End");
 end
 
-local function player_entering_world()
-	CanOpenerGlobal.DebugLog("Event Called PLAYER_ENTERING_WORLD");
-	--CanOpener:TryUpdateButtons();
+local function bag_update_delayed()
+	CanOpenerGlobal.DebugLog("bag_update_delayed - Start");
+	if not CanOpenerGlobal.LockDown then
+		if shouldUpdateBags then
+			shouldUpdateBags = false;
+			CanOpenerGlobal.UpdateButtons();
+		end
+		CanOpenerGlobal.DrawButtons()
+	end
+	CanOpenerGlobal.DebugLog("bag_update_delayed - End");
+end
+
+local function player_entering_world(isInitialLogin, isReloadingUi)
+	CanOpenerGlobal.DebugLog("player_entering_world - Start");
+	CanOpenerGlobal.DebugLog(
+		"player_entering_world - isInitialLogin " ..
+		tostring(isInitialLogin) .. " | isReloadingUi " .. tostring(isReloadingUi));
+
+	CanOpenerGlobal.Frame:Show();
+	playerEnteredWorld = true;
+	CanOpenerGlobal.DebugLog("player_entering_world - End");
+end
+
+local function player_leaving_world()
+	CanOpenerGlobal.DebugLog("player_leaving_world - Start");
+	playerEnteredWorld = false;
+	CanOpenerGlobal.DebugLog("player_leaving_world - End");
 end
 
 local function player_regen_disabled()
-	CanOpenerGlobal.DebugLog("Event Called PLAYER_REGEN_DISABLED");
+	CanOpenerGlobal.DebugLog("player_regen_disabled - Start");
+	CanOpenerGlobal.Frame:Hide();
 	CanOpenerGlobal.LockDown = true;
+	CanOpenerGlobal.DebugLog("player_regen_disabled - End");
 end
 
 local function player_regen_enabled()
-	CanOpenerGlobal.DebugLog("Event Called PLAYER_REGEN_ENABLED");
+	CanOpenerGlobal.DebugLog("player_regen_enabled - Start");
 	CanOpenerGlobal.LockDown = false;
+	bag_update_delayed();
+	CanOpenerGlobal.Frame:Show();
+	CanOpenerGlobal.DebugLog("player_regen_enabled - End");
 end
 
 CanOpenerGlobal.Events = {
-    ["ADDON_LOADED"] = addon_Loaded,
-    ["BAG_UPDATE"] = bag_update,
-    ["PLAYER_ENTERING_WORLD"] = player_entering_world,
-    ["PLAYER_REGEN_DISABLED"] = player_regen_disabled,
-    ["PLAYER_REGEN_ENABLED"] = player_regen_enabled,
+	["ADDON_LOADED"] = addon_Loaded,
+	["BAG_UPDATE"] = bag_update,
+	["BAG_UPDATE_DELAYED"] = bag_update_delayed,
+	["PLAYER_ENTERING_WORLD"] = player_entering_world,
+	["PLAYER_LEAVING_WORLD"] = player_leaving_world,
+	["PLAYER_REGEN_DISABLED"] = player_regen_disabled,
+	["PLAYER_REGEN_ENABLED"] = player_regen_enabled,
+};
+
+CanOpenerGlobal.ForceButtonRefresh = function ()
+	shouldUpdateBags = true;
+	bag_update_delayed();
+end
+------------------------------------------------
+-- Enums
+------------------------------------------------
+CanOpenerGlobal.BagIndicies = {
+	["Backpack"] = 0,
+	["Bag_1"] = 1,
+	["Bag_2"] = 2,
+	["Bag_3"] = 3,
+	["Bag_4"] = 4,
+	["ReagentBag"] = 5,
 };
