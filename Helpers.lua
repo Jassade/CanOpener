@@ -37,7 +37,7 @@ canOutTable = function(table, indent, premsg)
 end
 
 local function debugLog(...)
-	if DLAPI then DLAPI.DebugLog(addonName, ...) end
+	if CanOpenerSavedVars.debugMode and DLAPI then DLAPI.DebugLog(addonName, ...) end
 end
 CanOpenerGlobal.DebugLog = debugLog;
 
@@ -48,6 +48,7 @@ local function initSavedVariables()
 	CanOpenerSavedVars = {
 		enable = true,
 		showRousing = true,
+		debugMode = false,
 		position = { "CENTER", "CENTER", 0, 0 },
 	};
 end

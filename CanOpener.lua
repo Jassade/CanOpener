@@ -24,6 +24,12 @@ local function slashHandler(msg)
 		CanOpenerGlobal.CanOut(": Resetting settings and position.");
 		CanOpenerGlobal.ResetSavedVariables();
 		CanOpenerGlobal.DebugLog("slashHandler - End Reset");
+	elseif (command == "debug") then
+		CanOpenerGlobal.DebugLog("slashHandler - Start Debug");
+		CanOpenerGlobal.CanOut(": Turning Debug Mode ".. (CanOpenerSavedVars.debugMode and "off" or "on") .. ".");
+		CanOpenerSavedVars.debugMode = not CanOpenerSavedVars.debugMode;
+		CanOpenerGlobal.ResetSavedVariables();
+		CanOpenerGlobal.DebugLog("slashHandler - End Reset");
 	else
 		CanOpenerGlobal.DebugLog("slashHandler - Unknown command " .. (command or "<None>"));
 		CanOpenerGlobal.CanOut(": Commands for |cffffa500/CanOpener|r :");
