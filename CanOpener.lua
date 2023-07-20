@@ -170,30 +170,48 @@ local drawButtons = function()
 	CanOpenerGlobal.DebugLog("drawButtons - Current Buttons");
 	CanOpenerGlobal.DebugLog(buttons);
 
-	for _, value in ipairs(buttons) do
-		value:Hide();
+	local buttonIndex = 0;
+
+	for _, tbl in ipairs(buttons) do
+		local button = tbl.button;
+		local itemID = tbl.itemID;
+
+		if(buttonQueue[itemID])then
+			SetButton(button, buttonIndex, itemID);
+			buttonQueue[itemID] = nil;
+		else
+			button:Hide();
+		end
+
 	end
-	wipe(buttons);
 
 	CanOpenerGlobal.DebugLog("drawButtons - Buttons in queue");
 	CanOpenerGlobal.DebugLog(buttonQueue);
 
-	for index, itemID in ipairs(buttonQueue) do
+	for _, itemID in ipairs(buttonQueue) do
 		local cacheDetails = CanOpenerGlobal.openables[itemID];
 
 		if not cacheDetails.button then
 			createButton(cacheDetails, itemID);
 		end
 
-		cacheDetails.button:SetPoint("LEFT", frame, "LEFT", (index - 1) * 38, 0);
-		local count = GetItemCount(itemID) or 0;
-		cacheDetails.button.countString:SetText(tostring(count));
-		cacheDetails.button.texture:SetDesaturated(false);
-		table.insert(buttons, cacheDetails.button);
+		SetButton(cacheDetails.button, buttonIndex, itemID);
+		table.insert(buttons, {button = cacheDetails.button, itemID});
 		cacheDetails.button:Show();
+
+		buttonIndex = buttonIndex + 1;
 	end
 	wipe(buttonQueue);
 	wipe(itemIDsInQueue);
 	CanOpenerGlobal.DebugLog("drawButtons - End");
 end
 CanOpenerGlobal.DrawButtons = drawButtons;
+
+function SetButton(button, buttonIndex, itemID)
+	button:SetPoint("LEFT", frame, "LEFT", buttonIndex * 38, 0);
+	local count = GetItemCount(itemID) or 0;
+	button.countString:SetText(tostring(count));
+	button.texture:SetDesaturated(false);
+	buttonIndex = buttonIndex + 1;
+
+end

@@ -37,7 +37,7 @@ canOutTable = function(table, indent, premsg)
 end
 
 local function debugLog(...)
-	if CanOpenerSavedVars.debugMode and DLAPI then DLAPI.DebugLog(addonName, ...) end
+	if CanOpenerSavedVars and CanOpenerSavedVars.debugMode and DLAPI then DLAPI.DebugLog(addonName, ...) end
 end
 CanOpenerGlobal.DebugLog = debugLog;
 
