@@ -19,6 +19,13 @@ local function slashHandler(msg)
 		CanOpenerGlobal.CanOut(": Elemental Rousings " ..
 			(CanOpenerSavedVars.showRousing and "will" or "will not") .. " be shown");
 		CanOpenerGlobal.DebugLog("slashHandler - End Rousing");
+	elseif (command == "remixgem") then
+		CanOpenerGlobal.DebugLog("slashHandler - Start Remix Gems");
+		CanOpenerSavedVars.showRemixGems = not CanOpenerSavedVars.showRemixGems;
+		CanOpenerGlobal.ForceButtonRefresh();
+		CanOpenerGlobal.CanOut(": Remix Gems " ..
+			(CanOpenerSavedVars.showRemixGems and "will" or "will not") .. " be shown");
+		CanOpenerGlobal.DebugLog("slashHandler - End Remix Gems");
 	elseif (command == "reset") then
 		CanOpenerGlobal.DebugLog("slashHandler - Start Reset");
 		CanOpenerGlobal.CanOut(": Resetting settings and position.");
@@ -144,11 +151,11 @@ local UpdateButtons = function()
 			if itemID and cacheDetails then
 				local count = GetItemCount(itemID);
 
-				local showRousings = CanOpenerSavedVars.showRousing;
-				local itemIsRousing = cacheDetails.isRousing;
-				local skipRousing = showRousings or (not itemIsRousing)
+				local skipRousing = CanOpenerSavedVars.showRousing or (not cacheDetails.isRousing)
+				local skipRemixGems = CanOpenerSavedVars.showRemixGems or (not cacheDetails.mopRemixGem)
+				local threshold = cacheDetails.threshold or 1
 
-				if skipRousing and (cacheDetails.threshold or 1) <= count and not itemIDsInQueue[itemID] then
+				if (skipRousing or skipRemixGems) and threshold <= count and not itemIDsInQueue[itemID] then
 					table.insert(buttonQueue, itemID);
 					itemIDsInQueue[itemID] = true;
 				end
@@ -213,5 +220,4 @@ function SetButton(button, buttonIndex, itemID)
 	button.countString:SetText(tostring(count));
 	button.texture:SetDesaturated(false);
 	buttonIndex = buttonIndex + 1;
-
 end

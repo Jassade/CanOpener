@@ -48,6 +48,7 @@ local function initSavedVariables()
 	CanOpenerSavedVars = {
 		enable = true,
 		showRousing = true,
+		showRemixGems = true,
 		debugMode = false,
 		position = { "CENTER", "CENTER", 0, 0 },
 	};
