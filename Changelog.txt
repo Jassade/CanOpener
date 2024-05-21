@@ -1,3 +1,4 @@
 1.0.0 - Initial Release
 1.0.1 - Bumped TOC for 10.1.5
-1.0.2 - Added Some openables from 10.1.5
+1.0.2 - Added some openables from 10.1.5
+1.0.3 - Added openables for MoP Remix
