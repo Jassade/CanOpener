@@ -41,6 +41,7 @@ local function slashHandler(msg)
 		CanOpenerGlobal.DebugLog("slashHandler - Unknown command " .. (command or "<None>"));
 		CanOpenerGlobal.CanOut(": Commands for |cffffa500/CanOpener|r :");
 		CanOpenerGlobal.CanOut("  |cffffa500 rousing|r - Toggle showing Elemental Rousings");
+		CanOpenerGlobal.CanOut("  |cffffa500 remixgem|r - Toggle showing Remix Gems");
 		CanOpenerGlobal.CanOut("  |cffffa500 reset|r - Reset all settings!");
 	end
 	CanOpenerGlobal.DebugLog("slashHandler - End");
