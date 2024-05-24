@@ -865,6 +865,17 @@ CanOpenerGlobal.openables = {
 	[207052] = { name = "jingoist-s-plate-equipment-bag" },
 	[207068] = { name = "jingoist-s-leather-equipment-bag" },
 	[208390] = { name = "bronze-archive-stone" },
+-- 10.2.7 Openables
+	[215362] = { name = "cache-of-storms"},
+	[215363] = { name = "cache-of-embers" },
+	[215364] = { name = "cache-of-dreams"},
+	[217110] = { name = "cache-of-awakened-embers" },
+	[217109] = { name = "cache-of-awakened-storms"},
+	[217728] = { name = "cache-of-awakened-treasures"},
+	[217729] = { name = "cache-of-awakened-treasures"},
+	[217111] = { name = "cache-of-awakened-dreams"},
+	[217242] = { name = "awakening-stone-wing" },
+	[217243] = { name = "awakening-ruby-wing"},
 -- MoP: Remix
 	[211279] = { name = "cache-of-infinite-treasure" },
 	[223908] = { name = "minor-bronze-cache" },
