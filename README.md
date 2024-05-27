@@ -13,7 +13,11 @@ Adds buttons for items that can be opened, learned, etc. Very small and responsi
 Use `/co` or `/canopener` followed by a command
 - `rousing` This will toggle showing Rousing elements
 - `remixgem` This will toggle showing Remix Gems
+- `remixgemlevel` Toggle combining gems higher than Epic
 - `reset` This will reset the addon to the default settings
+
+# Missing Items
+To request adding any missing items open an issue or make a Pull Request. 
 
 # Planned Upgrades
 - Localizations
