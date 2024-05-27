@@ -49,6 +49,7 @@ local function initSavedVariables()
 		enable = true,
 		showRousing = true,
 		showRemixGems = true,
+		remixGemsLevel = 99,
 		debugMode = false,
 		position = { "CENTER", "CENTER", 0, 0 },
 	};
