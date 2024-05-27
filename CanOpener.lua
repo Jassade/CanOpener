@@ -26,6 +26,13 @@ local function slashHandler(msg)
 		CanOpenerGlobal.CanOut(": Remix Gems " ..
 			(CanOpenerSavedVars.showRemixGems and "will" or "will not") .. " be shown");
 		CanOpenerGlobal.DebugLog("slashHandler - End Remix Gems");
+	elseif (command == "remixgemlevel") then
+		CanOpenerGlobal.DebugLog("slashHandler - Start Remix Gem Level");
+		CanOpenerGlobal.mopRemixEpicGem = not CanOpenerGlobal.mopRemixEpicGem;
+		CanOpenerGlobal.ForceButtonRefresh();
+		CanOpenerGlobal.CanOut(": Remix Gems " ..
+			(CanOpenerSavedVars.showRemixGems and "will" or "will not") .. " be combined higher than Epic");
+		CanOpenerGlobal.DebugLog("slashHandler - End Remix Gems Level");
 	elseif (command == "reset") then
 		CanOpenerGlobal.DebugLog("slashHandler - Start Reset");
 		CanOpenerGlobal.CanOut(": Resetting settings and position.");
@@ -33,7 +40,7 @@ local function slashHandler(msg)
 		CanOpenerGlobal.DebugLog("slashHandler - End Reset");
 	elseif (command == "debug") then
 		CanOpenerGlobal.DebugLog("slashHandler - Start Debug");
-		CanOpenerGlobal.CanOut(": Turning Debug Mode ".. (CanOpenerSavedVars.debugMode and "off" or "on") .. ".");
+		CanOpenerGlobal.CanOut(": Turning Debug Mode " .. (CanOpenerSavedVars.debugMode and "off" or "on") .. ".");
 		CanOpenerSavedVars.debugMode = not CanOpenerSavedVars.debugMode;
 		CanOpenerGlobal.ResetSavedVariables();
 		CanOpenerGlobal.DebugLog("slashHandler - End Reset");
@@ -42,6 +49,8 @@ local function slashHandler(msg)
 		CanOpenerGlobal.CanOut(": Commands for |cffffa500/CanOpener|r :");
 		CanOpenerGlobal.CanOut("  |cffffa500 rousing|r - Toggle showing Elemental Rousings");
 		CanOpenerGlobal.CanOut("  |cffffa500 remixgem|r - Toggle showing Remix Gems");
+		CanOpenerGlobal.CanOut(
+			"  |cffffa500 remixgemlevel|r - Toggle combining gems higher than Epic");
 		CanOpenerGlobal.CanOut("  |cffffa500 reset|r - Reset all settings!");
 	end
 	CanOpenerGlobal.DebugLog("slashHandler - End");
@@ -152,13 +161,9 @@ local UpdateButtons = function()
 			if itemID and cacheDetails then
 				local count = GetItemCount(itemID);
 
-				local skipRousing = CanOpenerSavedVars.showRousing or (not cacheDetails.isRousing)
-				local skipRemixGems = CanOpenerSavedVars.showRemixGems or (not cacheDetails.mopRemixGem)
-				local threshold = cacheDetails.threshold or 1
-
-				if (skipRousing or skipRemixGems) and threshold <= count and not itemIDsInQueue[itemID] then
-					table.insert(buttonQueue, itemID);
-					itemIDsInQueue[itemID] = true;
+				if CanOpenerGlobal.CriteriaContext:evaluateAll(cacheDetails, count) and not itemIDsInQueue[itemID] then
+					table.insert(buttonQueue, itemID)
+					itemIDsInQueue[itemID] = true
 				end
 			end
 		end
@@ -184,13 +189,12 @@ local drawButtons = function()
 		local button = tbl.button;
 		local itemID = tbl.itemID;
 
-		if(buttonQueue[itemID])then
+		if (buttonQueue[itemID]) then
 			SetButton(button, buttonIndex, itemID);
 			buttonQueue[itemID] = nil;
 		else
 			button:Hide();
 		end
-
 	end
 
 	CanOpenerGlobal.DebugLog("drawButtons - Buttons in queue");
@@ -204,7 +208,7 @@ local drawButtons = function()
 		end
 
 		SetButton(cacheDetails.button, buttonIndex, itemID);
-		table.insert(buttons, {button = cacheDetails.button, itemID});
+		table.insert(buttons, { button = cacheDetails.button, itemID });
 		cacheDetails.button:Show();
 
 		buttonIndex = buttonIndex + 1;
