@@ -1062,5 +1062,7 @@ CanOpenerGlobal.openables = {
 	[198171] = { name = "suspiciously-silent-crate" },
 	[208878] = { name = "adventurers-footlocker" },
 	[219219] = { name = "timerunners-starter-kit" },
-	[209832] = { name = "crate-of-dreambound-leather" }
+	[209832] = { name = "crate-of-dreambound-leather" },
+	[208951] = { name = "paracausal-cluster" },
+	[208952] = { name = "soridormis-letter-of-commendation" }
 };
