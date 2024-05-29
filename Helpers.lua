@@ -41,6 +41,71 @@ local function debugLog(...)
 end
 CanOpenerGlobal.DebugLog = debugLog;
 
+enum colorName
+{
+	LIGHTBLUE,
+	LIGHTRED,
+	SPRINGGREEN,
+	GREENYELLOW,
+	BLUE,
+	PURPLE,
+	GREEN,
+	RED,
+	GOLD,
+	GOLD2,
+	GREY,
+	WHITE,
+	SUBWHITE,
+	MAGENTA,
+	YELLOW,
+	ORANGEY,
+	CHOCOLATE,
+	CYAN,
+	IVORY,
+	LIGHTYELLOW,
+	SEXGREEN,
+	SEXTEAL,
+	SEXPINK,
+	SEXBLUE,
+	SEXHOTPINK,
+	CANOPENERBUMBER
+};
+CanOpenerGlobal.ColorName = colorName;
+
+colors = {
+	[colorName.LIGHTBLUE] = 'ff00ccff',
+	[colorName.LIGHTRED] = 'ffff6060',
+	[colorName.SPRINGGREEN] = 'ff00FF7F',
+	[colorName.GREENYELLOW] = 'ffADFF2F',
+	[colorName.BLUE] = 'ff0000ff',
+	[colorName.PURPLE] = 'ffDA70D6',
+	[colorName.GREEN] = 'ff00ff00',
+	[colorName.RED] = 'ffff0000',
+	[colorName.GOLD] = 'ffffcc00',
+	[colorName.GOLD2] = 'ffFFC125',
+	[colorName.GREY] = 'ff888888',
+	[colorName.WHITE] = 'ffffffff',
+	[colorName.SUBWHITE] = 'ffbbbbbb',
+	[colorName.MAGENTA] = 'ffff00ff',
+	[colorName.YELLOW] = 'ffffff00',
+	[colorName.ORANGEY] = 'ffFF4500',
+	[colorName.CHOCOLATE] = 'ffCD661D',
+	[colorName.CYAN] = 'ff00ffff',
+	[colorName.IVORY] = 'ff8B8B83',
+	[colorName.LIGHTYELLOW] = 'ffFFFFE0',
+	[colorName.SEXGREEN] = 'ff71C671',
+	[colorName.SEXTEAL] = 'ff388E8E',
+	[colorName.SEXPINK] = 'ffC67171',
+	[colorName.SEXBLUE] = 'ff00E5EE',
+	[colorName.SEXHOTPINK] = 'ffFF6EB4'
+	[colorName.CANOPENERBUMBER] = 'c0ffee69'
+};
+
+local function colorizeText(text, colorName)
+	return "|c" .. colors[colorName] .. "|r";
+end
+CanOpenerGlobal.ColorizeText = colorizeText;
+
 ------------------------------------------------
 -- Saved Variable Management
 ------------------------------------------------
