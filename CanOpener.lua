@@ -16,23 +16,19 @@ local function slashHandler(msg)
 		CanOpenerGlobal.DebugLog("slashHandler - Start Rousing");
 		CanOpenerSavedVars.showRousing = not CanOpenerSavedVars.showRousing;
 		CanOpenerGlobal.ForceButtonRefresh();
-		CanOpenerGlobal.CanOut(": Elemental Rousings " ..
-			(CanOpenerSavedVars.showRousing and CanOpenerGlobal.ColorizeText("will", CanOpenerGlobal.ColorName.SPRINGGREEN) or CanOpenerGlobal.ColorizeText("will not", CanOpenerGlobal.ColorName.LIGHTRED))
-			 .. " be shown");
+		CanOpenerGlobal.CanOut(": Elemental Rousings " .. CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars.showRousing, "will", "will not") .. " be shown");
 		CanOpenerGlobal.DebugLog("slashHandler - End Rousing");
 	elseif (command == "remixgem") then
 		CanOpenerGlobal.DebugLog("slashHandler - Start Remix Gems");
 		CanOpenerSavedVars.showRemixGems = not CanOpenerSavedVars.showRemixGems;
 		CanOpenerGlobal.ForceButtonRefresh();
-		CanOpenerGlobal.CanOut(": Remix Gems " ..
-			(CanOpenerSavedVars.showRemixGems and CanOpenerGlobal.ColorizeText("will", CanOpenerGlobal.ColorName.SPRINGGREEN) or CanOpenerGlobal.ColorizeText("will not", CanOpenerGlobal.ColorName.LIGHTRED)) .. " be shown");
+		CanOpenerGlobal.CanOut(": Remix Gems " .. CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars.showRemixGems, "will", "will not") .. " be shown");
 		CanOpenerGlobal.DebugLog("slashHandler - End Remix Gems");
-	elseif (command == "remixgemlevel") then
+	elseif (command == "remixepicgems") then
 		CanOpenerGlobal.DebugLog("slashHandler - Start Remix Gem Level");
-		CanOpenerGlobal.mopRemixEpicGem = not CanOpenerGlobal.mopRemixEpicGem;
+		CanOpenerSavedVars.remixEpicGems = not CanOpenerSavedVars.remixEpicGems;
 		CanOpenerGlobal.ForceButtonRefresh();
-		CanOpenerGlobal.CanOut(": Remix Gems " ..
-			(CanOpenerSavedVars.showRemixGems and CanOpenerGlobal.ColorizeText("will", CanOpenerGlobal.ColorName.SPRINGGREEN) or CanOpenerGlobal.ColorizeText("will not", CanOpenerGlobal.ColorName.LIGHTRED)) .. " be combined higher than Epic");
+		CanOpenerGlobal.CanOut(": Remix Gems " .. CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars.remixEpicGems, "will", "will not") .. " be combined higher than Epic");
 		CanOpenerGlobal.DebugLog("slashHandler - End Remix Gems Level");
 	elseif (command == "reset") then
 		CanOpenerGlobal.DebugLog("slashHandler - Start Reset");
@@ -47,14 +43,13 @@ local function slashHandler(msg)
 		CanOpenerGlobal.DebugLog("slashHandler - End Reset");
 	else
 		CanOpenerGlobal.DebugLog("slashHandler - Unknown command " .. (command or "<None>"));
-		CanOpenerGlobal.CanOut(": Commands for |cffffa500/CanOpener|r :");
-		local rousingState = CanOpenerSavedVars.showRousing and CanOpenerGlobal.ColorizeText("On", CanOpenerGlobal.ColorName.SPRINGGREEN) or CanOpenerGlobal.ColorizeText("Off", CanOpenerGlobal.ColorName.LIGHTRED)
+		CanOpenerGlobal.CanOut("Commands for |cffffa500/CanOpener|r :");
+		local rousingState = CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars.showRousing, "On", "Off");
 		CanOpenerGlobal.CanOut("  |cffffa500 rousing|r - Toggle showing Elemental Rousings (" .. rousingState .. ")");
-		local remixGemsState = CanOpenerSavedVars.remixgem and CanOpenerGlobal.ColorizeText("On", CanOpenerGlobal.ColorName.SPRINGGREEN) or CanOpenerGlobal.ColorizeText("Off", CanOpenerGlobal.ColorName.LIGHTRED)
-		CanOpenerGlobal.CanOut("  |cffffa500 remixgem|r - Toggle showing Remix Gems (" .. remixGemsState .. ")");
-		local remixgemlevelState = CanOpenerSavedVars.remixgemlevel and CanOpenerGlobal.ColorizeText("On", CanOpenerGlobal.ColorName.SPRINGGREEN) or CanOpenerGlobal.ColorizeText("Off", CanOpenerGlobal.ColorName.LIGHTRED)
-		CanOpenerGlobal.CanOut(
-			"  |cffffa500 remixgemlevel|r - Toggle combining gems higher than Epic (" .. remixgemlevelState .. ")");
+		local remixGemsState = CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars.showRemixGems, "On", "Off");
+		CanOpenerGlobal.CanOut("  |cffffa500 remixGem|r - Toggle showing Remix Gems (" .. remixGemsState .. ")");
+		local remixEpicGemsState = CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars.remixEpicGems, "On", "Off");
+		CanOpenerGlobal.CanOut("  |cffffa500 remixEpicGems|r - Toggle combining gems higher than Epic (" .. remixEpicGemsState .. ")");
 		CanOpenerGlobal.CanOut("  |cffffa500 reset|r - Reset all settings!");
 	end
 	CanOpenerGlobal.DebugLog("slashHandler - End");

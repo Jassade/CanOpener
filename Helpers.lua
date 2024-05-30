@@ -41,38 +41,37 @@ local function debugLog(...)
 end
 CanOpenerGlobal.DebugLog = debugLog;
 
-enum colorName
-{
-	LIGHTBLUE,
-	LIGHTRED,
-	SPRINGGREEN,
-	GREENYELLOW,
-	BLUE,
-	PURPLE,
-	GREEN,
-	RED,
-	GOLD,
-	GOLD2,
-	GREY,
-	WHITE,
-	SUBWHITE,
-	MAGENTA,
-	YELLOW,
-	ORANGEY,
-	CHOCOLATE,
-	CYAN,
-	IVORY,
-	LIGHTYELLOW,
-	SEXGREEN,
-	SEXTEAL,
-	SEXPINK,
-	SEXBLUE,
-	SEXHOTPINK,
-	CANOPENERBUMBER
+local colorName = {
+	LIGHTBLUE = 1,
+	LIGHTRED = 2,
+	SPRINGGREEN = 3,
+	GREENYELLOW = 4,
+	BLUE = 5,
+	PURPLE = 6,
+	GREEN = 7,
+	RED = 8,
+	GOLD = 9,
+	GOLD2 = 10,
+	GREY = 11,
+	WHITE = 12,
+	SUBWHITE = 13,
+	MAGENTA = 14,
+	YELLOW = 15,
+	ORANGEY = 16,
+	CHOCOLATE = 17,
+	CYAN = 18,
+	IVORY = 19,
+	LIGHTYELLOW = 20,
+	SEXGREEN = 21,
+	SEXTEAL = 22,
+	SEXPINK = 23,
+	SEXBLUE = 24,
+	SEXHOTPINK = 25,
+	CANOPENERBUMBER = 26
 };
 CanOpenerGlobal.ColorName = colorName;
 
-colors = {
+local colors = {
 	[colorName.LIGHTBLUE] = 'ff00ccff',
 	[colorName.LIGHTRED] = 'ffff6060',
 	[colorName.SPRINGGREEN] = 'ff00FF7F',
@@ -97,14 +96,21 @@ colors = {
 	[colorName.SEXTEAL] = 'ff388E8E',
 	[colorName.SEXPINK] = 'ffC67171',
 	[colorName.SEXBLUE] = 'ff00E5EE',
-	[colorName.SEXHOTPINK] = 'ffFF6EB4'
+	[colorName.SEXHOTPINK] = 'ffFF6EB4',
 	[colorName.CANOPENERBUMBER] = 'c0ffee69'
 };
 
-local function colorizeText(text, colorName)
-	return "|c" .. colors[colorName] .. "|r";
+local function colorizeText(text, color)
+	return "|c" .. colors[color] .. text .. "|r";
 end
 CanOpenerGlobal.ColorizeText = colorizeText;
+
+local function posOrNegColor(test, positiveText, negativeText)
+    local color = test and CanOpenerGlobal.ColorName.SPRINGGREEN or CanOpenerGlobal.ColorName.LIGHTRED
+    local text = test and positiveText or negativeText
+    return colorizeText(text, color)
+end
+CanOpenerGlobal.PosOrNegColor = posOrNegColor;
 
 ------------------------------------------------
 -- Saved Variable Management
@@ -114,7 +120,7 @@ local function initSavedVariables()
 		enable = true,
 		showRousing = true,
 		showRemixGems = true,
-		remixGemsLevel = 99,
+		remixEpicGems = false,
 		debugMode = false,
 		position = { "CENTER", "CENTER", 0, 0 },
 	};
@@ -147,7 +153,7 @@ end
 local function bag_update(bagID)
 	CanOpenerGlobal.DebugLog("bag_update - Start");
 	CanOpenerGlobal.DebugLog("bag_update - bagID " .. bagID);
-	if(CanOpenerGlobal.BagIndicies.Backpack <= bagID and bagID <= CanOpenerGlobal.BagIndicies.ReagentBag) then
+	if (CanOpenerGlobal.BagIndicies.Backpack <= bagID and bagID <= CanOpenerGlobal.BagIndicies.ReagentBag) then
 		shouldUpdateBags = true;
 	end
 	CanOpenerGlobal.DebugLog("bag_update - End");
@@ -207,7 +213,7 @@ CanOpenerGlobal.Events = {
 	["PLAYER_REGEN_ENABLED"] = player_regen_enabled,
 };
 
-CanOpenerGlobal.ForceButtonRefresh = function ()
+CanOpenerGlobal.ForceButtonRefresh = function()
 	shouldUpdateBags = true;
 	bag_update_delayed();
 end
