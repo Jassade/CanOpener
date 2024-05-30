@@ -65,7 +65,7 @@ function SkipRemixEpicGemsStrategy:new()
 end
 
 function SkipRemixEpicGemsStrategy:evaluate(cacheDetails, count)
-    return not CanOpenerSavedVars.remixCombineEpicGems and cacheDetails.mopRemixEpicGem
+    return not CanOpenerSavedVars.remixEpicGems and cacheDetails.mopRemixEpicGem
 end
 
 ThresholdStrategy = setmetatable({}, {__index = CriteriaStrategy})
