@@ -120,7 +120,7 @@ local function initSavedVariables()
 		enable = true,
 		showRousing = true,
 		showRemixGems = true,
-		remixEpicGems = false,
+		remixEpicGems = true,
 		debugMode = false,
 		position = { "CENTER", "CENTER", 0, 0 },
 	};
