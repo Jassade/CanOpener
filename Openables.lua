@@ -832,7 +832,7 @@ CanOpenerGlobal.openables = {
 	[200285] = { name = "dragonscale-expedition-insignia" },
 	[205985] = { name = "loamm-niffen-insignia" },
 	[205342] = { name = "loamm-niffen-insignia" },
-	-- 10.1.5 openables
+-- 10.1.5 openables
 	[208095] = { name = "cache-of-timewarped-treasures" },
 	[207583] = { name = "box-of-collapsed-reality" },
 	[208091] = { name = "cache-of-timewarped-treasures" },
@@ -872,7 +872,7 @@ CanOpenerGlobal.openables = {
 	[207052] = { name = "jingoist-s-plate-equipment-bag" },
 	[207068] = { name = "jingoist-s-leather-equipment-bag" },
 	[208390] = { name = "bronze-archive-stone" },
-	-- 10.2.7 Openables
+-- 10.2.7 Openables
 	[215362] = { name = "cache-of-storms" },
 	[215363] = { name = "cache-of-embers" },
 	[215364] = { name = "cache-of-dreams" },
@@ -883,7 +883,7 @@ CanOpenerGlobal.openables = {
 	[217111] = { name = "cache-of-awakened-dreams" },
 	[217242] = { name = "awakening-stone-wing" },
 	[217243] = { name = "awakening-ruby-wing" },
-	-- MoP: Remix
+-- MoP: Remix
 	[211279] = { name = "cache-of-infinite-treasure" },
 	[223908] = { name = "minor-bronze-cache" },
 	[223909] = { name = "lesser-bronze-cache" },
@@ -957,7 +957,7 @@ CanOpenerGlobal.openables = {
 	[211109] = { name = "chipped-sustaining-emerald", mopRemixGem = true, threshold = 3 },
 	[216642] = { name = "flawed-sustaining-emerald", mopRemixGem = true, threshold = 3 },
 	[211125] = { name = "sustaining-emerald", mopRemixGem = true, threshold = 3, mopRemixEpicGem = true },
-	-- More Openables added >= 10.0
+-- More Openables added >= 10.0
 	[211389] = { name = "cache-of-overblooming-treasures" },
 	[224296] = { name = "basket-of-draconic-flowers" },
 	[198657] = { name = "forgotten-jewelry-box" },
@@ -1076,7 +1076,7 @@ CanOpenerGlobal.openables = {
 	[209832] = { name = "crate-of-dreambound-leather" },
 	[208951] = { name = "paracausal-cluster" },
 	[208952] = { name = "soridormis-letter-of-commendation" },
--- Openables Added in 11.0 beta	
+-- Openables Added in 11.0 beta
 	[227450] = { name = "sky-racers-purse" },
 	[226198] = { name = "resonance-crystal-agglomeration" },
 	[224100] = { name = "bottomless-bag-of-khaz-algar-general-goods" },
@@ -2374,6 +2374,58 @@ CanOpenerGlobal.openables = {
 	[183886] = { name = "sikas-rare-ore-pouch" },
 	[184047] = { name = "ascended-chest-of-arms" },
 	[185906] = { name = "anniversary-gift" },
-	[187601] = { name = "broken-isles-leather-delivery" }
-
+	[187601] = { name = "broken-isles-leather-delivery" },
+-- 11.0 Launch updates
+	[206006] = { name = "earth-warders-thanks" },
+	[205991] = { name = "shiny-token-of-gratitude" },
+	[147729] = { name = "netherchunk" },
+	[228741] = { name = "lamplighter-supply-satchel" },
+	[228361] = { name = "seasoned-adventurers-cache" },
+	[224721] = { name = "wax-sealed-box" },
+	[227792] = { name = "everyday-cache" },
+	[228916] = { name = "algari-tailors-satchel" },
+	[227713] = { name = "artisans-consortium-payout" },
+	[224722] = { name = "waxy-bundle-of-resonance-crystals" },
+	[228917] = { name = "satchel-of-ore" },
+	[224726] = { name = "waxy-box-of-rocks" },
+	[224724] = { name = "waxy-bundle-of-dust" },
+	[228933] = { name = "algari-leatherworkers-satchel" },
+	[228220] = { name = "waxy-bundle" },
+	[228919] = { name = "satchel-of-algari-herbs" },
+	[224725] = { name = "waxy-bundle-of-herbs" },
+	[228931] = { name = "algari-enchanters-satchel" },
+	[228932] = { name = "algari-engineers-satchel" },
+	[224723] = { name = "waxy-bundle-of-leather" },
+	[224650] = { name = "wax-sealed-pouch" },
+	[228612] = { name = "artisans-consortium-payout" },
+	[228611] = { name = "artisans-consortium-payout" },
+	[227676] = { name = "satchel-of-surplus-ore" },
+	[228610] = { name = "artisans-consortium-payout" },
+	[228959] = { name = "pile-of-unidentified-meat" },
+	[213781] = { name = "algari-amber-prism" },
+	[227675] = { name = "satchel-of-surplus-herbs" },
+	[213780] = { name = "algari-amber-prism" },
+	[213784] = { name = "algari-emerald-prism" },
+	[228337] = { name = "satchel-of-surplus-dust" },
+	[213793] = { name = "algari-sapphire-prism" },
+	[229005] = { name = "cache-of-earthen-treasures" },
+	[213783] = { name = "algari-emerald-prism" },
+	[213790] = { name = "algari-onyx-prism" },
+	[227681] = { name = "satchel-of-surplus-leather" },
+	[227682] = { name = "satchel-of-surplus-cloth" },
+	[213792] = { name = "algari-sapphire-prism" },
+	[227677] = { name = "satchel-of-enchanting-surplus" },
+	[229129] = { name = "cache-of-delvers-spoils" },
+	[229006] = { name = "cache-of-earthen-treasures" },
+	[229354] = { name = "algari-adventurers-cache" },
+	[213789] = { name = "algari-onyx-prism" },
+	[229130] = { name = "cache-of-delvers-spoils" },
+	[227680] = { name = "satchel-of-jewelcrafting-surplus" },
+	[213786] = { name = "algari-ruby-prism" },
+	[227679] = { name = "satchel-of-inscription-surplus" },
+	[213787] = { name = "algari-ruby-prism" },
+	[227678] = { name = "satchel-of-engineering-surplus" },
+	[228920] = { name = "satchel-of-chitin" },
+	[228918] = { name = "satchel-of-leather" },
 };
+
