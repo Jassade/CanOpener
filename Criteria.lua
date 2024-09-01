@@ -89,9 +89,11 @@ local thresholdStrategy = ThresholdStrategy:new()
 -- Add strategies to context
 local strategies = {
     skipRousingStrategy,
-    skipRemixGemsStrategy,
-    skipRemixEpicGemsStrategy,
     thresholdStrategy
 }
+if CanOpenerGlobal.remixActive then
+    strategies.insert(2, skipRemixGemsStrategy)
+    strategies.insert(3, skipRemixEpicGemsStrategy)
+end
 
 CanOpenerGlobal.CriteriaContext = CriteriaContext:new(strategies)
