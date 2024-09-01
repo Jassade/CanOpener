@@ -2,3 +2,6 @@
 1.0.1 - Bumped TOC for 10.1.5
 1.0.2 - Added some openables from 10.1.5
 1.0.3 - Added openables for MoP Remix
+1.0.4 - 1.0.48 - I forgot to update this. There were a lot of changes, and I am sorry.
+1.0.49 - Added GitHub actions to make my life easier.
+1.0.50 - Added flag for Remix active.

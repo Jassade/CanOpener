@@ -16,6 +16,8 @@ Use `/co` or `/canopener` followed by a command
 - `remixepicgems` Toggle combining gems higher than Epic
 - `reset` This will reset the addon to the default settings
 
+**NOTE:** Remix options are only active while the event is, otherwise they will not show up.
+
 # Missing Items
 To request adding any missing items open an issue or make a Pull Request. 
 

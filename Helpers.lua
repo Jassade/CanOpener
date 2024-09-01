@@ -119,6 +119,7 @@ local function initSavedVariables()
 	CanOpenerSavedVars = {
 		enable = true,
 		showRousing = true,
+		isRemixActive = false,
 		showRemixGems = true,
 		remixEpicGems = true,
 		debugMode = false,
