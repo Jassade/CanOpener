@@ -1,0 +1,30 @@
+name: Create Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create_release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Extract version number from CanOpener.toc
+      id: get_version
+      run: |
+        VERSION=$(grep -m 1 '^## Version:' CanOpener.toc | sed 's/## Version: //')
+        echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+    - name: Create GitHub Release
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: v${{ env.VERSION }}-release
+        release_name: v${{ env.VERSION }}-release
+        body: |
+          This is an automated release.
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
