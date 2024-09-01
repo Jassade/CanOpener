@@ -18,13 +18,13 @@ local function slashHandler(msg)
 		CanOpenerGlobal.ForceButtonRefresh();
 		CanOpenerGlobal.CanOut(": Elemental Rousings " .. CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars.showRousing, "will", "will not") .. " be shown");
 		CanOpenerGlobal.DebugLog("slashHandler - End Rousing");
-	elseif (CanOpenerGlobal.remixActive & command == "remixgem") then
+	elseif (CanOpenerGlobal.remixActive and command == "remixgem") then
 		CanOpenerGlobal.DebugLog("slashHandler - Start Remix Gems");
 		CanOpenerSavedVars.showRemixGems = not CanOpenerSavedVars.showRemixGems;
 		CanOpenerGlobal.ForceButtonRefresh();
 		CanOpenerGlobal.CanOut(": Remix Gems " .. CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars.showRemixGems, "will", "will not") .. " be shown");
 		CanOpenerGlobal.DebugLog("slashHandler - End Remix Gems");
-	elseif (CanOpenerGlobal.remixActive & command == "remixepicgems") then
+	elseif (CanOpenerGlobal.remixActive and command == "remixepicgems") then
 		CanOpenerGlobal.DebugLog("slashHandler - Start Remix Gem Level");
 		CanOpenerSavedVars.remixEpicGems = not CanOpenerSavedVars.remixEpicGems;
 		CanOpenerGlobal.ForceButtonRefresh();
@@ -135,7 +135,12 @@ local function createButton(cacheDetails, id)
 	end);
 	--Setup macro
 	btn:SetAttribute("type", "macro");
-	btn:SetAttribute("macrotext", format("/use item:%d", id));
+	if cacheDetails.lockbox and IsSpellKnown(1804) then -- 1804 is the ID for Pick Lock
+		local localizedName = C_Spell.GetSpellInfo(1804).name;
+		btn:SetAttribute("macrotext", format("/cast %s\n/use item:%d", localizedName, id));
+	else
+		btn:SetAttribute("macrotext", format("/use item:%d", id));
+	end
 	btn.countString = btn:CreateFontString(btn:GetName() .. "Count", "OVERLAY", "NumberFontNormal");
 	btn.countString:SetPoint("BOTTOMRIGHT", btn, -0, 2);
 	btn.countString:SetJustifyH("RIGHT");
