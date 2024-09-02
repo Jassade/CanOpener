@@ -2626,5 +2626,12 @@ CanOpenerGlobal.openables = {
 	[227430] = { name = "null-sliver" },
 	[227419] = { name = "faded-scribes-runic-drawings" },
 	[227662] = { name = "glimmer-of-inscription-knowledge" },
+	[221268] = { name = "pouch-of-weathered-harbinger-crests" },
+	[221373] = { name = "satchel-of-carved-harbinger-crests" },
+	[221375] = { name = "pack-of-runed-harbinger-crests" },
+	[220767] = { name = "triumphant-satchel-of-carved-harbinger-crests" },
+	[220773] = { name = "celebratory-pack-of-runed-harbinger-crests" },
+	[220776] = { name = "glorious-cluster-of-gilded-harbinger-crests" },
+	[226257] = { name = "delvers-pouch-of-valorstones" },
 };
 
