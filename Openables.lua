@@ -2633,5 +2633,6 @@ CanOpenerGlobal.openables = {
 	[220773] = { name = "celebratory-pack-of-runed-harbinger-crests" },
 	[220776] = { name = "glorious-cluster-of-gilded-harbinger-crests" },
 	[226257] = { name = "delvers-pouch-of-valorstones" },
+	[220148] = { name = "pale-huskfish"},
 };
 
