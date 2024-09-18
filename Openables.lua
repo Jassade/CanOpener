@@ -2633,6 +2633,15 @@ CanOpenerGlobal.openables = {
 	[220773] = { name = "celebratory-pack-of-runed-harbinger-crests" },
 	[220776] = { name = "glorious-cluster-of-gilded-harbinger-crests" },
 	[226257] = { name = "delvers-pouch-of-valorstones" },
-	[220148] = { name = "pale-huskfish"},
+	[220148] = { name = "pale-huskfish" },
+	[225249] = { name = "rattling-bag-o-gold" },
+	[227668] = { name = "delvers-bounty-t1" },
+	[227778] = { name = "delvers-bounty-t2" },
+	[227779] = { name = "delvers-bounty-t3" },
+	[227780] = { name = "delvers-bounty-t4" },
+	[227781] = { name = "delvers-bounty-t5" },
+	[227782] = { name = "delvers-bounty-t6" },
+	[227783] = { name = "delvers-bounty-t7" },
+	[227784] = { name = "delvers-bounty-t8" },
 };
 
