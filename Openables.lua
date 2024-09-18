@@ -1161,7 +1161,7 @@ CanOpenerGlobal.openables = {
 	[5760] = { name = "eternium-lockbox", lockbox = true },
 	[21228] = { name = "mithril-bound-trunk" },
 	[16882] = { name = "battered-junkbox", lockbox = true },
-	[4636] = { name = "strong-iron-lockbox" },
+	[4636] = { name = "strong-iron-lockbox", lockbox = true },
 	[5758] = { name = "mithril-lockbox", lockbox = true },
 	[4637] = { name = "steel-lockbox", lockbox = true },
 	[9363] = { name = "sparklematic-wrapped-box" },

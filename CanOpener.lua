@@ -135,12 +135,15 @@ local function createButton(cacheDetails, id)
 	end);
 	--Setup macro
 	btn:SetAttribute("type", "macro");
-	if cacheDetails.lockbox and IsSpellKnown(1804) then -- 1804 is the ID for Pick Lock
-		local localizedName = C_Spell.GetSpellInfo(1804).name;
-		btn:SetAttribute("macrotext", format("/cast %s\n/use item:%d", localizedName, id));
-	else
-		btn:SetAttribute("macrotext", format("/use item:%d", id));
-	end
+	-- if cacheDetails.lockbox and IsSpellKnown(1804) then -- 1804 is the ID for Pick Lock
+	-- 	local localizedName = C_Spell.GetSpellInfo(1804).name;
+	-- 	btn:SetAttribute("macrotext", format("/cast %s\n/use item:%d", localizedName, id));
+	-- else
+	-- 	btn:SetAttribute("macrotext", format("/use item:%d", id));
+	-- end
+
+	btn:SetAttribute("macrotext", format("/use item:%d", id));
+
 	btn.countString = btn:CreateFontString(btn:GetName() .. "Count", "OVERLAY", "NumberFontNormal");
 	btn.countString:SetPoint("BOTTOMRIGHT", btn, -0, 2);
 	btn.countString:SetJustifyH("RIGHT");
@@ -164,7 +167,7 @@ local UpdateButtons = function()
 		for slot = 1, C_Container.GetContainerNumSlots(bagID) do
 			local itemID = C_Container.GetContainerItemID(bagID, slot);
 			local cacheDetails = CanOpenerGlobal.openables[itemID];
-			if itemID and cacheDetails then
+			if itemID and cacheDetails and not cacheDetails.lockbox then -- Don't show lockboxes in the button bar for now
 				local count = GetItemCount(itemID);
 
 				if CanOpenerGlobal.CriteriaContext:evaluateAll(cacheDetails, count) and not itemIDsInQueue[itemID] then
