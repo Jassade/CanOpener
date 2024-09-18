@@ -1,6 +1,6 @@
 ## Interface: 100207
 ## Title: Can Opener
-## Version: 1.0.52
+## Version: 1.0.53
 ## Author: Jassade
 ## Notes: Adds a movable button to easily open items in your bag!
 ## SavedVariablesPerCharacter: CanOpenerSavedVars
