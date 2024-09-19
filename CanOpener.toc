@@ -1,9 +1,11 @@
-## Interface: 100207
+## Interface: 110005
 ## Title: Can Opener
 ## Version: 1.0.53
 ## Author: Jassade
 ## Notes: Adds a movable button to easily open items in your bag!
 ## SavedVariablesPerCharacter: CanOpenerSavedVars
+## IconTexture: Interface\AddOns\CanOpener\CanOpenerIcon.tga
+
 Helpers.lua
 Openables.lua
 Criteria.lua
