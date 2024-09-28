@@ -1,5 +1,4 @@
 local _, CanOpenerGlobal = ...
-local playerEnteredWorld = false;
 local shouldUpdateBags = false;
 local addonName = "Can Opener";
 
@@ -179,13 +178,11 @@ local function player_entering_world(isInitialLogin, isReloadingUi)
 		tostring(isInitialLogin) .. " | isReloadingUi " .. tostring(isReloadingUi));
 
 	CanOpenerGlobal.Frame:Show();
-	playerEnteredWorld = true;
 	CanOpenerGlobal.DebugLog("player_entering_world - End");
 end
 
 local function player_leaving_world()
 	CanOpenerGlobal.DebugLog("player_leaving_world - Start");
-	playerEnteredWorld = false;
 	CanOpenerGlobal.DebugLog("player_leaving_world - End");
 end
 
