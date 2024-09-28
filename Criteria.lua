@@ -32,11 +32,18 @@ function CriteriaContext:evaluateAll(cacheDetails, count)
     return true
 end
 
-SkipRousingStrategy = setmetatable({}, {__index = CriteriaStrategy})
+-- SkipRousingStrategy = setmetatable({}, {__index = CriteriaStrategy})
+-- SkipRousingStrategy.__index = SkipRousingStrategy
+
+-- function SkipRousingStrategy:new()
+--     local instance = CriteriaStrategy.new(self)
+--     return instance
+-- end
+SkipRousingStrategy = CriteriaStrategy:new()
 SkipRousingStrategy.__index = SkipRousingStrategy
 
 function SkipRousingStrategy:new()
-    local instance = CriteriaStrategy.new(self)
+    local instance = setmetatable({}, self)
     return instance
 end
 
@@ -44,11 +51,19 @@ function SkipRousingStrategy:evaluate(cacheDetails, count)
     return not CanOpenerSavedVars.showRousing and cacheDetails.isRousing
 end
 
-SkipRemixGemsStrategy = setmetatable({}, {__index = CriteriaStrategy})
+-- SkipRemixGemsStrategy = setmetatable({}, {__index = CriteriaStrategy})
+-- SkipRemixGemsStrategy.__index = SkipRemixGemsStrategy
+
+-- function SkipRemixGemsStrategy:new()
+--     local instance = CriteriaStrategy.new(self)
+--     return instance
+-- end
+
+SkipRemixGemsStrategy = CriteriaStrategy:new()
 SkipRemixGemsStrategy.__index = SkipRemixGemsStrategy
 
 function SkipRemixGemsStrategy:new()
-    local instance = CriteriaStrategy.new(self)
+    local instance = setmetatable({}, self)
     return instance
 end
 
@@ -56,11 +71,19 @@ function SkipRemixGemsStrategy:evaluate(cacheDetails, count)
     return not CanOpenerSavedVars.showRemixGems and cacheDetails.mopRemixGem
 end
 
-SkipRemixEpicGemsStrategy = setmetatable({}, {__index = CriteriaStrategy})
+-- SkipRemixEpicGemsStrategy = setmetatable({}, {__index = CriteriaStrategy})
+-- SkipRemixEpicGemsStrategy.__index = SkipRemixEpicGemsStrategy
+
+-- function SkipRemixEpicGemsStrategy:new()
+--     local instance = CriteriaStrategy.new(self)
+--     return instance
+-- end
+
+SkipRemixEpicGemsStrategy = CriteriaStrategy:new()
 SkipRemixEpicGemsStrategy.__index = SkipRemixEpicGemsStrategy
 
 function SkipRemixEpicGemsStrategy:new()
-    local instance = CriteriaStrategy.new(self)
+    local instance = setmetatable({}, self)
     return instance
 end
 
@@ -68,11 +91,19 @@ function SkipRemixEpicGemsStrategy:evaluate(cacheDetails, count)
     return not CanOpenerSavedVars.remixEpicGems and cacheDetails.mopRemixEpicGem
 end
 
-ThresholdStrategy = setmetatable({}, {__index = CriteriaStrategy})
+-- ThresholdStrategy = setmetatable({}, {__index = CriteriaStrategy})
+-- ThresholdStrategy.__index = ThresholdStrategy
+
+-- function ThresholdStrategy:new()
+--     local instance = CriteriaStrategy.new(self)
+--     return instance
+-- end
+
+ThresholdStrategy = CriteriaStrategy:new()
 ThresholdStrategy.__index = ThresholdStrategy
 
 function ThresholdStrategy:new()
-    local instance = CriteriaStrategy.new(self)
+    local instance = setmetatable({}, self)
     return instance
 end
 

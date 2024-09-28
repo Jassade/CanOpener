@@ -155,7 +155,7 @@ local function createButton(cacheDetails, id)
 	btn.icon = btn:CreateTexture(nil, "BACKGROUND");
 	btn.icon:SetTexture(C_Item.GetItemIconByID(id));
 	btn.texture = btn.icon;
-	btn.texture:SetAllPoints(btn:GetParent());
+	btn.texture:SetAllPoints();
 	btn:RegisterForClicks("LeftButtonUp", "LeftButtonDown");
 
 	--Tooltip
