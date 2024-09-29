@@ -3,6 +3,12 @@ local shouldUpdateBags = false;
 local addonName = "Can Opener";
 
 ------------------------------------------------
+-- Global Settings
+------------------------------------------------
+CanOpenerGlobal.IsRemixActive = false;
+CanOpenerGlobal.DebugMode = false;
+
+------------------------------------------------
 -- Debug Methods
 ------------------------------------------------
 local canOut;
@@ -36,7 +42,7 @@ canOutTable = function(table, indent, premsg)
 end
 
 local function debugLog(...)
-	if CanOpenerSavedVars and CanOpenerSavedVars.debugMode and DLAPI then DLAPI.DebugLog(addonName, ...) end
+	if CanOpenerGlobal and CanOpenerGlobal.DebugMode and DLAPI then DLAPI.DebugLog(addonName, ...) end
 end
 CanOpenerGlobal.DebugLog = debugLog;
 
@@ -118,10 +124,8 @@ local function initSavedVariables()
 	CanOpenerSavedVars = {
 		enable = true,
 		showRousing = true,
-		isRemixActive = false,
 		showRemixGems = true,
 		remixEpicGems = true,
-		debugMode = false,
 		position = { "CENTER", "CENTER", 0, 0 },
 	};
 end
@@ -146,6 +150,7 @@ local function addon_Loaded(addOnName)
 		CanOpenerGlobal.DebugLog("0 - Addon Loaded");
 		CanOpenerGlobal.Frame:UnregisterEvent("ADDON_LOADED");
 		CanOpenerGlobal.SavedVars = CanOpenerSavedVars or initSavedVariables();
+        InitSettingsMenu();
 	end
 	CanOpenerGlobal.DebugLog("resetSavedVariables - End");
 end
