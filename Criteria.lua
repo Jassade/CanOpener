@@ -32,11 +32,11 @@ function CriteriaContext:evaluateAll(cacheDetails, count)
     return true
 end
 
-SkipRousingStrategy = setmetatable({}, {__index = CriteriaStrategy})
+SkipRousingStrategy = CriteriaStrategy:new()
 SkipRousingStrategy.__index = SkipRousingStrategy
 
 function SkipRousingStrategy:new()
-    local instance = CriteriaStrategy.new(self)
+    local instance = setmetatable({}, self)
     return instance
 end
 
@@ -44,11 +44,11 @@ function SkipRousingStrategy:evaluate(cacheDetails, count)
     return not CanOpenerSavedVars.showRousing and cacheDetails.isRousing
 end
 
-SkipRemixGemsStrategy = setmetatable({}, {__index = CriteriaStrategy})
+SkipRemixGemsStrategy = CriteriaStrategy:new()
 SkipRemixGemsStrategy.__index = SkipRemixGemsStrategy
 
 function SkipRemixGemsStrategy:new()
-    local instance = CriteriaStrategy.new(self)
+    local instance = setmetatable({}, self)
     return instance
 end
 
@@ -56,11 +56,11 @@ function SkipRemixGemsStrategy:evaluate(cacheDetails, count)
     return not CanOpenerSavedVars.showRemixGems and cacheDetails.mopRemixGem
 end
 
-SkipRemixEpicGemsStrategy = setmetatable({}, {__index = CriteriaStrategy})
+SkipRemixEpicGemsStrategy = CriteriaStrategy:new()
 SkipRemixEpicGemsStrategy.__index = SkipRemixEpicGemsStrategy
 
 function SkipRemixEpicGemsStrategy:new()
-    local instance = CriteriaStrategy.new(self)
+    local instance = setmetatable({}, self)
     return instance
 end
 
@@ -68,11 +68,11 @@ function SkipRemixEpicGemsStrategy:evaluate(cacheDetails, count)
     return not CanOpenerSavedVars.remixEpicGems and cacheDetails.mopRemixEpicGem
 end
 
-ThresholdStrategy = setmetatable({}, {__index = CriteriaStrategy})
+ThresholdStrategy = CriteriaStrategy:new()
 ThresholdStrategy.__index = ThresholdStrategy
 
 function ThresholdStrategy:new()
-    local instance = CriteriaStrategy.new(self)
+    local instance = setmetatable({}, self)
     return instance
 end
 
@@ -91,7 +91,7 @@ local strategies = {
     skipRousingStrategy,
     thresholdStrategy
 }
-if CanOpenerGlobal.remixActive then
+if CanOpenerGlobal.IsRemixActive then
     strategies.insert(2, skipRemixGemsStrategy)
     strategies.insert(3, skipRemixEpicGemsStrategy)
 end

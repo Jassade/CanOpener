@@ -1,7 +1,12 @@
 local _, CanOpenerGlobal = ...
-local playerEnteredWorld = false;
 local shouldUpdateBags = false;
 local addonName = "Can Opener";
+
+------------------------------------------------
+-- Global Settings
+------------------------------------------------
+CanOpenerGlobal.IsRemixActive = false;
+CanOpenerGlobal.DebugMode = false;
 
 ------------------------------------------------
 -- Debug Methods
@@ -37,7 +42,7 @@ canOutTable = function(table, indent, premsg)
 end
 
 local function debugLog(...)
-	if CanOpenerSavedVars and CanOpenerSavedVars.debugMode and DLAPI then DLAPI.DebugLog(addonName, ...) end
+	if CanOpenerGlobal and CanOpenerGlobal.DebugMode and DLAPI then DLAPI.DebugLog(addonName, ...) end
 end
 CanOpenerGlobal.DebugLog = debugLog;
 
@@ -119,11 +124,10 @@ local function initSavedVariables()
 	CanOpenerSavedVars = {
 		enable = true,
 		showRousing = true,
-		isRemixActive = false,
 		showRemixGems = true,
 		remixEpicGems = true,
-		debugMode = false,
 		position = { "CENTER", "CENTER", 0, 0 },
+		excludedItems = { },
 	};
 end
 local function resetSavedVariables()
@@ -147,6 +151,7 @@ local function addon_Loaded(addOnName)
 		CanOpenerGlobal.DebugLog("0 - Addon Loaded");
 		CanOpenerGlobal.Frame:UnregisterEvent("ADDON_LOADED");
 		CanOpenerGlobal.SavedVars = CanOpenerSavedVars or initSavedVariables();
+        InitSettingsMenu();
 	end
 	CanOpenerGlobal.DebugLog("resetSavedVariables - End");
 end
@@ -179,13 +184,11 @@ local function player_entering_world(isInitialLogin, isReloadingUi)
 		tostring(isInitialLogin) .. " | isReloadingUi " .. tostring(isReloadingUi));
 
 	CanOpenerGlobal.Frame:Show();
-	playerEnteredWorld = true;
 	CanOpenerGlobal.DebugLog("player_entering_world - End");
 end
 
 local function player_leaving_world()
 	CanOpenerGlobal.DebugLog("player_leaving_world - Start");
-	playerEnteredWorld = false;
 	CanOpenerGlobal.DebugLog("player_leaving_world - End");
 end
 
