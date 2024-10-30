@@ -5,3 +5,4 @@
 1.0.4 - 1.0.48 - I forgot to update this. There were a lot of changes, and I am sorry.
 1.0.49 - Added GitHub actions to make my life easier.
 1.0.50 - Added flag for Remix active; Will now try to open lockboxes with lock pick skill if you have it.
+1.0.56 - 11.0.5 items
