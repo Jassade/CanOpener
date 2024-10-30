@@ -127,6 +127,7 @@ local function initSavedVariables()
 		showRemixGems = true,
 		remixEpicGems = true,
 		position = { "CENTER", "CENTER", 0, 0 },
+		excludedItems = { },
 	};
 end
 local function resetSavedVariables()

@@ -87,32 +87,59 @@ function InitSettingsMenu()
         end
     end
 
-    do
-        local variable = "debugMode"
-        local name = "Enable Debug Mode (Resets on Reload)"
-        local tooltip = "Enable debug logging for troubleshooting purposes."
-        local defaultValue = false
+    -- do
+    --     local variable = "position"
+    --     local name = "Position"
+    --     local tooltip = "Set the position of the CanOpener UI."
+    --     local defaultValue = { "CENTER", "CENTER", 0, 0 }
 
-        local function GetValue()
-            return CanOpenerGlobal.DebugMode;
-        end
+    --     local function GetValue()
+    --         return CanOpenerSavedVars.position
+    --     end
 
-        local function SetValue(value)
-            CanOpenerGlobal.DebugMode = value
-        end
+    --     local function SetValue(value)
+    --         CanOpenerSavedVars.position = value
+    --     end
 
-        local setting = Settings.RegisterProxySetting(
-            category,
-            "CanOpener_" .. variable,
-            Settings.VarType.Boolean,
-            name,
-            defaultValue,
-            GetValue,
-            SetValue
-        )
+    --     local setting = Settings.RegisterProxySetting(
+    --         category,
+    --         "CanOpener_" .. variable,
+    --         Settings.VarType.Table,
+    --         name,
+    --         defaultValue,
+    --         GetValue,
+    --         SetValue
+    --     )
 
-        Settings.CreateCheckbox(category, setting, tooltip)
-    end
+    --     Settings.CreateCheckbox(category, setting, tooltip)
+    -- end
+
+    -- do
+    --     local variable = "debugMode"
+    --     local name = "Enable Debug Mode (Resets on Reload)"
+    --     local tooltip = "Enable debug logging for troubleshooting purposes."
+    --     local defaultValue = false
+
+    --     local function GetValue()
+    --         return CanOpenerGlobal.DebugMode;
+    --     end
+
+    --     local function SetValue(value)
+    --         CanOpenerGlobal.DebugMode = value
+    --     end
+
+    --     local setting = Settings.RegisterProxySetting(
+    --         category,
+    --         "CanOpener_" .. variable,
+    --         Settings.VarType.Boolean,
+    --         name,
+    --         defaultValue,
+    --         GetValue,
+    --         SetValue
+    --     )
+
+    --     Settings.CreateCheckbox(category, setting, tooltip)
+    -- end
 
     Settings.RegisterAddOnCategory(category)
 end
