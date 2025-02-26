@@ -45,6 +45,33 @@ local function slashHandler(msg)
 		CanOpenerGlobal.DebugMode = not CanOpenerGlobal.DebugMode;
 		CanOpenerGlobal.ResetSavedVariables();
 		CanOpenerGlobal.DebugLog("slashHandler - End Reset");
+	elseif command == "ignore" and rest then
+		CanOpenerGlobal.DebugLog("slashHandler - Start Ignore");
+		local itemID = tonumber(rest)
+		if itemID then
+			CanOpenerGlobal.excludedItems[itemID] = true
+			CanOpenerGlobal.CanOut("CanOpener: Ignoring item ID " .. itemID)
+		else
+			CanOpenerGlobal.CanOut("CanOpener: Invalid item ID.")
+		end
+		CanOpenerGlobal.DebugLog("slashHandler - End Ignore");
+	elseif command == "unignore" and rest then
+		CanOpenerGlobal.DebugLog("slashHandler - Start Unignore");
+		local itemID = tonumber(rest)
+		if itemID and CanOpenerGlobal.excludedItems[itemID] then
+			CanOpenerGlobal.excludedItems[itemID] = nil
+			CanOpenerGlobal.CanOut(": Removed item ID " .. itemID .. " from ignore list.")
+		else
+			CanOpenerGlobal.CanOut(": Item ID not found in ignore list.")
+		end
+		CanOpenerGlobal.DebugLog("slashHandler - End Unignore");
+	elseif command == "list" then
+		CanOpenerGlobal.DebugLog("slashHandler - Start Ignore List");
+		CanOpenerGlobal.CanOut(": Ignored Items List:")
+		for itemID, _ in pairs(CanOpenerGlobal.excludedItems) do
+			CanOpenerGlobal.CanOut(" - Item ID: " .. itemID)
+		end
+		CanOpenerGlobal.DebugLog("slashHandler - End Ignore List");
 	else
 		CanOpenerGlobal.DebugLog("slashHandler - Unknown command " .. (command or "<None>"));
 		CanOpenerGlobal.CanOut("Commands for |cffffa500/CanOpener|r :");
@@ -57,6 +84,9 @@ local function slashHandler(msg)
 			CanOpenerGlobal.CanOut("  |cffffa500 remixEpicGems|r - Toggle combining gems higher than Epic (" ..
 				remixEpicGemsState .. ")");
 		end
+		CanOpenerGlobal.CanOut("  |cffffa500 ignore|r <itemID> - Ignore a specific item")
+        CanOpenerGlobal.CanOut("  |cffffa500 unignore|r <itemID> - Remove an item from the ignore list")
+        CanOpenerGlobal.CanOut("  |cffffa500 list|r - Show ignored items")
 		CanOpenerGlobal.CanOut("  |cffffa500 reset|r - Reset all settings!");
 	end
 	CanOpenerGlobal.DebugLog("slashHandler - End");
