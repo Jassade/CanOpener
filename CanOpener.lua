@@ -162,6 +162,24 @@ local function createButton(cacheDetails, id)
 	btn:SetScript("OnEnter", buttonOnEnter);
 	btn:SetScript("OnLeave", buttonOnLeave);
 
+	-- Hook a shift-right click to add the item to the per–character ignore list.
+	btn:HookScript("OnMouseUp", function(self, button)
+		if button == "RightButton" and IsShiftKeyDown() then
+			local itemID = self.itemID
+			local itemName = C_Item.GetItemNameByID(itemID);
+			-- If not already ignored, add it; otherwise notify the user.
+			if not CanOpenerSavedVars.excludedItems[itemID] then
+				CanOpenerSavedVars.excludedItems[itemID] = true
+				CanOpenerGlobal.CanOut(itemName .. " added to your ignore list.")
+			else
+				CanOpenerGlobal.CanOut(itemName .. " is already in your ignore list.")
+			end
+			CanOpenerGlobal.ForceButtonRefresh()
+			-- Prevent any further processing of the click.
+			return
+		end
+	end)
+
 	CanOpenerGlobal.DebugLog("createButton - End");
 end
 
@@ -172,7 +190,9 @@ local UpdateButtons = function()
 		for slot = 1, C_Container.GetContainerNumSlots(bagID) do
 			local itemID = C_Container.GetContainerItemID(bagID, slot);
 			local cacheDetails = CanOpenerGlobal.openables[itemID];
-			if itemID and cacheDetails and not cacheDetails.lockbox then -- Don't show lockboxes in the button bar for now
+			-- local manualExclude = cacheDetails.lockbox; -- Don't show lockboxes in the button bar for now
+			local onExcludeList = CanOpenerSavedVars.excludedItems[itemID] or false;
+			if itemID and cacheDetails and not cacheDetails.lockbox and not onExcludeList then
 				local count = C_Item.GetItemCount(itemID);
 
 				if CanOpenerGlobal.CriteriaContext:evaluateAll(cacheDetails, count) and not itemIDsInQueue[itemID] then
