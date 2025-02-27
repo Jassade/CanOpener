@@ -45,6 +45,31 @@ local function slashHandler(msg)
 		CanOpenerGlobal.DebugMode = not CanOpenerGlobal.DebugMode;
 		CanOpenerGlobal.ResetSavedVariables();
 		CanOpenerGlobal.DebugLog("slashHandler - End Reset");
+	elseif command == "ignore" and rest then
+		CanOpenerGlobal.DebugLog("slashHandler - Start Ignore");
+		local itemID = tonumber(rest)
+		if itemID then
+			CanOpenerSavedVars.excludedItems[itemID] = true
+			CanOpenerGlobal.CanOut(": Ignoring item ID " .. itemID)
+		else
+			CanOpenerGlobal.CanOut(": Invalid item ID.")
+		end
+		CanOpenerGlobal.DebugLog("slashHandler - End Ignore");
+	elseif command == "unignore" and rest then
+		CanOpenerGlobal.DebugLog("slashHandler - Start Unignore");
+		local itemID = tonumber(rest)
+		if itemID and CanOpenerSavedVars.excludedItems[itemID] then
+			CanOpenerSavedVars.excludedItems[itemID] = nil
+			CanOpenerGlobal.CanOut(": Removed item ID " .. itemID .. " from ignore list.")
+		else
+			CanOpenerGlobal.CanOut(": Item ID not found in ignore list.")
+		end
+		CanOpenerGlobal.DebugLog("slashHandler - End Unignore");
+	elseif command == "list" then
+		CanOpenerGlobal.DebugLog("slashHandler - Start Ignore List");
+		CanOpenerGlobal.CanOut(": Ignored Items List:")
+		CanOpenerGlobal.CanOut(CanOpenerSavedVars.excludedItems);
+		CanOpenerGlobal.DebugLog("slashHandler - End Ignore List");
 	else
 		CanOpenerGlobal.DebugLog("slashHandler - Unknown command " .. (command or "<None>"));
 		CanOpenerGlobal.CanOut("Commands for |cffffa500/CanOpener|r :");
@@ -57,6 +82,9 @@ local function slashHandler(msg)
 			CanOpenerGlobal.CanOut("  |cffffa500 remixEpicGems|r - Toggle combining gems higher than Epic (" ..
 				remixEpicGemsState .. ")");
 		end
+		CanOpenerGlobal.CanOut("  |cffffa500 ignore|r <itemID> - Ignore a specific item")
+        CanOpenerGlobal.CanOut("  |cffffa500 unignore|r <itemID> - Remove an item from the ignore list")
+        CanOpenerGlobal.CanOut("  |cffffa500 list|r - Show ignored items")
 		CanOpenerGlobal.CanOut("  |cffffa500 reset|r - Reset all settings!");
 	end
 	CanOpenerGlobal.DebugLog("slashHandler - End");
@@ -162,6 +190,24 @@ local function createButton(cacheDetails, id)
 	btn:SetScript("OnEnter", buttonOnEnter);
 	btn:SetScript("OnLeave", buttonOnLeave);
 
+	-- Hook a shift-right click to add the item to the per–character ignore list.
+	btn:HookScript("OnMouseUp", function(self, button)
+		if button == "RightButton" and IsShiftKeyDown() then
+			local itemID = self.itemID
+			local itemName = C_Item.GetItemNameByID(itemID);
+			-- If not already ignored, add it; otherwise notify the user.
+			if not CanOpenerSavedVars.excludedItems[itemID] then
+				CanOpenerSavedVars.excludedItems[itemID] = true
+				CanOpenerGlobal.CanOut(itemName .. " added to your ignore list.")
+			else
+				CanOpenerGlobal.CanOut(itemName .. " is already in your ignore list.")
+			end
+			CanOpenerGlobal.ForceButtonRefresh()
+			-- Prevent any further processing of the click.
+			return
+		end
+	end)
+
 	CanOpenerGlobal.DebugLog("createButton - End");
 end
 
@@ -172,7 +218,9 @@ local UpdateButtons = function()
 		for slot = 1, C_Container.GetContainerNumSlots(bagID) do
 			local itemID = C_Container.GetContainerItemID(bagID, slot);
 			local cacheDetails = CanOpenerGlobal.openables[itemID];
-			if itemID and cacheDetails and not cacheDetails.lockbox then -- Don't show lockboxes in the button bar for now
+			-- local manualExclude = cacheDetails.lockbox; -- Don't show lockboxes in the button bar for now
+			local onExcludeList = CanOpenerSavedVars.excludedItems[itemID] or false;
+			if itemID and cacheDetails and not cacheDetails.lockbox and not onExcludeList then
 				local count = C_Item.GetItemCount(itemID);
 
 				if CanOpenerGlobal.CriteriaContext:evaluateAll(cacheDetails, count) and not itemIDsInQueue[itemID] then

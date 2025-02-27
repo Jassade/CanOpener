@@ -130,6 +130,12 @@ local function initSavedVariables()
 		excludedItems = { },
 	};
 end
+local function UpdateSavedVars()
+	-- Added Excluded Items
+	if CanOpenerSavedVars.excludedItems == nil then
+		CanOpenerSavedVars.excludedItems = {};
+	end
+end
 local function resetSavedVariables()
 	debugLog(CanOpenerGlobal.Frame);
 	CanOpenerGlobal.DebugLog("resetSavedVariables - Start");
@@ -150,7 +156,10 @@ local function addon_Loaded(addOnName)
 	if addOnName == "CanOpener" then
 		CanOpenerGlobal.DebugLog("0 - Addon Loaded");
 		CanOpenerGlobal.Frame:UnregisterEvent("ADDON_LOADED");
-		CanOpenerGlobal.SavedVars = CanOpenerSavedVars or initSavedVariables();
+		if CanOpenerSavedVars == nil then
+			initSavedVariables();
+		end
+		UpdateSavedVars();
         InitSettingsMenu();
 	end
 	CanOpenerGlobal.DebugLog("resetSavedVariables - End");
