@@ -49,17 +49,17 @@ local function slashHandler(msg)
 		CanOpenerGlobal.DebugLog("slashHandler - Start Ignore");
 		local itemID = tonumber(rest)
 		if itemID then
-			CanOpenerGlobal.excludedItems[itemID] = true
-			CanOpenerGlobal.CanOut("CanOpener: Ignoring item ID " .. itemID)
+			CanOpenerSavedVars.excludedItems[itemID] = true
+			CanOpenerGlobal.CanOut(": Ignoring item ID " .. itemID)
 		else
-			CanOpenerGlobal.CanOut("CanOpener: Invalid item ID.")
+			CanOpenerGlobal.CanOut(": Invalid item ID.")
 		end
 		CanOpenerGlobal.DebugLog("slashHandler - End Ignore");
 	elseif command == "unignore" and rest then
 		CanOpenerGlobal.DebugLog("slashHandler - Start Unignore");
 		local itemID = tonumber(rest)
-		if itemID and CanOpenerGlobal.excludedItems[itemID] then
-			CanOpenerGlobal.excludedItems[itemID] = nil
+		if itemID and CanOpenerSavedVars.excludedItems[itemID] then
+			CanOpenerSavedVars.excludedItems[itemID] = nil
 			CanOpenerGlobal.CanOut(": Removed item ID " .. itemID .. " from ignore list.")
 		else
 			CanOpenerGlobal.CanOut(": Item ID not found in ignore list.")
@@ -68,9 +68,7 @@ local function slashHandler(msg)
 	elseif command == "list" then
 		CanOpenerGlobal.DebugLog("slashHandler - Start Ignore List");
 		CanOpenerGlobal.CanOut(": Ignored Items List:")
-		for itemID, _ in pairs(CanOpenerGlobal.excludedItems) do
-			CanOpenerGlobal.CanOut(" - Item ID: " .. itemID)
-		end
+		CanOpenerGlobal.CanOut(CanOpenerSavedVars.excludedItems);
 		CanOpenerGlobal.DebugLog("slashHandler - End Ignore List");
 	else
 		CanOpenerGlobal.DebugLog("slashHandler - Unknown command " .. (command or "<None>"));
