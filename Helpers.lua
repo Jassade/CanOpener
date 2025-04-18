@@ -126,7 +126,7 @@ local function initSavedVariables()
 		showRousing = true,
 		showRemixGems = true,
 		remixEpicGems = true,
-		showLevelRestrictedItems = true, -- Add this line
+		showLevelRestrictedItems = true,
 		position = { "CENTER", "CENTER", 0, 0 },
 		excludedItems = { },
 	};

@@ -11,7 +11,7 @@ function CriteriaStrategy:new()
     return instance
 end
 
-function CriteriaStrategy:evaluate(itemID, cacheDetails, count)
+function CriteriaStrategy:shouldFilter(itemID, cacheDetails, count)
     error("This method should be overridden in the derived class")
 end
 
@@ -25,7 +25,7 @@ end
 
 function CriteriaContext:evaluateAll(itemID, cacheDetails, count)
     for _, strategy in ipairs(self.strategies) do
-        if strategy:evaluate(itemID, cacheDetails, count) then
+        if strategy:shouldFilter(itemID, cacheDetails, count) then
             return false
         end
     end
@@ -40,7 +40,7 @@ function SkipRousingStrategy:new()
     return instance
 end
 
-function SkipRousingStrategy:evaluate(itemID, cacheDetails, count)
+function SkipRousingStrategy:shouldFilter(itemID, cacheDetails, count)
     return not CanOpenerSavedVars.showRousing and cacheDetails.isRousing
 end
 
@@ -52,7 +52,7 @@ function SkipRemixGemsStrategy:new()
     return instance
 end
 
-function SkipRemixGemsStrategy:evaluate(itemID, cacheDetails, count)
+function SkipRemixGemsStrategy:shouldFilter(itemID, cacheDetails, count)
     return not CanOpenerSavedVars.showRemixGems and cacheDetails.mopRemixGem
 end
 
@@ -64,7 +64,7 @@ function SkipRemixEpicGemsStrategy:new()
     return instance
 end
 
-function SkipRemixEpicGemsStrategy:evaluate(itemID, cacheDetails, count)
+function SkipRemixEpicGemsStrategy:shouldFilter(itemID, cacheDetails, count)
     return not CanOpenerSavedVars.remixEpicGems and cacheDetails.mopRemixEpicGem
 end
 
@@ -76,7 +76,7 @@ function ThresholdStrategy:new()
     return instance
 end
 
-function ThresholdStrategy:evaluate(itemID, cacheDetails, count)
+function ThresholdStrategy:shouldFilter(itemID, cacheDetails, count)
     return (cacheDetails.threshold or 1) > count
 end
 
@@ -88,13 +88,13 @@ function LevelRequirementStrategy:new()
     return instance
 end
 
-function LevelRequirementStrategy:evaluate(itemID, cacheDetails, count)
+function LevelRequirementStrategy:shouldFilter(itemID, cacheDetails, count)
     local _,_,_,_,itemMinLevel = C_Item.GetItemInfo(itemID)
     if not itemMinLevel then
         -- If item info is still unavailable, return false
         return false
     end
-    CanOpenerGlobal.DebugLog("LevelRequirementStrategy:evaluate - itemMinLevel: " .. tostring(itemMinLevel) .. ", playerLevel: " .. tostring(UnitLevel("player")))
+    CanOpenerGlobal.DebugLog("LevelRequirementStrategy:shouldFilter - itemMinLevel: " .. tostring(itemMinLevel) .. ", playerLevel: " .. tostring(UnitLevel("player")))
     return not CanOpenerSavedVars.showLevelRestrictedItems and itemMinLevel > UnitLevel("player")
 end
 
