@@ -34,6 +34,13 @@ local function slashHandler(msg)
 			CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars.remixEpicGems, "will", "will not") ..
 			" be combined higher than Epic");
 		CanOpenerGlobal.DebugLog("slashHandler - End Remix Gems Level");
+	elseif (command == "levelrestricted") then
+        CanOpenerGlobal.DebugLog("slashHandler - Start Level Restricted");
+        CanOpenerSavedVars.showLevelRestrictedItems = not CanOpenerSavedVars.showLevelRestrictedItems;
+        CanOpenerGlobal.ForceButtonRefresh();
+        CanOpenerGlobal.CanOut(": Level-Restricted Items " ..
+            CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars.showLevelRestrictedItems, "will", "will not") .. " be shown");
+        CanOpenerGlobal.DebugLog("slashHandler - End Level Restricted");
 	elseif (command == "reset") then
 		CanOpenerGlobal.DebugLog("slashHandler - Start Reset");
 		CanOpenerGlobal.CanOut(": Resetting settings and position.");
@@ -71,22 +78,24 @@ local function slashHandler(msg)
 		CanOpenerGlobal.CanOut(CanOpenerSavedVars.excludedItems);
 		CanOpenerGlobal.DebugLog("slashHandler - End Ignore List");
 	else
-		CanOpenerGlobal.DebugLog("slashHandler - Unknown command " .. (command or "<None>"));
-		CanOpenerGlobal.CanOut("Commands for |cffffa500/CanOpener|r :");
-		local rousingState = CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars.showRousing, "On", "Off");
-		CanOpenerGlobal.CanOut("  |cffffa500 rousing|r - Toggle showing Elemental Rousings (" .. rousingState .. ")");
-		if (CanOpenerGlobal.IsRemixActive) then
-			local remixGemsState = CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars.showRemixGems, "On", "Off");
-			CanOpenerGlobal.CanOut("  |cffffa500 remixGem|r - Toggle showing Remix Gems (" .. remixGemsState .. ")");
-			local remixEpicGemsState = CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars.remixEpicGems, "On", "Off");
-			CanOpenerGlobal.CanOut("  |cffffa500 remixEpicGems|r - Toggle combining gems higher than Epic (" ..
-				remixEpicGemsState .. ")");
-		end
-		CanOpenerGlobal.CanOut("  |cffffa500 ignore|r <itemID> - Ignore a specific item")
-        CanOpenerGlobal.CanOut("  |cffffa500 unignore|r <itemID> - Remove an item from the ignore list")
-        CanOpenerGlobal.CanOut("  |cffffa500 list|r - Show ignored items")
-		CanOpenerGlobal.CanOut("  |cffffa500 reset|r - Reset all settings!");
-	end
+        CanOpenerGlobal.DebugLog("slashHandler - Unknown command " .. (command or "<None>"));
+        CanOpenerGlobal.CanOut("Commands for |cffffa500/CanOpener|r :");
+        local rousingState = CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars.showRousing, "On", "Off");
+        CanOpenerGlobal.CanOut("  |cffffa500 rousing|r - Toggle showing Elemental Rousings (" .. rousingState .. ")");
+        if (CanOpenerGlobal.IsRemixActive) then
+            local remixGemsState = CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars.showRemixGems, "On", "Off");
+            CanOpenerGlobal.CanOut("  |cffffa500 remixGem|r - Toggle showing Remix Gems (" .. remixGemsState .. ")");
+            local remixEpicGemsState = CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars.remixEpicGems, "On", "Off");
+            CanOpenerGlobal.CanOut("  |cffffa500 remixEpicGems|r - Toggle combining gems higher than Epic (" ..
+                remixEpicGemsState .. ")");
+        end
+        local levelRestrictedState = CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars.showLevelRestrictedItems, "On", "Off");
+        CanOpenerGlobal.CanOut("  |cffffa500 levelrestricted|r - Toggle showing level-restricted items (" .. levelRestrictedState .. ")");
+        CanOpenerGlobal.CanOut("  |cffffa500 ignore|r <itemID> - Ignore a specific item");
+        CanOpenerGlobal.CanOut("  |cffffa500 unignore|r <itemID> - Remove an item from the ignore list");
+        CanOpenerGlobal.CanOut("  |cffffa500 list|r - Show ignored items");
+        CanOpenerGlobal.CanOut("  |cffffa500 reset|r - Reset all settings!");
+    end
 	CanOpenerGlobal.DebugLog("slashHandler - End");
 end
 
@@ -223,7 +232,7 @@ local UpdateButtons = function()
 			if itemID and cacheDetails and not cacheDetails.lockbox and not onExcludeList then
 				local count = C_Item.GetItemCount(itemID);
 
-				if CanOpenerGlobal.CriteriaContext:evaluateAll(cacheDetails, count) and not itemIDsInQueue[itemID] then
+				if CanOpenerGlobal.CriteriaContext:evaluateAll(itemID, cacheDetails, count) and not itemIDsInQueue[itemID] then
 					table.insert(buttonQueue, itemID)
 					itemIDsInQueue[itemID] = true
 				end
