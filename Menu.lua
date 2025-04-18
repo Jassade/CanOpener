@@ -31,6 +31,33 @@ function InitSettingsMenu()
         Settings.CreateCheckbox(category, setting, tooltip)
     end
 
+    do
+        local variable = "showLevelRestrictedItems"
+        local name = "Show Level-Restricted Items"
+        local tooltip = "If Checked, items with a level requirement higher than your character's level will be shown."
+        local defaultValue = true
+
+        local function GetValue()
+            return CanOpenerSavedVars.showLevelRestrictedItems
+        end
+
+        local function SetValue(value)
+            CanOpenerSavedVars.showLevelRestrictedItems = value
+        end
+
+        local setting = Settings.RegisterProxySetting(
+            category,
+            "CanOpener_" .. variable,
+            Settings.VarType.Boolean,
+            name,
+            defaultValue,
+            GetValue,
+            SetValue
+        )
+
+        Settings.CreateCheckbox(category, setting, tooltip)
+    end
+
     if (CanOpenerGlobal.IsRemixActive) then
         do
             local variable = "showRemixGems"
