@@ -2737,5 +2737,6 @@ CanOpenerGlobal.openables = {
 	[239004] = { name = "radiant-service-satchel" },
 	[237743] = { name = "arathi-soldiers-coffer" },
 	[237759] = { name = "arathi-clerics-chest" },
+	[245589] = { name = "hellcaller-chest" },
 };
 
