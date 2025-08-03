@@ -1,4 +1,4 @@
-## Interface: 110107
+## Interface: 110107, 110200
 ## Title: Can Opener
 ## Version: 1.0.67
 ## Author: Jassade
