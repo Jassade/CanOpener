@@ -2776,5 +2776,10 @@ CanOpenerGlobal.openables = {
 	[248127] = { name = "delvers-cosmetic-surprise-bag" },
 	[250763] = { name = "theater-troupes-trove" },
 	[240208] = { name = "void-touched-valorstone" },
+	[240926] = { name = "pack-of-runed-ethereal-crests" },
+	[240927] = { name = "satchel-of-carved-ethereal-crests" },
+	[240928] = { name = "pouch-of-weathered-ethereal-crests" },
+	[240930] = { name = "celebratory-pack-of-runed-ethereal-crests" },
+	[240931] = { name = "triumphant-satchel-of-carved-ethereal-crests" },
 };
 
