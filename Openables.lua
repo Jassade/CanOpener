@@ -2781,5 +2781,6 @@ CanOpenerGlobal.openables = {
 	[240928] = { name = "pouch-of-weathered-ethereal-crests" },
 	[240930] = { name = "celebratory-pack-of-runed-ethereal-crests" },
 	[240931] = { name = "triumphant-satchel-of-carved-ethereal-crests" },
+	[255676] = { name = "phase-divers-cache" },
 };
 
