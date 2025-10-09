@@ -2801,5 +2801,8 @@ CanOpenerGlobal.openables = {
 	[254850] = { name = "minor-bronze-cache" },
 	[244457] = { name = "keystone-container" },
 	[254849] = { name = "minor-bronze-cache" },
+	[245925] = { name = "artifactium-sand" },
+	[249891] = { name = "mound-of-artifactium-sand" },
+	[246937] = { name = "perfected-epoch-memento" },
 };
 
