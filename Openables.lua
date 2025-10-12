@@ -832,7 +832,7 @@ CanOpenerGlobal.openables = {
 	[200285] = { name = "dragonscale-expedition-insignia" },
 	[205985] = { name = "loamm-niffen-insignia" },
 	[205342] = { name = "loamm-niffen-insignia" },
--- 10.1.5 openables
+	-- 10.1.5 openables
 	[208095] = { name = "cache-of-timewarped-treasures" },
 	[207583] = { name = "box-of-collapsed-reality" },
 	[208091] = { name = "cache-of-timewarped-treasures" },
@@ -872,7 +872,7 @@ CanOpenerGlobal.openables = {
 	[207052] = { name = "jingoist-s-plate-equipment-bag" },
 	[207068] = { name = "jingoist-s-leather-equipment-bag" },
 	[208390] = { name = "bronze-archive-stone" },
--- 10.2.7 Openables
+	-- 10.2.7 Openables
 	[215362] = { name = "cache-of-storms" },
 	[215363] = { name = "cache-of-embers" },
 	[215364] = { name = "cache-of-dreams" },
@@ -883,7 +883,7 @@ CanOpenerGlobal.openables = {
 	[217111] = { name = "cache-of-awakened-dreams" },
 	[217242] = { name = "awakening-stone-wing" },
 	[217243] = { name = "awakening-ruby-wing" },
--- MoP: Remix
+	-- MoP: Remix
 	[211279] = { name = "cache-of-infinite-treasure" },
 	[223908] = { name = "minor-bronze-cache" },
 	[223909] = { name = "lesser-bronze-cache" },
@@ -957,7 +957,7 @@ CanOpenerGlobal.openables = {
 	[211109] = { name = "chipped-sustaining-emerald", mopRemixGem = true, threshold = 3 },
 	[216642] = { name = "flawed-sustaining-emerald", mopRemixGem = true, threshold = 3 },
 	[211125] = { name = "sustaining-emerald", mopRemixGem = true, threshold = 3, mopRemixEpicGem = true },
--- More Openables added >= 10.0
+	-- More Openables added >= 10.0
 	[211389] = { name = "cache-of-overblooming-treasures" },
 	[224296] = { name = "basket-of-draconic-flowers" },
 	[198657] = { name = "forgotten-jewelry-box", lockbox = true },
@@ -1076,7 +1076,7 @@ CanOpenerGlobal.openables = {
 	[209832] = { name = "crate-of-dreambound-leather" },
 	[208951] = { name = "paracausal-cluster" },
 	[208952] = { name = "soridormis-letter-of-commendation" },
--- Openables Added in 11.0 beta
+	-- Openables Added in 11.0 beta
 	[227450] = { name = "sky-racers-purse" },
 	[226198] = { name = "resonance-crystal-agglomeration" },
 	[224100] = { name = "bottomless-bag-of-khaz-algar-general-goods" },
@@ -2375,7 +2375,7 @@ CanOpenerGlobal.openables = {
 	[184047] = { name = "ascended-chest-of-arms" },
 	[185906] = { name = "anniversary-gift" },
 	[187601] = { name = "broken-isles-leather-delivery" },
--- 11.0 Launch updates
+	-- 11.0 Launch updates
 	[206006] = { name = "earth-warders-thanks" },
 	[205991] = { name = "shiny-token-of-gratitude" },
 	[147729] = { name = "netherchunk" },
@@ -2643,7 +2643,7 @@ CanOpenerGlobal.openables = {
 	[227782] = { name = "delvers-bounty-t6" },
 	[227783] = { name = "delvers-bounty-t7" },
 	[227784] = { name = "delvers-bounty-t8" },
--- 11.0.5 Items
+	-- 11.0.5 Items
 	[229355] = { name = "chromies-premium-goodie-bag" },
 	[233014] = { name = "bronze-celebration-cache-of-treasures" },
 	[232877] = { name = "timely-goodie-bag" },
@@ -2662,7 +2662,7 @@ CanOpenerGlobal.openables = {
 	[223622] = { name = "20th-anniversary-cache-heroic" },
 	[228910] = { name = "cache-of-nerubian-treasures" },
 	[232631] = { name = "wrapped-spear" },
--- 11.0.7 - 11.1.0 Items
+	-- 11.0.7 - 11.1.0 Items
 	[234450] = { name = "pirates-booty" },
 	[236877] = { name = "crystallized-essence-of-kajamite" },
 	[232372] = { name = "crate-of-bygone-riches" },
@@ -2804,5 +2804,7 @@ CanOpenerGlobal.openables = {
 	[245925] = { name = "artifactium-sand" },
 	[249891] = { name = "mound-of-artifactium-sand" },
 	[246937] = { name = "perfected-epoch-memento" },
+	[246936] = { name = "resonant-epoch-memento" },
+	[253224] = { name = "mote-of-a-broken-time", threshold = 10 },
+	[254267] = { name = "fragmented-memento-of-epoch-challenges", threshold = 100 },
 };
-
