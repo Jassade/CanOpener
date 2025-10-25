@@ -2807,4 +2807,12 @@ CanOpenerGlobal.openables = {
 	[246936] = { name = "resonant-epoch-memento" },
 	[253224] = { name = "mote-of-a-broken-time", threshold = 10 },
 	[254267] = { name = "fragmented-memento-of-epoch-challenges", threshold = 100 },
+	[146900] = { name = "nightfallen-cache" },
+	[152105] = { name = "nightfallen-cache" },
+	[146897] = { name = "farondis-chest" },
+	[152102] = { name = "farondis-chest" },
+	[146898] = { name = "dreamweaver-cache" },
+	[152103] = { name = "dreamweaver-cache" },
+	[146901] = { name = "valarjar-strongbox" },
+	[152106] = { name = "valarjar-strongbox" },
 };
