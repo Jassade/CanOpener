@@ -2815,4 +2815,5 @@ CanOpenerGlobal.openables = {
 	[152103] = { name = "dreamweaver-cache" },
 	[146901] = { name = "valarjar-strongbox" },
 	[152106] = { name = "valarjar-strongbox" },
+    [146899] = { name = "highmountain-supplies" },
 };
