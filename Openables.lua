@@ -2816,4 +2816,7 @@ CanOpenerGlobal.openables = {
 	[146901] = { name = "valarjar-strongbox" },
 	[152106] = { name = "valarjar-strongbox" },
     [146899] = { name = "highmountain-supplies" },
+	[152104] = { name = "highmountain-supplies" },
+	[152108] = { name = "legionfall-chest" },
+	[147361] = { name = "legionfall-chest" },
 };
