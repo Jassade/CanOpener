@@ -2819,4 +2819,6 @@ CanOpenerGlobal.openables = {
 	[152104] = { name = "highmountain-supplies" },
 	[152108] = { name = "legionfall-chest" },
 	[147361] = { name = "legionfall-chest" },
+	[264675] = { name = "cache-from-the-infinites-armory" },
+	[256763] = { name = "cache-from-the-infinites-armory" },
 };
