@@ -2821,4 +2821,5 @@ CanOpenerGlobal.openables = {
 	[147361] = { name = "legionfall-chest" },
 	[264675] = { name = "cache-from-the-infinites-armory" },
 	[256763] = { name = "cache-from-the-infinites-armory" },
+	[253227] = { name = "flawless-thread-of-time", threshold = 10 },
 };
