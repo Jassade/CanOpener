@@ -11,3 +11,6 @@
 1.0.62 - Added more items from 11.1.0 - 11.1.5 and bumped TOC
 1.0.63 - Added LevelRequirementStrategy to suppress items based on level requirements.
          Updated slash commands and settings menu to toggle level-restricted items.
+1.0.74 - Split Openables into per-expansion files for easier maintenance.
+         Refactored slash commands, settings menu, and button management code.
+         Bumped TOC for 12.0.

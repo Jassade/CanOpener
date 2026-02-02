@@ -1,46 +1,34 @@
 local _, CanOpenerGlobal = ...;
 local buttons = {};
-local buttonQueue = {};
-local itemIDsInQueue = {};
 
 ------------------------------------------------
 -- Slash Commands
 ------------------------------------------------
+local function toggleSavedVar(varName, description)
+	CanOpenerSavedVars[varName] = not CanOpenerSavedVars[varName];
+	CanOpenerGlobal.ForceButtonRefresh();
+	CanOpenerGlobal.CanOut(": " .. description .. " " ..
+		CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars[varName], "will", "will not") .. " be shown");
+end
+
 local function slashHandler(msg)
 	CanOpenerGlobal.DebugLog("slashHandler - Start");
-	local command, rest = msg:match("^(%S*)%s*(.-)$") -- Extract the first word (command) and the rest of the string (parameters)
-	command = command:lower()                      -- Convert the command to lowercase to make comparison case-insensitive
+	local command, rest = msg:match("^(%S*)%s*(.-)$")
+	command = command:lower()
 	CanOpenerGlobal.DebugLog("slashHandler - Command " .. command);
 
 	if (command == "rousing") then
-		CanOpenerGlobal.DebugLog("slashHandler - Start Rousing");
-		CanOpenerSavedVars.showRousing = not CanOpenerSavedVars.showRousing;
-		CanOpenerGlobal.ForceButtonRefresh();
-		CanOpenerGlobal.CanOut(": Elemental Rousings " ..
-			CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars.showRousing, "will", "will not") .. " be shown");
-		CanOpenerGlobal.DebugLog("slashHandler - End Rousing");
+		toggleSavedVar("showRousing", "Elemental Rousings");
 	elseif (CanOpenerGlobal.IsRemixActive and command == "remixgem") then
-		CanOpenerGlobal.DebugLog("slashHandler - Start Remix Gems");
-		CanOpenerSavedVars.showRemixGems = not CanOpenerSavedVars.showRemixGems;
-		CanOpenerGlobal.ForceButtonRefresh();
-		CanOpenerGlobal.CanOut(": Remix Gems " ..
-			CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars.showRemixGems, "will", "will not") .. " be shown");
-		CanOpenerGlobal.DebugLog("slashHandler - End Remix Gems");
+		toggleSavedVar("showRemixGems", "Remix Gems");
 	elseif (CanOpenerGlobal.IsRemixActive and command == "remixepicgems") then
-		CanOpenerGlobal.DebugLog("slashHandler - Start Remix Gem Level");
 		CanOpenerSavedVars.remixEpicGems = not CanOpenerSavedVars.remixEpicGems;
 		CanOpenerGlobal.ForceButtonRefresh();
 		CanOpenerGlobal.CanOut(": Remix Gems " ..
 			CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars.remixEpicGems, "will", "will not") ..
 			" be combined higher than Epic");
-		CanOpenerGlobal.DebugLog("slashHandler - End Remix Gems Level");
 	elseif (command == "levelrestricted") then
-        CanOpenerGlobal.DebugLog("slashHandler - Start Level Restricted");
-        CanOpenerSavedVars.showLevelRestrictedItems = not CanOpenerSavedVars.showLevelRestrictedItems;
-        CanOpenerGlobal.ForceButtonRefresh();
-        CanOpenerGlobal.CanOut(": Level-Restricted Items " ..
-            CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars.showLevelRestrictedItems, "will", "will not") .. " be shown");
-        CanOpenerGlobal.DebugLog("slashHandler - End Level Restricted");
+		toggleSavedVar("showLevelRestrictedItems", "Level-Restricted Items");
 	elseif (command == "reset") then
 		CanOpenerGlobal.DebugLog("slashHandler - Start Reset");
 		CanOpenerGlobal.CanOut(": Resetting settings and position.");
@@ -50,8 +38,7 @@ local function slashHandler(msg)
 		CanOpenerGlobal.DebugLog("slashHandler - Start Debug");
 		CanOpenerGlobal.CanOut(": Turning Debug Mode " .. (CanOpenerGlobal.DebugMode and "off" or "on") .. ".");
 		CanOpenerGlobal.DebugMode = not CanOpenerGlobal.DebugMode;
-		CanOpenerGlobal.ResetSavedVariables();
-		CanOpenerGlobal.DebugLog("slashHandler - End Reset");
+		CanOpenerGlobal.DebugLog("slashHandler - End Debug");
 	elseif command == "ignore" and rest then
 		CanOpenerGlobal.DebugLog("slashHandler - Start Ignore");
 		local itemID = tonumber(rest)
@@ -156,7 +143,7 @@ end
 local function createButton(cacheDetails, id)
 	CanOpenerGlobal.DebugLog("createButton - Start");
 	CanOpenerGlobal.DebugLog("createButton - id " .. id);
-	local btn = CreateFrame("Button", cacheDetails.name, frame, "SecureActionButtonTemplate");
+	local btn = CreateFrame("Button", "CanOpener_" .. id, frame, "SecureActionButtonTemplate");
 	cacheDetails.button = btn;
 	btn.itemID = id;
 
@@ -177,13 +164,6 @@ local function createButton(cacheDetails, id)
 	end);
 	--Setup macro
 	btn:SetAttribute("type", "macro");
-	-- if cacheDetails.lockbox and IsSpellKnown(1804) then -- 1804 is the ID for Pick Lock
-	-- 	local localizedName = C_Spell.GetSpellInfo(1804).name;
-	-- 	btn:SetAttribute("macrotext", format("/cast %s\n/use item:%d", localizedName, id));
-	-- else
-	-- 	btn:SetAttribute("macrotext", format("/use item:%d", id));
-	-- end
-
 	btn:SetAttribute("macrotext", format("/use item:%d", id));
 
 	btn.countString = btn:CreateFontString(btn:GetName() .. "Count", "OVERLAY", "NumberFontNormal");
@@ -220,80 +200,65 @@ local function createButton(cacheDetails, id)
 	CanOpenerGlobal.DebugLog("createButton - End");
 end
 
-local UpdateButtons = function()
-	CanOpenerGlobal.DebugLog("updateButton - Start");
+local RefreshButtons = function()
+	CanOpenerGlobal.DebugLog("RefreshButtons - Start");
+	-- Don't do anything if we are in combat. Daddy Blizz says so.
+	if (CanOpenerGlobal.LockDown) then
+		CanOpenerGlobal.DebugLog("RefreshButtons - LOCK DOWN");
+		return;
+	end
+
+	-- Hide all existing buttons
+	for _, tbl in ipairs(buttons) do
+		tbl.button:Hide();
+	end
+	wipe(buttons);
+
+	-- Scan bags for openable items
+	local visibleItems = {};
+	local seen = {};
 	for bagID = CanOpenerGlobal.BagIndicies.Backpack, CanOpenerGlobal.BagIndicies.ReagentBag, 1 do
-		CanOpenerGlobal.DebugLog(bagID);
 		for slot = 1, C_Container.GetContainerNumSlots(bagID) do
 			local itemID = C_Container.GetContainerItemID(bagID, slot);
 			local cacheDetails = CanOpenerGlobal.openables[itemID];
-			-- local manualExclude = cacheDetails.lockbox; -- Don't show lockboxes in the button bar for now
 			local onExcludeList = CanOpenerSavedVars.excludedItems[itemID] or false;
-			if itemID and cacheDetails and not cacheDetails.lockbox and not onExcludeList then
+			if itemID and cacheDetails and not onExcludeList and not seen[itemID] then
 				local count = C_Item.GetItemCount(itemID);
-
-				if CanOpenerGlobal.CriteriaContext:evaluateAll(itemID, cacheDetails, count) and not itemIDsInQueue[itemID] then
-					table.insert(buttonQueue, itemID)
-					itemIDsInQueue[itemID] = true
+				if count > 0 and CanOpenerGlobal.CriteriaContext:evaluateAll(itemID, cacheDetails, count) then
+					table.insert(visibleItems, itemID);
+					seen[itemID] = true;
 				end
 			end
 		end
 	end
-	CanOpenerGlobal.DebugLog("updateButton - End");
-end
-CanOpenerGlobal.UpdateButtons = UpdateButtons;
 
-local drawButtons = function()
-	CanOpenerGlobal.DebugLog("drawButtons - Start");
-	-- Don't do anything if we are in combat. Daddy Blizz says so.
-	if (CanOpenerGlobal.LockDown) then
-		CanOpenerGlobal.DebugLog("drawButtons - LOCK DOWN");
-		return;
-	end
+	-- Sort by item ID for stable ordering
+	table.sort(visibleItems);
 
-	CanOpenerGlobal.DebugLog("drawButtons - Current Buttons");
-	CanOpenerGlobal.DebugLog(buttons);
-
+	-- Create/show buttons
 	local buttonIndex = 0;
-
-	for _, tbl in ipairs(buttons) do
-		local button = tbl.button;
-		local itemID = tbl.itemID;
-
-		if (buttonQueue[itemID]) then
-			SetButton(button, buttonIndex, itemID);
-			buttonQueue[itemID] = nil;
-		else
-			button:Hide();
-		end
-	end
-
-	CanOpenerGlobal.DebugLog("drawButtons - Buttons in queue");
-	CanOpenerGlobal.DebugLog(buttonQueue);
-
-	for _, itemID in ipairs(buttonQueue) do
+	for _, itemID in ipairs(visibleItems) do
 		local cacheDetails = CanOpenerGlobal.openables[itemID];
 
 		if not cacheDetails.button then
 			createButton(cacheDetails, itemID);
 		end
 
-		SetButton(cacheDetails.button, buttonIndex, itemID);
-		table.insert(buttons, { button = cacheDetails.button, itemID });
-		cacheDetails.button:Show();
+		local button = cacheDetails.button;
+		button:ClearAllPoints();
+		SetButton(button, buttonIndex, itemID);
+		button:Show();
 
+		table.insert(buttons, { button = button, itemID = itemID });
 		buttonIndex = buttonIndex + 1;
 	end
-	wipe(buttonQueue);
-	wipe(itemIDsInQueue);
-	CanOpenerGlobal.DebugLog("drawButtons - End");
+	CanOpenerGlobal.DebugLog("RefreshButtons - End");
 end
-CanOpenerGlobal.DrawButtons = drawButtons;
+CanOpenerGlobal.RefreshButtons = RefreshButtons;
 
 function SetButton(button, buttonIndex, itemID)
 	button:SetPoint("LEFT", frame, "LEFT", buttonIndex * 38, 0);
 	local count = C_Item.GetItemCount(itemID) or 0;
 	button.countString:SetText(tostring(count));
 	button.texture:SetDesaturated(false);
-	buttonIndex = buttonIndex + 1;
 end

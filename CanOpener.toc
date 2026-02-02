@@ -8,6 +8,17 @@
 
 Helpers.lua
 Openables.lua
+Openables\Classic.lua
+Openables\BurningCrusade.lua
+Openables\WrathOfTheLichKing.lua
+Openables\Cataclysm.lua
+Openables\MistsOfPandaria.lua
+Openables\WarlordsOfDraenor.lua
+Openables\Legion.lua
+Openables\BattleForAzeroth.lua
+Openables\Shadowlands.lua
+Openables\Dragonflight.lua
+Openables\TheWarWithin.lua
 Criteria.lua
 Menu.lua
 CanOpener.lua
