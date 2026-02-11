@@ -451,6 +451,7 @@ local twwIDs = {
     245589,  -- Hellcaller Chest
     245611,  -- Wriggling Pinnacle Cache
     245925,  -- Artifactium Sand
+    246697,  -- Self-Assembling Homeware Kit
     246812,  -- Minor Bronze Cache
     246813,  -- Greater Bronze Cache
     246814,  -- Bronze Cache

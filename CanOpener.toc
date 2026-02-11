@@ -19,6 +19,7 @@ Openables\BattleForAzeroth.lua
 Openables\Shadowlands.lua
 Openables\Dragonflight.lua
 Openables\TheWarWithin.lua
+Openables\Midnight.lua
 Criteria.lua
 Menu.lua
 CanOpener.lua

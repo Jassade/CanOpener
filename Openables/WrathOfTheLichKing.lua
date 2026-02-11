@@ -54,6 +54,7 @@ local wotlkIDs = {
     52676,  -- Cache of the Ley-Guardian
     54535,  -- Keg-Shaped Treasure Chest
     54536,  -- Satchel of Chilled Goods
+    54537,  -- Heart-Shaped Box
 }
 for _, id in ipairs(wotlkIDs) do openables[id] = {} end
 
