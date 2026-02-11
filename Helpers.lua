@@ -42,68 +42,39 @@ canOutTable = function(table, indent, premsg)
 end
 
 local function debugLog(...)
-	if CanOpenerGlobal and CanOpenerGlobal.DebugMode and DLAPI then DLAPI.DebugLog(addonName, ...) end
+	if CanOpenerGlobal and CanOpenerGlobal.DebugMode and DLAPI and DLAPI.DebugLog then DLAPI.DebugLog(addonName, ...) end
 end
 CanOpenerGlobal.DebugLog = debugLog;
 
-local colorName = {
-	LIGHTBLUE = 1,
-	LIGHTRED = 2,
-	SPRINGGREEN = 3,
-	GREENYELLOW = 4,
-	BLUE = 5,
-	PURPLE = 6,
-	GREEN = 7,
-	RED = 8,
-	GOLD = 9,
-	GOLD2 = 10,
-	GREY = 11,
-	WHITE = 12,
-	SUBWHITE = 13,
-	MAGENTA = 14,
-	YELLOW = 15,
-	ORANGEY = 16,
-	CHOCOLATE = 17,
-	CYAN = 18,
-	IVORY = 19,
-	LIGHTYELLOW = 20,
-	SEXGREEN = 21,
-	SEXTEAL = 22,
-	SEXPINK = 23,
-	SEXBLUE = 24,
-	SEXHOTPINK = 25,
-	CANOPENERBUMBER = 26
-};
-CanOpenerGlobal.ColorName = colorName;
-
 local colors = {
-	[colorName.LIGHTBLUE] = 'ff00ccff',
-	[colorName.LIGHTRED] = 'ffff6060',
-	[colorName.SPRINGGREEN] = 'ff00FF7F',
-	[colorName.GREENYELLOW] = 'ffADFF2F',
-	[colorName.BLUE] = 'ff0000ff',
-	[colorName.PURPLE] = 'ffDA70D6',
-	[colorName.GREEN] = 'ff00ff00',
-	[colorName.RED] = 'ffff0000',
-	[colorName.GOLD] = 'ffffcc00',
-	[colorName.GOLD2] = 'ffFFC125',
-	[colorName.GREY] = 'ff888888',
-	[colorName.WHITE] = 'ffffffff',
-	[colorName.SUBWHITE] = 'ffbbbbbb',
-	[colorName.MAGENTA] = 'ffff00ff',
-	[colorName.YELLOW] = 'ffffff00',
-	[colorName.ORANGEY] = 'ffFF4500',
-	[colorName.CHOCOLATE] = 'ffCD661D',
-	[colorName.CYAN] = 'ff00ffff',
-	[colorName.IVORY] = 'ff8B8B83',
-	[colorName.LIGHTYELLOW] = 'ffFFFFE0',
-	[colorName.SEXGREEN] = 'ff71C671',
-	[colorName.SEXTEAL] = 'ff388E8E',
-	[colorName.SEXPINK] = 'ffC67171',
-	[colorName.SEXBLUE] = 'ff00E5EE',
-	[colorName.SEXHOTPINK] = 'ffFF6EB4',
-	[colorName.CANOPENERBUMBER] = 'c0ffee69'
+	LIGHTBLUE = 'ff00ccff',
+	LIGHTRED = 'ffff6060',
+	SPRINGGREEN = 'ff00FF7F',
+	GREENYELLOW = 'ffADFF2F',
+	BLUE = 'ff0000ff',
+	PURPLE = 'ffDA70D6',
+	GREEN = 'ff00ff00',
+	RED = 'ffff0000',
+	GOLD = 'ffffcc00',
+	GOLD2 = 'ffFFC125',
+	GREY = 'ff888888',
+	WHITE = 'ffffffff',
+	SUBWHITE = 'ffbbbbbb',
+	MAGENTA = 'ffff00ff',
+	YELLOW = 'ffffff00',
+	ORANGEY = 'ffFF4500',
+	CHOCOLATE = 'ffCD661D',
+	CYAN = 'ff00ffff',
+	IVORY = 'ff8B8B83',
+	LIGHTYELLOW = 'ffFFFFE0',
+	SEXGREEN = 'ff71C671',
+	SEXTEAL = 'ff388E8E',
+	SEXPINK = 'ffC67171',
+	SEXBLUE = 'ff00E5EE',
+	SEXHOTPINK = 'ffFF6EB4',
+	CANOPENERBUMBER = 'c0ffee69'
 };
+CanOpenerGlobal.Colors = colors;
 
 local function colorizeText(text, color)
 	return "|c" .. colors[color] .. text .. "|r";
@@ -111,7 +82,7 @@ end
 CanOpenerGlobal.ColorizeText = colorizeText;
 
 local function posOrNegColor(test, positiveText, negativeText)
-    local color = test and CanOpenerGlobal.ColorName.SPRINGGREEN or CanOpenerGlobal.ColorName.LIGHTRED
+    local color = test and "SPRINGGREEN" or "LIGHTRED"
     local text = test and positiveText or negativeText
     return colorizeText(text, color)
 end
@@ -177,12 +148,9 @@ end
 
 local function bag_update_delayed()
 	CanOpenerGlobal.DebugLog("bag_update_delayed - Start");
-	if not CanOpenerGlobal.LockDown then
-		if shouldUpdateBags then
-			shouldUpdateBags = false;
-			CanOpenerGlobal.UpdateButtons();
-		end
-		CanOpenerGlobal.DrawButtons()
+	if not CanOpenerGlobal.LockDown and shouldUpdateBags then
+		shouldUpdateBags = false;
+		CanOpenerGlobal.RefreshButtons();
 	end
 	CanOpenerGlobal.DebugLog("bag_update_delayed - End");
 end
