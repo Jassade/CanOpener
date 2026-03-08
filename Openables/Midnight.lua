@@ -2,9 +2,128 @@ local _, CanOpenerGlobal = ...
 local openables = CanOpenerGlobal.openables
 
 local midnightIDs = {
+    238468,  -- Bloomed Bud
+    238469,  -- Sweeping Harvester's Scythe
+    238470,  -- Simple Leaf Pruners
+    238471,  -- Lightbloom Root
+    238472,  -- A Spade
+    238473,  -- Harvester's Sickle
+    238474,  -- Peculiar Lotus
+    238475,  -- Planting Shovel
     238531,  -- Radiant Stomach
+    238532,  -- Vial of Eversong Oddities
+    238533,  -- Vial of Voidstorm Oddities
+    238534,  -- Vial of Rootlands Oddities
+    238535,  -- Vial of Zul'Aman Oddities
+    238536,  -- Freshly Plucked Peacebloom
+    238537,  -- Measured Ladle
+    238538,  -- Pristine Potion
+    238539,  -- Failed Experiment
+    238540,  -- Deconstructed Forge Techniques
+    238541,  -- Silvermoon Smithing Kit
+    238542,  -- Carefully Racked Spear
+    238543,  -- Metalworking Cheat Sheet
+    238544,  -- Voidstorm Defense Spear
+    238545,  -- Rutaani Floratender's Sword
+    238546,  -- Sin'dorei Master's Forgemace
+    238547,  -- Silvermoon Blacksmith's Hammer
+    238548,  -- Enchanted Amani Mask
+    238549,  -- Enchanted Sunfire Silk
+    238550,  -- Pure Void Crystal
+    238551,  -- Everblazing Sunmote
+    238552,  -- Entropic Shard
+    238553,  -- Primal Essence Orb
+    238554,  -- Loa-Blessed Dust
+    238555,  -- Sin'dorei Enchanting Rod
+    238556,  -- One Engineer's Junk
+    238557,  -- Miniaturized Transport Skiff
+    238558,  -- Manual of Mistakes and Mishaps
+    238559,  -- Expeditious Pylon
+    238560,  -- Ethereal Stormwrench
+    238561,  -- Offline Helper Bot
+    238562,  -- What To Do When Nothing Works
+    238563,  -- Handy Wrench
+    238572,  -- Void-Touched Quill
+    238573,  -- Leather-Bound Techniques
+    238574,  -- Spare Ink
+    238575,  -- Intrepid Explorer's Marker
+    238576,  -- Leftover Sanguithorn Pigment
+    238577,  -- Half-Baked Techniques
+    238578,  -- Songwriter's Pen
+    238579,  -- Songwriter's Quill
+    238580,  -- Sin'dorei Masterwork Chisel
+    238581,  -- Speculative Voidstorm Crystal
+    238582,  -- Dual-Function Magnifiers
+    238583,  -- Poorly Rounded Vial
+    238584,  -- Shattered Glass
+    238585,  -- Vintage Soul Gem
+    238586,  -- Ethereal Gem Pliers
+    238587,  -- Sin'dorei Gem Faceters
+    238588,  -- Amani Leatherworker's Tool
+    238589,  -- Ethereal Leatherworking Knife
+    238590,  -- Prestigiously Racked Hide
+    238591,  -- Bundle of Tanner's Trinkets
+    238592,  -- Patterns: Beyond the Void
+    238593,  -- Haranir Leatherworking Mallet
+    238594,  -- Haranir Leatherworking Knife
+    238595,  -- Artisan's Considered Order
+    238596,  -- Miner's Guide to Voidstorm
+    238597,  -- Spelunker's Lucky Charm
+    238598,  -- Lost Voidstorm Satchel
+    238599,  -- Solid Ore Punchers
+    238600,  -- Glimmering Void Pearl
+    238601,  -- Amani Expert's Chisel
+    238602,  -- Star Metal Deposit
+    238603,  -- Spare Expedition Torch
+    238612,  -- A Child's Stuffy
+    238613,  -- A Really Nice Curtain
+    238614,  -- Sin'dorei Outfitter's Ruler
+    238615,  -- Wooden Weaving Sword
+    238616,  -- Book of Sin'dorei Stitches
+    238617,  -- Satin Throw Pillow
+    238618,  -- Particularly Enchanting Tablecloth
+    238619,  -- Artisan's Cover Comb
+    238628,  -- Lightbloom Afflicted Hide
+    238629,  -- Cadre Skinning Knife
+    238630,  -- Primal Hide
+    238631,  -- Voidstorm Leather Sample
+    238632,  -- Amani Tanning Oil
+    238633,  -- Sin'dorei Tanning Oil
+    238634,  -- Amani Skinning Knife
+    238635,  -- Thalassian Skinning Knife
     239077,  -- Mound of Mildly-Meaningful Meat
+    241131,  -- Amani Lapis Prism
+    241132,  -- Amani Lapis Prism
+    241133,  -- Tenebrous Amethyst Prism
+    241134,  -- Tenebrous Amethyst Prism
+    241135,  -- Sanguine Garnet Prism
+    241136,  -- Sanguine Garnet Prism
+    241137,  -- Harandar Peridot Prism
+    241138,  -- Harandar Peridot Prism
+    242650,  -- Box of Rocks
+    245644,  -- Box of Rocks
+    245647,  -- School of Gems
+    245648,  -- School of Gems
+    245650,  -- Bouquet of Herbs
+    245651,  -- Bouquet of Herbs
+    246585,  -- Artisan's Consortium Payout
+    250116,  -- Cache of Quel'Thalas Treasures
+    250117,  -- Cache of Quel'Thalas Treasures
+    250750,  -- Pouch of Sprouted Clippings
+    250753,  -- Bag of Cracked Orebits
+    250754,  -- Bag of Wild Skinnings
+    250755,  -- Pouch of Mystic Grindings
+    251286,  -- Bundle of Petrified Roots
+    251287,  -- Generous Bundle of Petrified Roots
+    251321,  -- Collection of Eversong Minerals
+    251322,  -- Thalassian Leatherworker's Duffel
+    251324,  -- Basket of Eversong Herbs
+    251326,  -- Thalassian Enchanter's Purse
+    251327,  -- Thalassian Tailor's Tote Bag
+    251970,  -- Overflowing Amani Trove
     254677,  -- Apex Cache
+    255157,  -- Abyss Angler's Fish Log
+    255428,  -- Tolbani's Medicine Satchel
     255666,  -- Huge Bag of Midnight General Goods
     255678,  -- Huge Bag of Midnight Herbs
     255679,  -- Huge Bag of Midnight Minerals
@@ -18,10 +137,17 @@ local midnightIDs = {
     255691,  -- Huge Bag of Midnight Tailoring Goods
     255703,  -- Huge Bag of Midnight Blacksmithing Goods
     255704,  -- Huge Bag of Midnight Inscription Goods
+    256055,  -- Overflowing Hara'ti Trove
     257023,  -- Preyseeker's Adventurer Chest
     257026,  -- Preyseeker's Veteran Chest
+    257603,  -- Primalist Weapon
+    258279,  -- [DNT] Big Pouch of Supplies
     258534,  -- Illustrious Contender's Strongbox
     258620,  -- Field Medic's Hazard Payout
+    258839,  -- Concealed Catalogue
+    259086,  -- Void-Touched Satchel of Cooperation
+    259334,  -- Overflowing Singularity Trove
+    260173,  -- Crystallized Dawnlight Manaflux
     260193,  -- Fabled Veteran's Cache
     260534,  -- Master Alchemist's Surplus Reagents
     260536,  -- Master Smith's Surplus Reagents
@@ -38,6 +164,7 @@ local midnightIDs = {
     260979,  -- Victorious Stormarion Cache
     262346,  -- Preyseeker's Champion Chest
     262349,  -- Satchel of Compensation
+    262432,  -- Weathered Lockbox
     262596,  -- Preyseeker's Satchel of Voidlight Marl
     262622,  -- Preyseeker's Satchel of Coffer Key Shards
     262623,  -- Preyseeker's Satchel of Adventurer Dawncrests
@@ -50,20 +177,64 @@ local midnightIDs = {
     262632,  -- Preyseeker's Cache of Coffer Key Shards
     262633,  -- Preyseeker's Cache of Champion Dawncrests
     262634,  -- Preyseeker's Cache of Voidlight Marl
+    262635,  -- Cache of Delver's Spoils
     262662,  -- Thalassian Distinguishment
     262928,  -- Preyseeker's Adventurer Sack
     262936,  -- Preyseeker's Veteran Sack
     262938,  -- Preyseeker's Champion Sack
     263178,  -- Delver's Starter Kit
     263179,  -- Delver's Cosmetic Surprise Bag
+    263400,  -- Cache of Delver's Spoils
+    263433,  -- Overflowing Silvermoon Trove
     263465,  -- Surplus Bag of Party Favors
     263466,  -- Overflowing Abundant Satchel
     263467,  -- Avid Learner's Supply Pack
     263468,  -- Stormarion Spoils
+    263710,  -- Primalist Plate Helm
+    263711,  -- Primalist Cloth Helm
+    263712,  -- Primalist Mail Helm
+    263713,  -- Primalist Leather Helm
+    263714,  -- Primalist Trinket
+    263715,  -- Primalist Plate Chestpiece
+    263716,  -- Primalist Cloth Chestpiece
+    263717,  -- Primalist Mail Chestpiece
+    263718,  -- Primalist Leather Chestpiece
+    263719,  -- Primalist Leather Leggings
+    263720,  -- Primalist Mail Leggings
+    263721,  -- Primalist Cloth Leggings
+    263722,  -- Primalist Plate Leggings
+    263724,  -- Primalist Plate Spaulders
+    263725,  -- Primalist Cloth Spaulders
+    263726,  -- Primalist Mail Spaulders
+    263727,  -- Primalist Leather Spaulders
+    263728,  -- Primalist Leather Bracers
+    263729,  -- Primalist Mail Bracers
+    263730,  -- Primalist Cloth Bracers
+    263731,  -- Primalist Plate Bracers
+    263732,  -- Primalist Plate Belt
+    263733,  -- Primalist Cloth Belt
+    263740,  -- Primalist Mail Belt
+    263776,  -- Primalist Leather Belt
+    263822,  -- Primalist Leather Boots
+    263859,  -- Primalist Mail Boots
+    263861,  -- Primalist Plate Boots
+    263862,  -- Primalist Cloth Boots
+    263863,  -- Primalist Cloth Gloves
+    263864,  -- Primalist Plate Gloves
+    263865,  -- Primalist Mail Gloves
+    263866,  -- Primalist Leather Gloves
+    263867,  -- Primalist Cloak
+    263868,  -- Primalist Ring
+    263869,  -- Primalist Necklace
+    263934,  -- Chest of Gold
     264274,  -- Fabled Adventurer's Cache
+    264470,  -- Ash-Tied Offering
+    264475,  -- Umbral Tin Lockbox
+    264587,  -- Ani's Trinket Bag
     264972,  -- Voidstorm Victuals
     264988,  -- Endgame Essentials
     265995,  -- Quel'Thalas Adventurer's Cache
+    267299,  -- Slayer's Duellum Trove
     268485,  -- Victorious Stormarion Pinnacle Cache
     268487,  -- Avid Learner's Supply Pack
     268488,  -- Overflowing Abundant Satchel
@@ -77,5 +248,6 @@ local midnightIDs = {
     269702,  -- Overflowing Abundant Satchel
     269703,  -- Avid Learner's Supply Pack
     269704,  -- Victorious Stormarion Cache
+    270431,  -- Haranir Footlocker
 }
 for _, id in ipairs(midnightIDs) do openables[id] = {} end
