@@ -2,6 +2,10 @@ local _, CanOpenerGlobal = ...
 local openables = CanOpenerGlobal.openables
 
 local midnightIDs = {
+    237496,  -- Igneous Rock Specimen
+    237506,  -- Septarian Nodule
+    238465,  -- Thalassian Phoenix Plume
+    238466,  -- Thalassian Phoenix Tail
     238468,  -- Bloomed Bud
     238469,  -- Sweeping Harvester's Scythe
     238470,  -- Simple Leaf Pruners
@@ -83,6 +87,8 @@ local midnightIDs = {
     238617,  -- Satin Throw Pillow
     238618,  -- Particularly Enchanting Tablecloth
     238619,  -- Artisan's Cover Comb
+    238625,  -- Fine Void-Tempered Hide
+    238626,  -- Mana-Infused Bone
     238628,  -- Lightbloom Afflicted Hide
     238629,  -- Cadre Skinning Knife
     238630,  -- Primal Hide
@@ -106,6 +112,8 @@ local midnightIDs = {
     245648,  -- School of Gems
     245650,  -- Bouquet of Herbs
     245651,  -- Bouquet of Herbs
+    246322,  -- Flicker of Midnight Blacksmithing Knowledge
+    246323,  -- Glimmer of Midnight Blacksmithing Knowledge
     246585,  -- Artisan's Consortium Payout
     250116,  -- Cache of Quel'Thalas Treasures
     250117,  -- Cache of Quel'Thalas Treasures
@@ -146,6 +154,8 @@ local midnightIDs = {
     258620,  -- Field Medic's Hazard Payout
     258839,  -- Concealed Catalogue
     259086,  -- Void-Touched Satchel of Cooperation
+    259192,  -- Voidstorm Ashes
+    259193,  -- Lost Thalassian Vellum
     259334,  -- Overflowing Singularity Trove
     260173,  -- Crystallized Dawnlight Manaflux
     260193,  -- Fabled Veteran's Cache
@@ -186,6 +196,8 @@ local midnightIDs = {
     263179,  -- Delver's Cosmetic Surprise Bag
     263400,  -- Cache of Delver's Spoils
     263433,  -- Overflowing Silvermoon Trove
+    263457,  -- Thalassian Scribe's Journal
+    263464,  -- Thalassian Enchanter's Folio
     263465,  -- Surplus Bag of Party Favors
     263466,  -- Overflowing Abundant Satchel
     263467,  -- Avid Learner's Supply Pack
@@ -235,6 +247,9 @@ local midnightIDs = {
     264988,  -- Endgame Essentials
     265995,  -- Quel'Thalas Adventurer's Cache
     267299,  -- Slayer's Duellum Trove
+    267653,  -- Glimmering Powder
+    267654,  -- Swirling Arcane Essence
+    267655,  -- Brimming Mana Shard
     268485,  -- Victorious Stormarion Pinnacle Cache
     268487,  -- Avid Learner's Supply Pack
     268488,  -- Overflowing Abundant Satchel
