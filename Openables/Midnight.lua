@@ -112,15 +112,39 @@ local midnightIDs = {
     245648,  -- School of Gems
     245650,  -- Bouquet of Herbs
     245651,  -- Bouquet of Herbs
+    245755,  -- Thalassian Treatise on Alchemy
+    245756,  -- Thalassian Treatise on Tailoring
+    245757,  -- Thalassian Treatise on Inscription
+    245758,  -- Thalassian Treatise on Leatherworking
+    245759,  -- Thalassian Treatise on Enchanting
+    245760,  -- Thalassian Treatise on Jewelcrafting
+    245763,  -- Thalassian Treatise on Blacksmithing
+    245809,  -- Thalassian Treatise on Engineering
+    246320,  -- Flicker of Midnight Alchemy Knowledge
+    246321,  -- Glimmer of Midnight Alchemy Knowledge
     246322,  -- Flicker of Midnight Blacksmithing Knowledge
     246323,  -- Glimmer of Midnight Blacksmithing Knowledge
+    246324,  -- Flicker of Midnight Enchanting Knowledge
+    246325,  -- Glimmer of Midnight Enchanting Knowledge
+    246326,  -- Flicker of Midnight Engineering Knowledge
+    246327,  -- Glimmer of Midnight Engineering Knowledge
+    246328,  -- Flicker of Midnight Inscription Knowledge
+    246329,  -- Glimmer of Midnight Inscription Knowledge
+    246330,  -- Flicker of Midnight Jewelcrafting Knowledge
+    246331,  -- Glimmer of Midnight Jewelcrafting Knowledge
+    246332,  -- Flicker of Midnight Leatherworking Knowledge
+    246333,  -- Glimmer of Midnight Leatherworking Knowledge
+    246334,  -- Flicker of Midnight Tailoring Knowledge
+    246335,  -- Glimmer of Midnight Tailoring Knowledge
     246585,  -- Artisan's Consortium Payout
     250116,  -- Cache of Quel'Thalas Treasures
     250117,  -- Cache of Quel'Thalas Treasures
+    250445,  -- Echo of Abundance: Enchanting
     250750,  -- Pouch of Sprouted Clippings
     250753,  -- Bag of Cracked Orebits
     250754,  -- Bag of Wild Skinnings
     250755,  -- Pouch of Mystic Grindings
+    250922,  -- Whisper of the Loa: Leatherworking
     251286,  -- Bundle of Petrified Roots
     251287,  -- Generous Bundle of Petrified Roots
     251321,  -- Collection of Eversong Minerals
@@ -148,14 +172,32 @@ local midnightIDs = {
     256055,  -- Overflowing Hara'ti Trove
     257023,  -- Preyseeker's Adventurer Chest
     257026,  -- Preyseeker's Veteran Chest
+    257599,  -- Skill Issue: Jewelcrafting
+    257600,  -- Skill Issue: Enchanting
+    257601,  -- Skill Issue: Tailoring
     257603,  -- Primalist Weapon
     258279,  -- [DNT] Big Pouch of Supplies
+    258411,  -- Traditions of the Haranir: Inscription
     258534,  -- Illustrious Contender's Strongbox
     258620,  -- Field Medic's Hazard Payout
     258839,  -- Concealed Catalogue
     259086,  -- Void-Touched Satchel of Cooperation
+    259188,  -- Lightbloomed Spore Sample
+    259189,  -- Aged Cruor
+    259190,  -- Thalassian Whestone
+    259191,  -- Infused Quenching Oil
     259192,  -- Voidstorm Ashes
     259193,  -- Lost Thalassian Vellum
+    259194,  -- Dance Gear
+    259195,  -- Dawn Capacitor
+    259196,  -- Brilliant Phoenix Ink
+    259197,  -- Loa-Blessed Rune
+    259198,  -- Void-Touched Eversong Diamond Fragments
+    259199,  -- Harandar Stone Sample
+    259200,  -- Amani Tanning Oil
+    259201,  -- Thalassian Mana Oil
+    259202,  -- Embroidered Memento
+    259203,  -- Finely Woven Lynx Collar
     259334,  -- Overflowing Singularity Trove
     260173,  -- Crystallized Dawnlight Manaflux
     260193,  -- Fabled Veteran's Cache
@@ -188,6 +230,9 @@ local midnightIDs = {
     262633,  -- Preyseeker's Cache of Champion Dawncrests
     262634,  -- Preyseeker's Cache of Voidlight Marl
     262635,  -- Cache of Delver's Spoils
+    262644,  -- Beyond the Event Horizon: Blacksmithing
+    262645,  -- Beyond the Event Horizon: Alchemy
+    262646,  -- Beyond the Event Horizon: Engineering
     262662,  -- Thalassian Distinguishment
     262928,  -- Preyseeker's Adventurer Sack
     262936,  -- Preyseeker's Veteran Sack
@@ -196,7 +241,13 @@ local midnightIDs = {
     263179,  -- Delver's Cosmetic Surprise Bag
     263400,  -- Cache of Delver's Spoils
     263433,  -- Overflowing Silvermoon Trove
+    263454,  -- Thalassian Alchemist's Notebook
+    263455,  -- Thalassian Blacksmith's Journal
+    263456,  -- Thalassian Engineer's Notepad
     263457,  -- Thalassian Scribe's Journal
+    263458,  -- Thalassian Jewelcrafter's Notebook
+    263459,  -- Thalassian Leatherworker's Journal
+    263460,  -- Thalassian Tailor's Notebook
     263464,  -- Thalassian Enchanter's Folio
     263465,  -- Surplus Bag of Party Favors
     263466,  -- Overflowing Abundant Satchel
@@ -250,6 +301,7 @@ local midnightIDs = {
     267653,  -- Glimmering Powder
     267654,  -- Swirling Arcane Essence
     267655,  -- Brimming Mana Shard
+    268297,  -- Rattling Bag o' Gold
     268485,  -- Victorious Stormarion Pinnacle Cache
     268487,  -- Avid Learner's Supply Pack
     268488,  -- Overflowing Abundant Satchel
