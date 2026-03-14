@@ -26,14 +26,6 @@ function InitSettingsMenu()
     RegisterBooleanSetting(category, "showLevelRestrictedItems", "Show Level-Restricted Items",
         "If Checked, items with a level requirement higher than your character's level will be shown.", true)
 
-    if (CanOpenerGlobal.IsRemixActive) then
-        RegisterBooleanSetting(category, "showRemixGems", "Show Remix Gems",
-            "Display Remix Gems in the CanOpener UI.", true)
-
-        RegisterBooleanSetting(category, "remixEpicGems", "Include Epic Gems in Remix",
-            "Show Epic Remix Gems.", true)
-    end
-
     local ignoreFrame = CreateFrame("Frame", "CanOpener_IgnoreFrame", UIParent)
     ignoreFrame:Hide()
     ignoreFrame.name = "Ignore Lists"

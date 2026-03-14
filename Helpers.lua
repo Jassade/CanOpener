@@ -5,7 +5,6 @@ local addonName = "Can Opener";
 ------------------------------------------------
 -- Global Settings
 ------------------------------------------------
-CanOpenerGlobal.IsRemixActive = false;
 CanOpenerGlobal.DebugMode = false;
 
 ------------------------------------------------
@@ -95,8 +94,6 @@ local function initSavedVariables()
 	CanOpenerSavedVars = {
 		enable = true,
 		showRousing = true,
-		showRemixGems = true,
-		remixEpicGems = true,
 		showLevelRestrictedItems = true,
 		position = { "CENTER", "CENTER", 0, 0 },
 		excludedItems = { },

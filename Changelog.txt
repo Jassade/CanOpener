@@ -14,3 +14,5 @@
 1.0.74 - Split Openables into per-expansion files for easier maintenance.
          Refactored slash commands, settings menu, and button management code.
          Bumped TOC for 12.0.
+1.0.75 - Removed MoP Remix event support (items, filters, settings, slash commands).
+         The Remix event is no longer active and will not return in this form.

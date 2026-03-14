@@ -837,27 +837,3 @@ openables[204077] = { threshold = 15 }  -- Wyrm's Shadowflame Crest Fragment
 openables[204078] = { threshold = 15 }  -- Aspect's Shadowflame Crest Fragment
 openables[204307] = { lockbox = true }  -- Ornate Bronze Lockbox
 openables[204717] = { threshold = 2 }  -- Splintered Spark of Shadowflame
-openables[210681] = { mopRemixGem = true, threshold = 3 }  -- Chipped Quick Topaz
-openables[210714] = { mopRemixGem = true, threshold = 3 }  -- Chipped Deadly Sapphire
-openables[210715] = { mopRemixGem = true, threshold = 3 }  -- Chipped Masterful Amethyst
-openables[210716] = { mopRemixGem = true, threshold = 3 }  -- Chipped Swift Opal
-openables[210717] = { mopRemixGem = true, threshold = 3 }  -- Chipped Hungering Ruby
-openables[210718] = { mopRemixGem = true, mopRemixEpicGem = true, threshold = 3 }  -- Hungering Ruby
-openables[211106] = { mopRemixGem = true, mopRemixEpicGem = true, threshold = 3 }  -- Masterful Amethyst
-openables[211107] = { mopRemixGem = true, mopRemixEpicGem = true, threshold = 3 }  -- Quick Topaz
-openables[211109] = { mopRemixGem = true, threshold = 3 }  -- Chipped Sustaining Emerald
-openables[211123] = { mopRemixGem = true, mopRemixEpicGem = true, threshold = 3 }  -- Deadly Sapphire
-openables[211124] = { mopRemixGem = true, mopRemixEpicGem = true, threshold = 3 }  -- Swift Opal
-openables[211125] = { mopRemixGem = true, mopRemixEpicGem = true, threshold = 3 }  -- Sustaining Emerald
-openables[216639] = { mopRemixGem = true, threshold = 3 }  -- Flawed Swift Opal
-openables[216640] = { mopRemixGem = true, threshold = 3 }  -- Flawed Masterful Amethyst
-openables[216641] = { mopRemixGem = true, threshold = 3 }  -- Flawed Hungering Ruby
-openables[216642] = { mopRemixGem = true, threshold = 3 }  -- Flawed Sustaining Emerald
-openables[216643] = { mopRemixGem = true, threshold = 3 }  -- Flawed Quick Topaz
-openables[216644] = { mopRemixGem = true, threshold = 3 }  -- Flawed Deadly Sapphire
-openables[220367] = { mopRemixGem = true, threshold = 3 }  -- Chipped Stalwart Pearl
-openables[220368] = { mopRemixGem = true, threshold = 3 }  -- Flawed Stalwart Pearl
-openables[220370] = { mopRemixGem = true, mopRemixEpicGem = true, threshold = 3 }  -- Stalwart Pearl
-openables[220371] = { mopRemixGem = true, threshold = 3 }  -- Chipped Versatile Diamond
-openables[220372] = { mopRemixGem = true, threshold = 3 }  -- Flawed Versatile Diamond
-openables[220374] = { mopRemixGem = true, mopRemixEpicGem = true, threshold = 3 }  -- Versatile Diamond

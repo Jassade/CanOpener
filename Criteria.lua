@@ -21,14 +21,6 @@ local skipRousing = createStrategy(function(itemID, cacheDetails, count)
     return not CanOpenerSavedVars.showRousing and cacheDetails.isRousing
 end)
 
-local skipRemixGems = createStrategy(function(itemID, cacheDetails, count)
-    return not CanOpenerSavedVars.showRemixGems and cacheDetails.mopRemixGem
-end)
-
-local skipRemixEpicGems = createStrategy(function(itemID, cacheDetails, count)
-    return not CanOpenerSavedVars.remixEpicGems and cacheDetails.mopRemixEpicGem
-end)
-
 local threshold = createStrategy(function(itemID, cacheDetails, count)
     return (cacheDetails.threshold or 1) > count
 end)
@@ -43,11 +35,6 @@ local levelRequirement = createStrategy(function(itemID, cacheDetails, count)
 end)
 
 -- Build strategy list
-local strategies = { skipRousing, threshold }
-if CanOpenerGlobal.IsRemixActive then
-    table.insert(strategies, skipRemixGems)
-    table.insert(strategies, skipRemixEpicGems)
-end
-table.insert(strategies, levelRequirement)
+local strategies = { skipRousing, threshold, levelRequirement }
 
 CanOpenerGlobal.CriteriaContext = setmetatable({ strategies = strategies }, CriteriaContext)

@@ -19,14 +19,6 @@ local function slashHandler(msg)
 
 	if (command == "rousing") then
 		toggleSavedVar("showRousing", "Elemental Rousings");
-	elseif (CanOpenerGlobal.IsRemixActive and command == "remixgem") then
-		toggleSavedVar("showRemixGems", "Remix Gems");
-	elseif (CanOpenerGlobal.IsRemixActive and command == "remixepicgems") then
-		CanOpenerSavedVars.remixEpicGems = not CanOpenerSavedVars.remixEpicGems;
-		CanOpenerGlobal.ForceButtonRefresh();
-		CanOpenerGlobal.CanOut(": Remix Gems " ..
-			CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars.remixEpicGems, "will", "will not") ..
-			" be combined higher than Epic");
 	elseif (command == "levelrestricted") then
 		toggleSavedVar("showLevelRestrictedItems", "Level-Restricted Items");
 	elseif (command == "reset") then
@@ -69,13 +61,6 @@ local function slashHandler(msg)
         CanOpenerGlobal.CanOut("Commands for |cffffa500/CanOpener|r :");
         local rousingState = CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars.showRousing, "On", "Off");
         CanOpenerGlobal.CanOut("  |cffffa500 rousing|r - Toggle showing Elemental Rousings (" .. rousingState .. ")");
-        if (CanOpenerGlobal.IsRemixActive) then
-            local remixGemsState = CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars.showRemixGems, "On", "Off");
-            CanOpenerGlobal.CanOut("  |cffffa500 remixGem|r - Toggle showing Remix Gems (" .. remixGemsState .. ")");
-            local remixEpicGemsState = CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars.remixEpicGems, "On", "Off");
-            CanOpenerGlobal.CanOut("  |cffffa500 remixEpicGems|r - Toggle combining gems higher than Epic (" ..
-                remixEpicGemsState .. ")");
-        end
         local levelRestrictedState = CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars.showLevelRestrictedItems, "On", "Off");
         CanOpenerGlobal.CanOut("  |cffffa500 levelrestricted|r - Toggle showing level-restricted items (" .. levelRestrictedState .. ")");
         CanOpenerGlobal.CanOut("  |cffffa500 ignore|r <itemID> - Ignore a specific item");
