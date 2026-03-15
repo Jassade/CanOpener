@@ -56,6 +56,9 @@ local function slashHandler(msg)
 		CanOpenerGlobal.CanOut(": Ignored Items List:")
 		CanOpenerGlobal.CanOut(CanOpenerSavedVars.excludedItems);
 		CanOpenerGlobal.DebugLog("slashHandler - End Ignore List");
+	elseif CanOpenerGlobal._eventSlashCommands[command] then
+		local entry = CanOpenerGlobal._eventSlashCommands[command]
+		toggleSavedVar(entry.varName, entry.description);
 	else
         CanOpenerGlobal.DebugLog("slashHandler - Unknown command " .. (command or "<None>"));
         CanOpenerGlobal.CanOut("Commands for |cffffa500/CanOpener|r :");
@@ -63,6 +66,10 @@ local function slashHandler(msg)
         CanOpenerGlobal.CanOut("  |cffffa500 rousing|r - Toggle showing Elemental Rousings (" .. rousingState .. ")");
         local levelRestrictedState = CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars.showLevelRestrictedItems, "On", "Off");
         CanOpenerGlobal.CanOut("  |cffffa500 levelrestricted|r - Toggle showing level-restricted items (" .. levelRestrictedState .. ")");
+        for cmd, entry in pairs(CanOpenerGlobal._eventSlashCommands) do
+            local state = CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars[entry.varName], "On", "Off");
+            CanOpenerGlobal.CanOut("  |cffffa500 " .. cmd .. "|r - Toggle showing " .. entry.description .. " (" .. state .. ")");
+        end
         CanOpenerGlobal.CanOut("  |cffffa500 ignore|r <itemID> - Ignore a specific item");
         CanOpenerGlobal.CanOut("  |cffffa500 unignore|r <itemID> - Remove an item from the ignore list");
         CanOpenerGlobal.CanOut("  |cffffa500 list|r - Show ignored items");

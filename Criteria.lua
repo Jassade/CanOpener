@@ -37,4 +37,9 @@ end)
 -- Build strategy list
 local strategies = { skipRousing, threshold, levelRequirement }
 
+-- Drain event-registered strategies
+for _, entry in ipairs(CanOpenerGlobal._eventStrategies) do
+    table.insert(strategies, createStrategy(entry.filterFn))
+end
+
 CanOpenerGlobal.CriteriaContext = setmetatable({ strategies = strategies }, CriteriaContext)

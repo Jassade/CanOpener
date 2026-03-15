@@ -88,6 +88,33 @@ end
 CanOpenerGlobal.PosOrNegColor = posOrNegColor;
 
 ------------------------------------------------
+-- Event Module Registration
+------------------------------------------------
+CanOpenerGlobal._eventStrategies = {};
+CanOpenerGlobal._eventSettings = {};
+CanOpenerGlobal._eventSlashCommands = {};
+
+function CanOpenerGlobal.RegisterStrategy(name, filterFn)
+	table.insert(CanOpenerGlobal._eventStrategies, { name = name, filterFn = filterFn })
+end
+
+function CanOpenerGlobal.RegisterEventSetting(varName, displayName, tooltip, defaultValue)
+	table.insert(CanOpenerGlobal._eventSettings, {
+		varName = varName,
+		displayName = displayName,
+		tooltip = tooltip,
+		defaultValue = defaultValue,
+	})
+end
+
+function CanOpenerGlobal.RegisterEventSlashCommand(cmd, varName, description)
+	CanOpenerGlobal._eventSlashCommands[cmd:lower()] = {
+		varName = varName,
+		description = description,
+	}
+end
+
+------------------------------------------------
 -- Saved Variable Management
 ------------------------------------------------
 local function initSavedVariables()
@@ -103,6 +130,12 @@ local function UpdateSavedVars()
 	-- Added Excluded Items
 	if CanOpenerSavedVars.excludedItems == nil then
 		CanOpenerSavedVars.excludedItems = {};
+	end
+	-- Apply defaults for any event-registered settings
+	for _, setting in ipairs(CanOpenerGlobal._eventSettings) do
+		if CanOpenerSavedVars[setting.varName] == nil then
+			CanOpenerSavedVars[setting.varName] = setting.defaultValue
+		end
 	end
 end
 local function resetSavedVariables()

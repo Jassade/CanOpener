@@ -26,6 +26,12 @@ function InitSettingsMenu()
     RegisterBooleanSetting(category, "showLevelRestrictedItems", "Show Level-Restricted Items",
         "If Checked, items with a level requirement higher than your character's level will be shown.", true)
 
+    -- Drain event-registered settings
+    for _, setting in ipairs(CanOpenerGlobal._eventSettings) do
+        RegisterBooleanSetting(category, setting.varName, setting.displayName,
+            setting.tooltip, setting.defaultValue)
+    end
+
     local ignoreFrame = CreateFrame("Frame", "CanOpener_IgnoreFrame", UIParent)
     ignoreFrame:Hide()
     ignoreFrame.name = "Ignore Lists"
