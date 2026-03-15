@@ -4,8 +4,10 @@ local openables = CanOpenerGlobal.openables
 local midnightIDs = {
     237496,  -- Igneous Rock Specimen
     237506,  -- Septarian Nodule
+    237507,  -- Cloudy Quartz
     238465,  -- Thalassian Phoenix Plume
     238466,  -- Thalassian Phoenix Tail
+    238467,  -- Thalassian Phoenix Ember
     238468,  -- Bloomed Bud
     238469,  -- Sweeping Harvester's Scythe
     238470,  -- Simple Leaf Pruners
@@ -89,6 +91,7 @@ local midnightIDs = {
     238619,  -- Artisan's Cover Comb
     238625,  -- Fine Void-Tempered Hide
     238626,  -- Mana-Infused Bone
+    238627,  -- Manafused Sample
     238628,  -- Lightbloom Afflicted Hide
     238629,  -- Cadre Skinning Knife
     238630,  -- Primal Hide
@@ -118,8 +121,11 @@ local midnightIDs = {
     245758,  -- Thalassian Treatise on Leatherworking
     245759,  -- Thalassian Treatise on Enchanting
     245760,  -- Thalassian Treatise on Jewelcrafting
+    245761,  -- Thalassian Treatise on Herbalism
+    245762,  -- Thalassian Treatise on Mining
     245763,  -- Thalassian Treatise on Blacksmithing
     245809,  -- Thalassian Treatise on Engineering
+    245828,  -- Thalassian Treatise on Skinning
     246320,  -- Flicker of Midnight Alchemy Knowledge
     246321,  -- Glimmer of Midnight Alchemy Knowledge
     246322,  -- Flicker of Midnight Blacksmithing Knowledge
@@ -137,14 +143,22 @@ local midnightIDs = {
     246334,  -- Flicker of Midnight Tailoring Knowledge
     246335,  -- Glimmer of Midnight Tailoring Knowledge
     246585,  -- Artisan's Consortium Payout
+    246754,  -- Pouch of Veteran Dawncrests
+    246755,  -- Satchel of Champion Dawncrests
+    246756,  -- Pack of Hero Dawncrests
     250116,  -- Cache of Quel'Thalas Treasures
     250117,  -- Cache of Quel'Thalas Treasures
+    250360,  -- Echo of Abundance: Skinning
+    250443,  -- Echo of Abundance: Herbalism
+    250444,  -- Echo of Abundance: Mining
     250445,  -- Echo of Abundance: Enchanting
     250750,  -- Pouch of Sprouted Clippings
     250753,  -- Bag of Cracked Orebits
     250754,  -- Bag of Wild Skinnings
     250755,  -- Pouch of Mystic Grindings
     250922,  -- Whisper of the Loa: Leatherworking
+    250923,  -- Whisper of the Loa: Skinning
+    250924,  -- Whisper of the Loa: Mining
     251286,  -- Bundle of Petrified Roots
     251287,  -- Generous Bundle of Petrified Roots
     251321,  -- Collection of Eversong Minerals
@@ -177,6 +191,7 @@ local midnightIDs = {
     257601,  -- Skill Issue: Tailoring
     257603,  -- Primalist Weapon
     258279,  -- [DNT] Big Pouch of Supplies
+    258410,  -- Traditions of the Haranir: Herbalism
     258411,  -- Traditions of the Haranir: Inscription
     258534,  -- Illustrious Contender's Strongbox
     258620,  -- Field Medic's Hazard Payout
@@ -290,10 +305,13 @@ local midnightIDs = {
     263868,  -- Primalist Ring
     263869,  -- Primalist Necklace
     263934,  -- Chest of Gold
+    263976,  -- Bundle of Adventurer Dawncrests
+    263977,  -- Venerable Satchel of Veteran Dawncrests
     264274,  -- Fabled Adventurer's Cache
     264470,  -- Ash-Tied Offering
     264475,  -- Umbral Tin Lockbox
     264587,  -- Ani's Trinket Bag
+    264652,  -- Delver's Pouch of Voidlight Marl
     264972,  -- Voidstorm Victuals
     264988,  -- Endgame Essentials
     265995,  -- Quel'Thalas Adventurer's Cache
