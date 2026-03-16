@@ -336,3 +336,15 @@ local midnightIDs = {
     270431,  -- Haranir Footlocker
 }
 for _, id in ipairs(midnightIDs) do openables[id] = {} end
+
+openables[245755] = {questId = 95127 } -- Thalassian Treatise on Alchemy
+openables[245756] = {questId = 95137 } -- Thalassian Treatise on Tailoring
+openables[245757] = {questId = 95131 } -- Thalassian Treatise on Inscription
+openables[245758] = {questId = 95134 } -- Thalassian Treatise on Leatherworking
+openables[245759] = {questId = 95129 } -- Thalassian Treatise on Enchanting
+openables[245760] = {questId = 95133 } -- Thalassian Treatise on Jewelcrafting
+openables[245761] = {questId = 95130 } -- Thalassian Treatise on Herbalism
+openables[245762] = {questId = 95135 } -- Thalassian Treatise on Mining
+openables[245763] = {questId = 95128 } -- Thalassian Treatise on Blacksmithing
+openables[245809] = {questId = 95138 } -- Thalassian Treatise on Engineering
+openables[245828] = {questId = 95136 } -- Thalassian Treatise on Skinning

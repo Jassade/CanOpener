@@ -34,8 +34,12 @@ local levelRequirement = createStrategy(function(itemID, cacheDetails, count)
     return not CanOpenerSavedVars.showLevelRestrictedItems and itemMinLevel > UnitLevel("player")
 end)
 
+local questTimeGate = createStrategy(function(itemID, cacheDetails, count)
+    return cacheDetails.questId and C_QuestLog.IsQuestFlaggedCompleted(cacheDetails.questId)
+end)
+
 -- Build strategy list
-local strategies = { skipRousing, threshold, levelRequirement }
+local strategies = { skipRousing, threshold, levelRequirement, questTimeGate }
 
 -- Drain event-registered strategies
 for _, entry in ipairs(CanOpenerGlobal._eventStrategies) do
