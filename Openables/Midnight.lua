@@ -263,6 +263,9 @@ local midnightIDs = {
     263458,  -- Thalassian Jewelcrafter's Notebook
     263459,  -- Thalassian Leatherworker's Journal
     263460,  -- Thalassian Tailor's Notebook
+    263461,  -- Thalassian Skinner's Notes
+    263462,  -- Thalassian Herbalist's Notes
+    263463,  -- Thalassian Miner's Notes
     263464,  -- Thalassian Enchanter's Folio
     263465,  -- Surplus Bag of Party Favors
     263466,  -- Overflowing Abundant Satchel
