@@ -383,3 +383,9 @@ openables[245762] = {questId = 95135 } -- Thalassian Treatise on Mining
 openables[245763] = {questId = 95128 } -- Thalassian Treatise on Blacksmithing
 openables[245809] = {questId = 95138 } -- Thalassian Treatise on Engineering
 openables[245828] = {questId = 95136 } -- Thalassian Treatise on Skinning
+openables[246447] = { threshold = 5 }  -- Apprentice's Scribbles
+openables[246448] = { threshold = 5 }  -- Artisan's Ledger
+openables[246449] = { threshold = 5 }  -- Mentor's Helpful Handiwork
+openables[247719] = { threshold = 5 }  -- Multicraft Matrix
+openables[247725] = { threshold = 5 }  -- Resourceful Rebar
+openables[260630] = { threshold = 5 }  -- Ingenious Identifier
