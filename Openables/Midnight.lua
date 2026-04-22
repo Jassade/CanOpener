@@ -143,6 +143,9 @@ local midnightIDs = {
     246334,  -- Flicker of Midnight Tailoring Knowledge
     246335,  -- Glimmer of Midnight Tailoring Knowledge
     246585,  -- Artisan's Consortium Payout
+    246751,  -- Triumphant Satchel of Champion Dawncrests
+    246752,  -- Celebratory Pack of Hero Dawncrests
+    246753,  -- Glorious Cluster of Myth Dawncrests
     246754,  -- Pouch of Veteran Dawncrests
     246755,  -- Satchel of Champion Dawncrests
     246756,  -- Pack of Hero Dawncrests
@@ -307,14 +310,27 @@ local midnightIDs = {
     263867,  -- Primalist Cloak
     263868,  -- Primalist Ring
     263869,  -- Primalist Necklace
+    263928,  -- Cache of Void-Touched Armaments
+    263929,  -- Cache of Void-Touched Armaments
     263934,  -- Chest of Gold
     263976,  -- Bundle of Adventurer Dawncrests
     263977,  -- Venerable Satchel of Veteran Dawncrests
     264274,  -- Fabled Adventurer's Cache
+    264314,  -- Cache of Void-Touched Headgear
+    264315,  -- Cache of Void-Touched Shoulderwear
+    264316,  -- Cache of Void-Touched Cloaks
+    264317,  -- Cache of Void-Touched Chestpieces
+    264318,  -- Cache of Void-Touched Bracers
+    264319,  -- Cache of Void-Touched Gloves
+    264320,  -- Cache of Void-Touched Belts
+    264321,  -- Cache of Void-Touched Legwear
+    264322,  -- Cache of Void-Touched Boots
+    264323,  -- Cache of Void-Touched Weapons
     264470,  -- Ash-Tied Offering
     264475,  -- Umbral Tin Lockbox
     264587,  -- Ani's Trinket Bag
     264652,  -- Delver's Pouch of Voidlight Marl
+    264914,  -- Ranger's Cache
     264972,  -- Voidstorm Victuals
     264988,  -- Endgame Essentials
     265995,  -- Quel'Thalas Adventurer's Cache
@@ -332,11 +348,27 @@ local midnightIDs = {
     269005,  -- Preyseeker's Glinting Coin Pouch
     269006,  -- Preyseeker's Gleaming Coin Pouch
     269007,  -- Preyseeker's Glittering Coin Pouch
+    269234,  -- Overflowing Ritual Site Cache
     269701,  -- Surplus Bag of Party Favors
     269702,  -- Overflowing Abundant Satchel
     269703,  -- Avid Learner's Supply Pack
     269704,  -- Victorious Stormarion Cache
+    270244,  -- Field Pouch
+    270247,  -- Field Satchel
     270431,  -- Haranir Footlocker
+    270932,  -- Wriggling Field Pouch
+    270933,  -- Bulging Field Pouch
+    270934,  -- Recruit's Field Pouch
+    270987,  -- Recruit's Field Satchel
+    271221,  -- Wriggling Recruit's Field Pouch
+    271222,  -- Bulging Recruit's Field Pouch
+    272125,  -- Recruit's Cache
+    273152,  -- Delve Gearbox
+    273153,  -- Delve Gearbox
+    273154,  -- Delve Gearbox
+    273155,  -- Delve Gearbox
+    273156,  -- Delve Gearbox
+    274578,  -- Offering of Unalloyed Abundance
 }
 for _, id in ipairs(midnightIDs) do openables[id] = {} end
 
