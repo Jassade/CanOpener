@@ -26,6 +26,9 @@ function InitSettingsMenu()
     RegisterBooleanSetting(category, "showLevelRestrictedItems", "Show Level-Restricted Items",
         "If Checked, items with a level requirement higher than your character's level will be shown.", true)
 
+    RegisterBooleanSetting(category, "showLockboxes", "Show Lockboxes",
+        "If Checked, locked items will always be shown. Otherwise they only show for characters with Pick Lock (Rogue) or Skeleton Pinkie (Mechagnome). Enable this if you open lockboxes another way (e.g. Blacksmithing skeleton keys).", false)
+
     -- Drain event-registered settings
     for _, setting in ipairs(CanOpenerGlobal._eventSettings) do
         RegisterBooleanSetting(category, setting.varName, setting.displayName,

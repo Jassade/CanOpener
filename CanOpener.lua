@@ -21,6 +21,8 @@ local function slashHandler(msg)
 		toggleSavedVar("showRousing", "Elemental Rousings");
 	elseif (command == "levelrestricted") then
 		toggleSavedVar("showLevelRestrictedItems", "Level-Restricted Items");
+	elseif (command == "lockbox") then
+		toggleSavedVar("showLockboxes", "Lockboxes");
 	elseif (command == "reset") then
 		CanOpenerGlobal.DebugLog("slashHandler - Start Reset");
 		CanOpenerGlobal.CanOut(": Resetting settings and position.");
@@ -66,6 +68,8 @@ local function slashHandler(msg)
         CanOpenerGlobal.CanOut("  |cffffa500 rousing|r - Toggle showing Elemental Rousings (" .. rousingState .. ")");
         local levelRestrictedState = CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars.showLevelRestrictedItems, "On", "Off");
         CanOpenerGlobal.CanOut("  |cffffa500 levelrestricted|r - Toggle showing level-restricted items (" .. levelRestrictedState .. ")");
+        local lockboxState = CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars.showLockboxes, "On", "Off");
+        CanOpenerGlobal.CanOut("  |cffffa500 lockbox|r - Toggle showing lockboxes (" .. lockboxState .. ")");
         for cmd, entry in pairs(CanOpenerGlobal._eventSlashCommands) do
             local state = CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars[entry.varName], "On", "Off");
             CanOpenerGlobal.CanOut("  |cffffa500 " .. cmd .. "|r - Toggle showing " .. entry.description .. " (" .. state .. ")");

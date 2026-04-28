@@ -122,6 +122,7 @@ local function initSavedVariables()
 		enable = true,
 		showRousing = true,
 		showLevelRestrictedItems = true,
+		showLockboxes = false,
 		position = { "CENTER", "CENTER", 0, 0 },
 		excludedItems = { },
 	};
@@ -130,6 +131,9 @@ local function UpdateSavedVars()
 	-- Added Excluded Items
 	if CanOpenerSavedVars.excludedItems == nil then
 		CanOpenerSavedVars.excludedItems = {};
+	end
+	if CanOpenerSavedVars.showLockboxes == nil then
+		CanOpenerSavedVars.showLockboxes = false;
 	end
 	-- Apply defaults for any event-registered settings
 	for _, setting in ipairs(CanOpenerGlobal._eventSettings) do

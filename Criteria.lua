@@ -38,8 +38,15 @@ local questTimeGate = createStrategy(function(itemID, cacheDetails, count)
     return cacheDetails.questId and C_QuestLog.IsQuestFlaggedCompleted(cacheDetails.questId)
 end)
 
+-- 1804 = Pick Lock (Rogue), 312916 = Skeleton Pinkie (Mechagnome)
+local lockbox = createStrategy(function(itemID, cacheDetails, count)
+    if not cacheDetails.lockbox then return false end
+    if CanOpenerSavedVars.showLockboxes then return false end
+    return not (IsSpellKnown(1804) or IsSpellKnown(312916))
+end)
+
 -- Build strategy list
-local strategies = { skipRousing, threshold, levelRequirement, questTimeGate }
+local strategies = { skipRousing, threshold, levelRequirement, questTimeGate, lockbox }
 
 -- Drain event-registered strategies
 for _, entry in ipairs(CanOpenerGlobal._eventStrategies) do
