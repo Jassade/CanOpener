@@ -368,6 +368,9 @@ local midnightIDs = {
     273154,  -- Delve Gearbox
     273155,  -- Delve Gearbox
     273156,  -- Delve Gearbox
+    274069,  -- Warbound Pack of Hero Dawncrests
+    274070,  -- Warbound Pack of Champion Dawncrests
+    274071,  -- Warbound Pack of Veteran Dawncrests
     274578,  -- Offering of Unalloyed Abundance
 }
 for _, id in ipairs(midnightIDs) do openables[id] = {} end
