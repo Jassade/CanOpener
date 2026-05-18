@@ -392,3 +392,4 @@ openables[246449] = { threshold = 5 }  -- Mentor's Helpful Handiwork
 openables[247719] = { threshold = 5 }  -- Multicraft Matrix
 openables[247725] = { threshold = 5 }  -- Resourceful Rebar
 openables[260630] = { threshold = 5 }  -- Ingenious Identifier
+openables[268650] = { threshold = 5 }  -- Ascendant Voidshard
