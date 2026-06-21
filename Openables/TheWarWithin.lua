@@ -488,3 +488,25 @@ openables[220376] = { lockbox = true }  -- Bismuth Lockbox
 openables[253224] = { threshold = 10 }  -- Mote of a Broken Time
 openables[253227] = { threshold = 10 }  -- Flawless Thread of Time
 openables[254267] = { threshold = 100 }  -- Fragmented Memento of Epoch Challenges
+openables[222546] = { questId = 83725 }  -- Algari Treatise on Alchemy
+openables[222554] = { questId = 83726 }  -- Algari Treatise on Blacksmithing
+openables[222550] = { questId = 83727 }  -- Algari Treatise on Enchanting
+openables[222621] = { questId = 83728 }  -- Algari Treatise on Engineering
+openables[222552] = { questId = 83729 }  -- Algari Treatise on Herbalism
+openables[222548] = { questId = 83730 }  -- Algari Treatise on Inscription
+openables[222551] = { questId = 83731 }  -- Algari Treatise on Jewelcrafting
+openables[222549] = { questId = 83732 }  -- Algari Treatise on Leatherworking
+openables[222553] = { questId = 83733 }  -- Algari Treatise on Mining
+openables[222649] = { questId = 83734 }  -- Algari Treatise on Skinning
+openables[222547] = { questId = 83735 }  -- Algari Treatise on Tailoring
+openables[232499] = { questId = 85734 }  -- Undermine Treatise on Alchemy
+openables[232500] = { questId = 85735 }  -- Undermine Treatise on Blacksmithing
+openables[232501] = { questId = 85736 }  -- Undermine Treatise on Enchanting
+openables[232502] = { questId = 85745 }  -- Undermine Treatise on Tailoring
+openables[232503] = { questId = 85738 }  -- Undermine Treatise on Herbalism
+openables[232504] = { questId = 85740 }  -- Undermine Treatise on Jewelcrafting
+openables[232505] = { questId = 85741 }  -- Undermine Treatise on Leatherworking
+openables[232506] = { questId = 85744 }  -- Undermine Treatise on Skinning
+openables[232507] = { questId = 85737 }  -- Undermine Treatise on Engineering
+openables[232508] = { questId = 85739 }  -- Undermine Treatise on Inscription
+openables[232509] = { questId = 85742 }  -- Undermine Treatise on Mining

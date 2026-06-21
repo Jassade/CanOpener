@@ -837,3 +837,14 @@ openables[204077] = { threshold = 15 }  -- Wyrm's Shadowflame Crest Fragment
 openables[204078] = { threshold = 15 }  -- Aspect's Shadowflame Crest Fragment
 openables[204307] = { lockbox = true }  -- Ornate Bronze Lockbox
 openables[204717] = { threshold = 2 }  -- Splintered Spark of Shadowflame
+openables[194697] = { questId = 74108 }  -- Draconic Treatise on Alchemy
+openables[198454] = { questId = 74109 }  -- Draconic Treatise on Blacksmithing
+openables[194702] = { questId = 74110 }  -- Draconic Treatise on Enchanting
+openables[198510] = { questId = 74111 }  -- Draconic Treatise on Engineering
+openables[194704] = { questId = 74107 }  -- Draconic Treatise on Herbalism
+openables[194699] = { questId = 74105 }  -- Draconic Treatise on Inscription
+openables[194703] = { questId = 74112 }  -- Draconic Treatise on Jewelcrafting
+openables[194700] = { questId = 74113 }  -- Draconic Treatise on Leatherworking
+openables[194708] = { questId = 74106 }  -- Draconic Treatise on Mining
+openables[201023] = { questId = 74114 }  -- Draconic Treatise on Skinning
+openables[194698] = { questId = 74115 }  -- Draconic Treatise on Tailoring
