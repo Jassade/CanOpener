@@ -484,7 +484,7 @@ local twwIDs = {
 }
 for _, id in ipairs(twwIDs) do openables[id] = {} end
 
-openables[219191] = { threshold = 15 },  -- Hastily Scrawled Notes
+openables[219191] = { threshold = 15 }  -- Hastily Scrawled Notes
 openables[220376] = { lockbox = true }  -- Bismuth Lockbox
 openables[253224] = { threshold = 10 }  -- Mote of a Broken Time
 openables[253227] = { threshold = 10 }  -- Flawless Thread of Time
