@@ -123,6 +123,7 @@ local function initSavedVariables()
 		showRousing = true,
 		showLevelRestrictedItems = true,
 		showLockboxes = false,
+		showOnlyOneButton = false,
 		position = { "CENTER", "CENTER", 0, 0 },
 		excludedItems = { },
 	};

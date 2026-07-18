@@ -23,6 +23,8 @@ local function slashHandler(msg)
 		toggleSavedVar("showLevelRestrictedItems", "Level-Restricted Items");
 	elseif (command == "lockbox") then
 		toggleSavedVar("showLockboxes", "Lockboxes");
+	elseif (command == "single") then
+		toggleSavedVar("showOnlyOneButton", "Single button");
 	elseif (command == "reset") then
 		CanOpenerGlobal.DebugLog("slashHandler - Start Reset");
 		CanOpenerGlobal.CanOut(": Resetting settings and position.");
@@ -70,6 +72,8 @@ local function slashHandler(msg)
         CanOpenerGlobal.CanOut("  |cffffa500 levelrestricted|r - Toggle showing level-restricted items (" .. levelRestrictedState .. ")");
         local lockboxState = CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars.showLockboxes, "On", "Off");
         CanOpenerGlobal.CanOut("  |cffffa500 lockbox|r - Toggle showing lockboxes (" .. lockboxState .. ")");
+		local singleButtonState = CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars.showOnlyOneButton, "On", "Off");
+        CanOpenerGlobal.CanOut("  |cffffa500 single|r - Toggle showing single button (" .. singleButtonState .. ")");
         for cmd, entry in pairs(CanOpenerGlobal._eventSlashCommands) do
             local state = CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars[entry.varName], "On", "Off");
             CanOpenerGlobal.CanOut("  |cffffa500 " .. cmd .. "|r - Toggle showing " .. entry.description .. " (" .. state .. ")");
@@ -246,6 +250,11 @@ local RefreshButtons = function()
 		button:Show();
 
 		table.insert(buttons, { button = button, itemID = itemID });
+
+		if (CanOpenerSavedVars.showOnlyOneButton) then
+			break;
+		end
+
 		buttonIndex = buttonIndex + 1;
 	end
 	CanOpenerGlobal.DebugLog("RefreshButtons - End");

@@ -29,6 +29,9 @@ function InitSettingsMenu()
     RegisterBooleanSetting(category, "showLockboxes", "Show Lockboxes",
         "If Checked, locked items will always be shown. Otherwise they only show for characters with Pick Lock (Rogue) or Skeleton Pinkie (Mechagnome). Enable this if you open lockboxes another way (e.g. Blacksmithing skeleton keys).", false)
 
+    RegisterBooleanSetting(category, "showOnlyOneButton", "Show Single Item At A Time",
+        "If Checked, only one item will be shown at a time.", false)
+
     -- Drain event-registered settings
     for _, setting in ipairs(CanOpenerGlobal._eventSettings) do
         RegisterBooleanSetting(category, setting.varName, setting.displayName,
