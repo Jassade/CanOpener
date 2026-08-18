@@ -348,6 +348,7 @@ local midnightIDs = {
     269005,  -- Preyseeker's Glinting Coin Pouch
     269006,  -- Preyseeker's Gleaming Coin Pouch
     269007,  -- Preyseeker's Glittering Coin Pouch
+    269029,  -- Bag of Totally Legitimate Amani Goods
     269234,  -- Overflowing Ritual Site Cache
     269701,  -- Surplus Bag of Party Favors
     269702,  -- Overflowing Abundant Satchel
@@ -372,6 +373,106 @@ local midnightIDs = {
     274070,  -- Warbound Pack of Champion Dawncrests
     274071,  -- Warbound Pack of Veteran Dawncrests
     274578,  -- Offering of Unalloyed Abundance
+    274707,  -- Crystallized Venomblight Manaflux
+    274708,  -- Nebulous Voidcache: Nymrissa Wavecaller
+    274713,  -- Cache of Amani Treasures
+    274714,  -- Cache of Amani Treasures
+    275726,  -- Preyhunter's Champion Chest
+    275728,  -- Preyhunter's Champion Sack
+    275822,  -- Preyhunter's Veteran Chest
+    275899,  -- Venom-Soaked Satchel
+    275911,  -- Venom-Covered Chest
+    275917,  -- Preyhunter's Veteran Sack
+    275918,  -- Preyhunter's Adventurer Chest
+    275919,  -- Preyhunter's Adventurer Sack
+    275978,  -- Delver's Starter Kit
+    275986,  -- Delver's Cosmetic Surprise Bag
+    276104,  -- Aspiring Preyhunter's Chest
+    276536,  -- Corrosive Reticule
+    276624,  -- Overflowing Hash'ura Trove
+    277137,  -- Wriggling Venom-Soaked Satchel
+    277157,  -- Barnacle-Encrusted Chest
+    277937,  -- Balanced Offering
+    277938,  -- Virulent Offering
+    277939,  -- Volatile Offering
+    277940,  -- Fragile Offering
+    277941,  -- Eerie Offering
+    277942,  -- Odious Offering
+    277943,  -- Pestilent Offering
+    277944,  -- Phlegmatic Offering
+    277945,  -- Melancholic Offering
+    277946,  -- Choleric Offering
+    277975,  -- Arcanostorage Sphere
+    278035,  -- Ornate Healing Potion
+    278084,  -- Handful of Esoteric Ingredients
+    278283,  -- Nebulous Voidcache: Entombed Sentinels
+    278284,  -- Nebulous Voidcache: Ula'tek
+    278285,  -- Nebulous Voidcache: Soulcoiler Nek'zali
+    278287,  -- Nebulous Voidcache: Vashnik
+    278288,  -- Nebulous Voidcache: Sszorak
+    278290,  -- Nebulous Voidcache: The Coiled Altar
+    278329,  -- Thalassian Recipe in a Bottle
+    279092,  -- Anguish-Touched Pouch
+    279284,  -- Nebulous Voidcache: Delver's Trove
+    279287,  -- Corroded Pouch
+    279288,  -- Corroded Satchel
+    279345,  -- Venom-Drenched Sack
+    279520,  -- Fabled Veteran's Cache
+    279522,  -- Surplus Bag of Party Favors
+    279523,  -- Overflowing Abundant Satchel
+    279525,  -- Avid Learner's Supply Pack
+    279526,  -- Victorious Stormarion Pinnacle Cache
+    279527,  -- Apex Cache
+    279574,  -- Preyhunter's Hero Chest
+    279618,  -- Nebulous Voidcache: Altar of Fangs
+    279619,  -- Nebulous Voidcache: The Blinding Vale
+    279621,  -- Nebulous Voidcache: Kings' Rest
+    279622,  -- Nebulous Voidcache: Ruby Life Pools
+    279623,  -- Nebulous Voidcache: Murder Row
+    279625,  -- Nebulous Voidcache: Voidscar Arena
+    280131,  -- Nebulous Voidcache: Prey
+    280136,  -- Gift of the Soulmates
+    280458,  -- Delver's Corroded Pouch of Undercoin
+    280781,  -- Cache of Void-Touched Armaments
+    280782,  -- Cache of Void-Touched Armaments: Boots
+    280783,  -- Cache of Void-Touched Armaments: Legs
+    280784,  -- Cache of Void-Touched Armaments: Belts
+    280785,  -- Cache of Void-Touched Armaments: Gloves
+    280786,  -- Cache of Void-Touched Armaments: Bracers
+    280787,  -- Cache of Void-Touched Armaments: Chest
+    280788,  -- Cache of Void-Touched Armaments: Cloak
+    280789,  -- Cache of Void-Touched Armaments: Shoulder
+    280790,  -- Cache of Void-Touched Armaments: Head
+    280791,  -- Cache of Void-Touched Armaments: Weapons
+    280792,  -- Cache of Void-Touched Armaments: Necklaces
+    280793,  -- Cache of Void-Touched Armaments: Rings
+    281223,  -- Satchel of Corrosive Coins
+    281405,  -- Cache of Void-Touched Armaments: Boots
+    281406,  -- Cache of Void-Touched Armaments: Legs
+    281407,  -- Cache of Void-Touched Armaments: Belts
+    281408,  -- Cache of Void-Touched Armaments: Gloves
+    281409,  -- Cache of Void-Touched Armaments: Bracers
+    281410,  -- Cache of Void-Touched Armaments: Chest
+    281411,  -- Cache of Void-Touched Armaments: Cloak
+    281412,  -- Cache of Void-Touched Armaments: Shoulder
+    281413,  -- Cache of Void-Touched Armaments: Head
+    281414,  -- Cache of Void-Touched Armaments: Weapons
+    281415,  -- Cache of Void-Touched Armaments: Necklaces
+    281416,  -- Cache of Void-Touched Armaments: Rings
+    281417,  -- Cache of Void-Touched Armaments: Boots
+    281418,  -- Cache of Void-Touched Armaments: Legs
+    281419,  -- Cache of Void-Touched Armaments: Belts
+    281420,  -- Cache of Void-Touched Armaments: Gloves
+    281421,  -- Cache of Void-Touched Armaments: Bracers
+    281422,  -- Cache of Void-Touched Armaments: Chest
+    281423,  -- Cache of Void-Touched Armaments: Cloak
+    281424,  -- Cache of Void-Touched Armaments: Shoulder
+    281425,  -- Cache of Void-Touched Armaments: Head
+    281426,  -- Cache of Void-Touched Armaments: Weapons
+    281427,  -- Cache of Void-Touched Armaments: Necklaces
+    281428,  -- Cache of Void-Touched Armaments: Rings
+    281429,  -- Cache of Void-Touched Armaments
+    282183,  -- Fabled Coiled Isle Veteran's Cache
 }
 for _, id in ipairs(midnightIDs) do openables[id] = {} end
 
@@ -393,3 +494,14 @@ openables[247719] = { threshold = 5 }  -- Multicraft Matrix
 openables[247725] = { threshold = 5 }  -- Resourceful Rebar
 openables[260630] = { threshold = 5 }  -- Ingenious Identifier
 openables[268650] = { threshold = 5 }  -- Ascendant Voidshard
+openables[274500] = { questId = 96459 }  -- Demystifyin': Alchemy
+openables[274507] = { questId = 96517 }  -- Demystifyin': Leatherworking
+openables[274508] = { questId = 96519 }  -- Demystifyin': Skinning
+openables[274509] = { questId = 96518 }  -- Demystifyin': Mining
+openables[274510] = { questId = 96516 }  -- Demystifyin': Jewelcrafting
+openables[274511] = { questId = 96512 }  -- Demystifyin': Enchanting
+openables[274512] = { questId = 96520 }  -- Demystifyin': Tailoring
+openables[274513] = { questId = 96514 }  -- Demystifyin': Herbalism
+openables[274514] = { questId = 96515 }  -- Demystifyin': Inscription
+openables[274515] = { questId = 96511 }  -- Demystifyin': Blacksmithing
+openables[274516] = { questId = 96513 }  -- Demystifyin': Engineering
