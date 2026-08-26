@@ -297,7 +297,6 @@ local dfIDs = {
     198395,  -- Dull Spined Clam
     198438,  -- Draconic Recipe in a Bottle
     198439,  -- Aged Recipe in a Bottle
-    198538,  -- Magically Bound Message
     198599,  -- Experimental Decay Sample
     198606,  -- Blacksmith's Writ
     198607,  -- Scribe's Glyphs

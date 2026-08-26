@@ -153,7 +153,6 @@ local wodIDs = {
     128652,  -- Gently Shaken Gift
     128653,  -- Winter Veil Gift
     128803,  -- Savage Satchel of Cooperation
-    129928,  -- Frigid Timewarped Prism
 }
 for _, id in ipairs(wodIDs) do openables[id] = {} end
 

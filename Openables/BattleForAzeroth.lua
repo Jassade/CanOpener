@@ -106,7 +106,6 @@ local bfaIDs = {
     168394,  -- Box of Assorted Parts
     168395,  -- Irradiated Box of Assorted Parts
     168488,  -- Seafarer's Lost Coin Pouch
-    168494,  -- Blueprint: Rustbolt Resistance Insignia
     168740,  -- Blingtron 7000 Gift Package
     168833,  -- Experimental Adventurer Augmentation
     169113,  -- Advanced Adventurer Augmentation
