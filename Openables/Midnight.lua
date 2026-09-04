@@ -115,17 +115,6 @@ local midnightIDs = {
     245648,  -- School of Gems
     245650,  -- Bouquet of Herbs
     245651,  -- Bouquet of Herbs
-    245755,  -- Thalassian Treatise on Alchemy
-    245756,  -- Thalassian Treatise on Tailoring
-    245757,  -- Thalassian Treatise on Inscription
-    245758,  -- Thalassian Treatise on Leatherworking
-    245759,  -- Thalassian Treatise on Enchanting
-    245760,  -- Thalassian Treatise on Jewelcrafting
-    245761,  -- Thalassian Treatise on Herbalism
-    245762,  -- Thalassian Treatise on Mining
-    245763,  -- Thalassian Treatise on Blacksmithing
-    245809,  -- Thalassian Treatise on Engineering
-    245828,  -- Thalassian Treatise on Skinning
     246320,  -- Flicker of Midnight Alchemy Knowledge
     246321,  -- Glimmer of Midnight Alchemy Knowledge
     246322,  -- Flicker of Midnight Blacksmithing Knowledge
@@ -354,6 +343,15 @@ local midnightIDs = {
     269702,  -- Overflowing Abundant Satchel
     269703,  -- Avid Learner's Supply Pack
     269704,  -- Victorious Stormarion Cache
+    269768,  -- Nebulous Voidcache: Prey
+    269856,  -- Bundle of Adventurer Mistcrests
+    269857,  -- Satchel of Champion Mistcrests
+    269858,  -- Pack of Hero Mistcrests
+    269859,  -- Pouch of Veteran Mistcrests
+    269864,  -- Triumphant Satchel of Champion Mistcrests
+    269865,  -- Celebratory Pack of Hero Mistcrests
+    269866,  -- Glorious Cluster of Myth Mistcrests
+    269867,  -- Venerable Satchel of Veteran Mistcrests
     270244,  -- Field Pouch
     270247,  -- Field Satchel
     270431,  -- Haranir Footlocker
@@ -372,11 +370,17 @@ local midnightIDs = {
     274069,  -- Warbound Pack of Hero Dawncrests
     274070,  -- Warbound Pack of Champion Dawncrests
     274071,  -- Warbound Pack of Veteran Dawncrests
+    274372,  -- Big ol' Bag of Polished Pet Charms
+    274421,  -- Crate of Community Coupons
+    274465,  -- Aggitated Crate of Zandalari Fury
     274578,  -- Offering of Unalloyed Abundance
     274707,  -- Crystallized Venomblight Manaflux
     274708,  -- Nebulous Voidcache: Nymrissa Wavecaller
     274713,  -- Cache of Amani Treasures
     274714,  -- Cache of Amani Treasures
+    275228,  -- Nebulous Voidcache: Rotmire
+    275690,  -- Riftstalker's Cache
+    275691,  -- Riftstalker's Overflowing Cache
     275726,  -- Preyhunter's Champion Chest
     275728,  -- Preyhunter's Champion Sack
     275822,  -- Preyhunter's Veteran Chest
@@ -388,8 +392,25 @@ local midnightIDs = {
     275978,  -- Delver's Starter Kit
     275986,  -- Delver's Cosmetic Surprise Bag
     276104,  -- Aspiring Preyhunter's Chest
+    276378,  -- Cache of Void-Touched Armaments: Boots
+    276379,  -- Cache of Void-Touched Armaments: Legs
+    276380,  -- Cache of Void-Touched Armaments: Belts
+    276381,  -- Cache of Void-Touched Armaments: Gloves
+    276382,  -- Cache of Void-Touched Armaments: Bracers
+    276383,  -- Cache of Void-Touched Armaments: Chest
+    276384,  -- Cache of Void-Touched Armaments: Cloak
+    276385,  -- Cache of Void-Touched Armaments: Shoulder
+    276386,  -- Cache of Void-Touched Armaments: Head
+    276387,  -- Riftstalker's Favor
+    276388,  -- Riftstalker's Overflowing Favor
+    276389,  -- Riftstalker's Prize
+    276390,  -- Riftstalker's Overflowing Prize
     276536,  -- Corrosive Reticule
     276624,  -- Overflowing Hash'ura Trove
+    277124,  -- Warbound Cache of Void-Touched Armaments
+    277125,  -- Cache of Void-Touched Armaments: Weapons
+    277126,  -- Cache of Void-Touched Armaments: Necklaces
+    277127,  -- Cache of Void-Touched Armaments: Rings
     277137,  -- Wriggling Venom-Soaked Satchel
     277157,  -- Barnacle-Encrusted Chest
     277937,  -- Balanced Offering
@@ -403,13 +424,33 @@ local midnightIDs = {
     277945,  -- Melancholic Offering
     277946,  -- Choleric Offering
     277975,  -- Arcanostorage Sphere
+    278004,  -- Warbound Cache of Void-Touched Armaments: Boots
+    278005,  -- Warbound Cache of Void-Touched Armaments: Legs
+    278006,  -- Warbound Cache of Void-Touched Armaments: Belts
+    278007,  -- Warbound Cache of Void-Touched Armaments: Gloves
+    278008,  -- Warbound Cache of Void-Touched Armaments: Bracers
+    278009,  -- Warbound Cache of Void-Touched Armaments: Chest
+    278010,  -- Warbound Cache of Void-Touched Armaments: Cloak
+    278011,  -- Warbound Cache of Void-Touched Armaments: Shoulder
+    278012,  -- Warbound Cache of Void-Touched Armaments: Head
+    278013,  -- Warbound Cache of Void-Touched Armaments: Weapons
+    278014,  -- Warbound Cache of Void-Touched Armaments: Necklaces
+    278015,  -- Warbound Cache of Void-Touched Armaments: Rings
+    278021,  -- Bulging Elven Field Pouch
+    278022,  -- Bulging Amani Field Pouch
+    278024,  -- Bulging Naga Field Pouch
+    278025,  -- Bulging Twilight Field Pouch
+    278026,  -- Bulging Ethereal Pack
+    278027,  -- Bulging Winter Pack
     278035,  -- Ornate Healing Potion
     278084,  -- Handful of Esoteric Ingredients
     278283,  -- Nebulous Voidcache: Entombed Sentinels
     278284,  -- Nebulous Voidcache: Ula'tek
     278285,  -- Nebulous Voidcache: Soulcoiler Nek'zali
+    278286,  -- Nebulous Voidcache: Tortollan Explorers
     278287,  -- Nebulous Voidcache: Vashnik
     278288,  -- Nebulous Voidcache: Sszorak
+    278289,  -- Nebulous Voidcache: The Twin Fangs
     278290,  -- Nebulous Voidcache: The Coiled Altar
     278329,  -- Thalassian Recipe in a Bottle
     279092,  -- Anguish-Touched Pouch
@@ -426,13 +467,18 @@ local midnightIDs = {
     279574,  -- Preyhunter's Hero Chest
     279618,  -- Nebulous Voidcache: Altar of Fangs
     279619,  -- Nebulous Voidcache: The Blinding Vale
+    279620,  -- Nebulous Voidcache: Den of Nalorakk
     279621,  -- Nebulous Voidcache: Kings' Rest
     279622,  -- Nebulous Voidcache: Ruby Life Pools
     279623,  -- Nebulous Voidcache: Murder Row
+    279624,  -- Nebulous Voidcache:Temple of Sethraliss
     279625,  -- Nebulous Voidcache: Voidscar Arena
     280131,  -- Nebulous Voidcache: Prey
     280136,  -- Gift of the Soulmates
     280458,  -- Delver's Corroded Pouch of Undercoin
+    280732,  -- Warbound Pack of Hero Mistcrests
+    280734,  -- Warbound Pack of Champion Mistcrests
+    280737,  -- Warbound Pack of Veteran Mistcrests
     280781,  -- Cache of Void-Touched Armaments
     280782,  -- Cache of Void-Touched Armaments: Boots
     280783,  -- Cache of Void-Touched Armaments: Legs
