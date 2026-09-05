@@ -8,6 +8,7 @@ local wodIDs = {
     108738,  -- Giant Draenor Clam
     108740,  -- Stolen Weapons
     110278,  -- Engorged Stomach
+    110592,  -- Unclaimed Black Market Container
     110678,  -- Darkmoon Ticket Fanny Pack
     111598,  -- Gold Strongbox
     111599,  -- Silver Strongbox
@@ -29,7 +30,9 @@ local wodIDs = {
     116202,  -- Pet Care Package
     116376,  -- Small Pouch of Coins
     116404,  -- Pilgrim's Bounty
+    116414,  -- Pet Supplies
     116761,  -- Winter Veil Gift
+    116762,  -- Stolen Present
     116764,  -- Small Pouch of Coins
     116980,  -- Invader's Forgotten Treasure
     117386,  -- Crate of Pandaren Archaeology Fragments
@@ -86,6 +89,7 @@ local wodIDs = {
     120312,  -- Bulging Sack of Coins
     120319,  -- Invader's Damaged Cache
     120320,  -- Invader's Abandoned Sack
+    120321,  -- Mystery Bag
     120322,  -- Klinking Stacked Card Deck
     120323,  -- Bulging Stacked Card Deck
     120324,  -- Bursting Stacked Card Deck
@@ -109,6 +113,7 @@ local wodIDs = {
     122535,  -- Traveler's Pet Supplies
     122607,  -- Savage Satchel of Cooperation
     122613,  -- Stash of Dusty Music Rolls
+    122677,  -- Bag of Gold
     122718,  -- Clinking Present
     123857,  -- Runic Pouch
     123858,  -- Follower Retraining Scroll Case
@@ -147,11 +152,19 @@ local wodIDs = {
     127853,  -- Iron Fleet Treasure Chest
     127854,  -- Iron Fleet Treasure Chest
     127855,  -- Iron Fleet Treasure Chest
+    127995,  -- Unclaimed Black Market Container
     128025,  -- Rattling Iron Cage
     128213,  -- Dented Ashmaul Strongbox
     128214,  -- Dented Ashmaul Strongbox
+    128215,  -- Dented Ashmaul Strongbox
+    128216,  -- Dented Ashmaul Strongbox
+    128319,  -- Void-Shrouded Satchel
+    128327,  -- Small Pouch of Coins
+    128391,  -- Iron Fleet Treasure Chest
+    128513,  -- Anniversary Gift
     128652,  -- Gently Shaken Gift
     128653,  -- Winter Veil Gift
+    128670,  -- Savage Gift
     128803,  -- Savage Satchel of Cooperation
 }
 for _, id in ipairs(wodIDs) do openables[id] = {} end

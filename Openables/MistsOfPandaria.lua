@@ -92,6 +92,7 @@ local mopIDs = {
     90162,  -- Golden Chest of the Regal Lord
     90163,  -- Golden Chest of the Howling Beast
     90164,  -- Golden Chest of the Cycle
+    90165,  -- Golden Chest of the Lich Lord
     90395,  -- Facets of Research
     90397,  -- Facets of Research
     90398,  -- Facets of Research
@@ -116,6 +117,7 @@ local mopIDs = {
     90634,  -- Hero's Purse
     90635,  -- Hero's Purse
     90735,  -- Goodies from Nomi
+    90818,  -- Misty Satchel of Exotic Mysteries
     90839,  -- Cache of Sha-Touched Gold
     90840,  -- Marauder's Gleaming Sack of Gold
     90892,  -- Winter Veil Gift
@@ -139,6 +141,7 @@ local mopIDs = {
     93199,  -- Tome of the Crane
     93200,  -- Tome of the Serpent
     93360,  -- Serpent's Cache
+    93626,  -- Stolen Present
     93724,  -- Darkmoon Game Prize
     94158,  -- Big Bag of Zandalari Supplies
     94159,  -- Small Bag of Zandalari Supplies
@@ -156,6 +159,7 @@ local mopIDs = {
     95618,  -- Cache of Mogu Riches
     95619,  -- Amber Encased Treasure Pouch
     97153,  -- Spoils of the Thunder King
+    97565,  -- Unclaimed Black Market Container
     97948,  -- Surplus Supplies
     97949,  -- Surplus Supplies
     97950,  -- Surplus Supplies
@@ -176,11 +180,15 @@ local mopIDs = {
     98102,  -- Overflowing Sack of Coins
     98103,  -- Gigantic Sack of Coins
     98133,  -- Greater Cache of Treasures
+    98134,  -- Heroic Cache of Treasures
+    98546,  -- Bulging Heroic Cache of Treasures
     98560,  -- Arcane Trove
     98562,  -- Sunreaver Bounty
+    102137,  -- Unclaimed Black Market Container
     103535,  -- Bulging Bag of Charms
     103624,  -- Treasures of the Vale
     103632,  -- Lucky Box of Greatness
+    104014,  -- Pouch of Timeless Coins
     104034,  -- Purse of Timeless Coins
     104035,  -- Giant Purse of Timeless Coins
     104112,  -- Curious Ticking Parcel
@@ -201,6 +209,8 @@ local mopIDs = {
     105713,  -- Twisted Treasures of the Vale
     105714,  -- Coalesced Turmoil
     105751,  -- Kor'kron Shaman's Treasure
+    105911,  -- Pouch of Enduring Wisdom
+    105912,  -- Pouch of Enduring Wisdom (5)
     106130,  -- Big Bag of Herbs
 }
 for _, id in ipairs(mopIDs) do openables[id] = {} end

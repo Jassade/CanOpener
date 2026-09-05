@@ -58,6 +58,7 @@ local tbcIDs = {
     33926,  -- Sealed Scroll Case
     33928,  -- Hollowed Bone Decanter
     34077,  -- Crudely Wrapped Gift
+    34426,  -- Winter Veil Gift
     34583,  -- Aldor Supplies Package
     34584,  -- Scryer Supplies Package
     34585,  -- Scryer Supplies Package

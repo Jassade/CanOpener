@@ -3,6 +3,10 @@ local openables = CanOpenerGlobal.openables
 
 local slIDs = {
     151060,  -- Keystone Container
+    168208,  -- Gleaming Chest
+    168209,  -- Gleaming Chest: Olberic
+    168210,  -- Gleaming Chest: Azrafael
+    168211,  -- Gleaming Chest: Beneficus
     171209,  -- Blooded Satchel
     171210,  -- Satchel of Nature's Bounty
     171211,  -- Venthyr's Coin Purse
@@ -62,11 +66,14 @@ local slIDs = {
     182590,  -- Vinewormed Coin Pouch
     182591,  -- Vinecovered Infused Rubies
     183424,  -- Stitched Satchel of Maldraxxi Goods
+    183426,  -- Stitched Satchel of Fae Goods
+    183428,  -- Stitched Satchel of Aspirant Goods
     183429,  -- Stitched Satchel of Venthyr Goods
     183699,  -- Exquisite Ingredients
     183701,  -- Cleansing Rite Materials
     183702,  -- Nature's Splendor
     183703,  -- Bonesmith's Satchel
+    183822,  -- Icecrown Survival Kit
     183834,  -- Crate of Drust Archaeology Fragments
     183835,  -- Crate of Zandalari Archaeology Fragments
     183882,  -- Collection of Random Bits
@@ -117,6 +124,7 @@ local slIDs = {
     185833,  -- Shipment of Lightless Silk
     185834,  -- Orboreal Distinguishment
     185906,  -- Anniversary Gift
+    185940,  -- Pristine Survival Kit
     185963,  -- Diviner's Rune Chit
     185972,  -- Tormentor's Cache
     185990,  -- Harvester's War Chest
@@ -142,7 +150,10 @@ local slIDs = {
     186971,  -- Feeder's Hand
     187028,  -- Supplies of the Archivists' Codex
     187029,  -- Mysterious Gift from Ve'nari
+    187077,  -- Packaged Soul Ash
     187182,  -- Hatching Corpsefly Egg
+    187221,  -- Soul Ash Cache
+    187222,  -- Stygic Singularity
     187254,  -- Arrangement of Anima
     187278,  -- Talon-Pierced Mawsworn Lockbox
     187346,  -- Lost Memento
@@ -189,6 +200,7 @@ local slIDs = {
     190656,  -- Cache of Sepulcher Treasures
     190823,  -- Firim's Mysterious Cache
     191030,  -- Cosmic Flux Parcel
+    191031,  -- Packaged Soul Cinders
     191040,  -- Cache of Sepulcher Treasures
     191041,  -- Cache of Sepulcher Treasures
     191139,  -- Tribute of the Enlightened Elders
@@ -200,6 +212,7 @@ local slIDs = {
     192094,  -- Winter Veil Gift
     192437,  -- Cache of Fated Treasures
     192438,  -- Cache of Fated Treasures
+    198449,  -- Pouch of Prodigious Wonders
 }
 for _, id in ipairs(slIDs) do openables[id] = {} end
 

@@ -5,6 +5,7 @@ local midnightIDs = {
     237496,  -- Igneous Rock Specimen
     237506,  -- Septarian Nodule
     237507,  -- Cloudy Quartz
+    237753,  -- Cache of Timerunning Gear
     238465,  -- Thalassian Phoenix Plume
     238466,  -- Thalassian Phoenix Tail
     238467,  -- Thalassian Phoenix Ember
@@ -49,6 +50,14 @@ local midnightIDs = {
     238561,  -- Offline Helper Bot
     238562,  -- What To Do When Nothing Works
     238563,  -- Handy Wrench
+    238564,  -- Ancient Flower
+    238565,  -- Dornogal Gardening Scythe
+    238566,  -- Earthen Digging Fork
+    238567,  -- Fungarian Slicer's Knife
+    238568,  -- Arathi Garden Trowel
+    238569,  -- Arathi Herb Pruner
+    238570,  -- Web-Entangled Lotus
+    238571,  -- Tunneler's Shovel
     238572,  -- Void-Touched Quill
     238573,  -- Leather-Bound Techniques
     238574,  -- Spare Ink
@@ -81,6 +90,14 @@ local midnightIDs = {
     238601,  -- Amani Expert's Chisel
     238602,  -- Star Metal Deposit
     238603,  -- Spare Expedition Torch
+    238604,  -- Dornogal Carving Knife
+    238605,  -- Earthen Worker's Beams
+    238606,  -- Artisan's Drawing Knife
+    238607,  -- Fungarian's Rich Tannin
+    238608,  -- Arathi Tanning Agent
+    238609,  -- Arathi Craftsman's Spokeshave
+    238610,  -- Nerubian's Slicking Iron
+    238611,  -- Carapace Shiner
     238612,  -- A Child's Stuffy
     238613,  -- A Really Nice Curtain
     238614,  -- Sin'dorei Outfitter's Ruler
@@ -138,6 +155,9 @@ local midnightIDs = {
     246754,  -- Pouch of Veteran Dawncrests
     246755,  -- Satchel of Champion Dawncrests
     246756,  -- Pack of Hero Dawncrests
+    246805,  -- Package of Remix Rings
+    246806,  -- Package of Remix Trinkets
+    246807,  -- Package of Remix Necklaces
     250116,  -- Cache of Quel'Thalas Treasures
     250117,  -- Cache of Quel'Thalas Treasures
     250360,  -- Echo of Abundance: Skinning
@@ -240,6 +260,7 @@ local midnightIDs = {
     262644,  -- Beyond the Event Horizon: Blacksmithing
     262645,  -- Beyond the Event Horizon: Alchemy
     262646,  -- Beyond the Event Horizon: Engineering
+    262658,  -- Nebulous Voidcache: Midnight Falls
     262662,  -- Thalassian Distinguishment
     262928,  -- Preyseeker's Adventurer Sack
     262936,  -- Preyseeker's Veteran Sack
@@ -540,6 +561,9 @@ openables[247719] = { threshold = 5 }  -- Multicraft Matrix
 openables[247725] = { threshold = 5 }  -- Resourceful Rebar
 openables[260630] = { threshold = 5 }  -- Ingenious Identifier
 openables[268650] = { threshold = 5 }  -- Ascendant Voidshard
+openables[262798] = { threshold = 20 }  -- Stranded Glimmerline
+openables[264506] = { threshold = 5 }  -- Stormarion Fragment
+openables[279576] = { threshold = 4 }  -- Void Vestige
 openables[274500] = { questId = 96459 }  -- Demystifyin': Alchemy
 openables[274507] = { questId = 96517 }  -- Demystifyin': Leatherworking
 openables[274508] = { questId = 96519 }  -- Demystifyin': Skinning

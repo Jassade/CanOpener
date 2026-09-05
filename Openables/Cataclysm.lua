@@ -39,7 +39,10 @@ local cataIDs = {
     69999,  -- Moat Monster Feeding Kit
     70719,  -- Water-Filled Gills
     70931,  -- Scrooge's Payoff
+    70938,  -- Winter Veil Gift
     71631,  -- Zen'Vorka's Cache
+    73792,  -- Stolen Present
+    77952,  -- Elementium Gem Cluster
     77956,  -- Spectral Mount Crate
     78897,  -- Pouch o' Tokens
     78898,  -- Sack o' Tokens

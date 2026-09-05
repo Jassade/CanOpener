@@ -61,10 +61,13 @@ local classicIDs = {
     15102,  -- Un'Goro Tested Sample
     15103,  -- Corrupt Tested Sample
     15699,  -- Small Brown-Wrapped Package
+    15874,  -- Soft-Shelled Clam
     15876,  -- Nathanos' Chest
     15902,  -- A Crazy Grab Bag
     16885,  -- Heavy Junkbox
     17685,  -- Smokywood Pastures Sampler
+    17726,  -- Smokywood Pastures Special Gift
+    17727,  -- Smokywood Pastures Gift Pack
     17962,  -- Blue Sack of Gems
     17963,  -- Green Sack of Gems
     17964,  -- Gray Sack of Gems
@@ -112,7 +115,12 @@ local classicIDs = {
     21216,  -- Smokywood Pastures Extra-Special Gift
     21228,  -- Mithril Bound Trunk
     21266,  -- Logistics Assignment
+    21270,  -- Gently Shaken Gift
+    21271,  -- Gently Shaken Gift
+    21310,  -- Gaily Wrapped Present
     21315,  -- Smokywood Satchel
+    21327,  -- Ticking Present
+    21363,  -- Festive Gift
     21386,  -- Followup Logistics Assignment
     21509,  -- Ahn'Qiraj War Effort Supplies
     21510,  -- Ahn'Qiraj War Effort Supplies
@@ -120,6 +128,7 @@ local classicIDs = {
     21512,  -- Ahn'Qiraj War Effort Supplies
     21513,  -- Ahn'Qiraj War Effort Supplies
     21528,  -- Colossal Bag of Loot
+    21640,  -- Lunar Festival Fireworks Pack
     21740,  -- Small Rocket Recipes
     21741,  -- Cluster Rocket Recipes
     21742,  -- Large Rocket Recipes

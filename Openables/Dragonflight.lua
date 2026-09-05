@@ -6,8 +6,11 @@ local dfIDs = {
     190233,  -- Maruuk Centaur Supplies
     191203,  -- Dragonscale Expedition Supplies
     192111,  -- Renewed Proto-Drake: Red Scales
+    192130,  -- Sundered Flame Weapon Mold
     192131,  -- Valdrakken Weapon Chain
     192132,  -- Draconium Blade Sharpener
+    192888,  -- Queen's Gift
+    192889,  -- Dreamer's Vision
     192890,  -- Keeper's Glory
     192891,  -- Earthwarden's Prize
     192892,  -- Timewatcher's Patience
@@ -30,8 +33,24 @@ local dfIDs = {
     193913,  -- Preserved Animal Parts
     194034,  -- Renewed Proto-Drake
     194039,  -- Heated Ore Sample
+    194040,  -- Slateskin Hide
+    194041,  -- Driftbloom Sprout
+    194054,  -- Dredged Seedling
+    194055,  -- Primordial Soil
+    194061,  -- Suffocating Spores
     194062,  -- Unyielding Stone Chunk
+    194063,  -- Glowing Fragment
+    194064,  -- Intricate Geode
+    194066,  -- Frigid Frostfur Pelt
+    194067,  -- Festering Carcass
+    194068,  -- Progenitor Scales
     194072,  -- Sack of Gold
+    194076,  -- Exotic Resilient Leather
+    194077,  -- Pristine Adamant Scales
+    194078,  -- Perfect Draconium Scale
+    194079,  -- Pure Serevite Nugget
+    194080,  -- Peculiar Bud
+    194081,  -- Mutated Root
     194087,  -- Ohuna Companion Color: Red
     194088,  -- Ohuna Companion Color: Dark
     194089,  -- Bakar Companion Color: Orange
@@ -43,6 +62,7 @@ local dfIDs = {
     194419,  -- Life Pool Herb Pouch
     194741,  -- Earthbound Tome
     194750,  -- Professional Equipment
+    194827,  -- Bundle O' Cards: Dragon Isles
     194838,  -- Highland Drake Manuscript: Spined Head
     196961,  -- Cliffside Wylderdrake: Armor
     196962,  -- Cliffside Wylderdrake: Silver and Purple Armor
@@ -321,6 +341,7 @@ local dfIDs = {
     198680,  -- Decaying Brackenhide Blanket
     198682,  -- Alexstraszite Cluster
     198683,  -- Treated Hides
+    198684,  -- Miniature Bronze Dragonflight Banner
     198685,  -- Well-Insulated Mug
     198686,  -- Frosted Parchment
     198687,  -- Closely Guarded Shiny
@@ -337,7 +358,10 @@ local dfIDs = {
     198704,  -- Pulsing Earth Rune
     198710,  -- Canteen of Suspicious Water
     198711,  -- Poacher's Pack
+    198712,  -- Firewater Powder Sample
+    198789,  -- Intact Coil Capacitor
     198790,  -- I.O.U.
+    198791,  -- Glimmer of Blacksmithing Wisdom
     198798,  -- Flashfrozen Scroll
     198799,  -- Forgotten Arcane Tome
     198800,  -- Fractured Titanic Sphere
@@ -404,6 +428,9 @@ local dfIDs = {
     200468,  -- Grand Hunt Spoils
     200477,  -- Stack of VIP Passes
     200513,  -- Grand Hunt Spoils
+    200515,  -- Grand Hunt Spoils
+    200516,  -- Grand Hunt Spoils
+    200592,  -- Dirty Old Satchel
     200609,  -- Dragon Racing Purse - First Place
     200610,  -- Dragon Racing Purse - Second Place
     200611,  -- Dragon Racing Purse - Third Place
@@ -486,6 +513,10 @@ local dfIDs = {
     201708,  -- Notebook of Crafting Knowledge
     201709,  -- Notebook of Crafting Knowledge
     201710,  -- Notebook of Crafting Knowledge
+    201711,  -- Notebook of Crafting Knowledge
+    201712,  -- Notebook of Crafting Knowledge
+    201713,  -- Notebook of Crafting Knowledge
+    201714,  -- Notebook of Crafting Knowledge
     201715,  -- Notebook of Crafting Knowledge
     201716,  -- Notebook of Crafting Knowledge
     201717,  -- Notebook of Crafting Knowledge
@@ -534,6 +565,7 @@ local dfIDs = {
     202102,  -- Immaculate Sac of Swog Treasures
     202122,  -- Primal Chaos Cluster
     202142,  -- Dragonbane Keep Strongbox
+    202163,  -- Rumble Prize Box
     202171,  -- Obsidian Flightstone
     202172,  -- Overflowing Satchel of Coins
     202183,  -- Small Rumble Purse
@@ -567,6 +599,20 @@ local dfIDs = {
     203353,  -- Winding Slitherdrake: Red Scales
     203354,  -- Winding Slitherdrake: White Scales
     203355,  -- Winding Slitherdrake: Yellow Scales
+    203434,  -- Bottomless Bag of Blacksmithing Goods
+    203435,  -- Bottomless Bag of Alchemy Goods
+    203436,  -- Bottomless Bag of Enchanting Goods
+    203437,  -- Bottomless Bag of Engineering Goods
+    203438,  -- Bottomless Bag of Inscription Goods
+    203439,  -- Bottomless Bag of Jewelcrafting Goods
+    203440,  -- Bottomless Bag of Leatherworking Goods
+    203441,  -- Bottomless Bag of Tailoring Goods
+    203444,  -- Bottomless Bag of Dragon Isles General Goods
+    203447,  -- Bottomless Bag of Optional Goods
+    203448,  -- Bottomless Bag of Ore
+    203449,  -- Bottomless Bag of Herbs
+    203450,  -- Bottomless Bag of Skins
+    203471,  -- Tasty Candy
     203476,  -- Primalist Cache
     203681,  -- Stormed Primalist Cache
     203699,  -- Tattered Gift Package
@@ -577,6 +623,18 @@ local dfIDs = {
     203774,  -- Big Bag o' Bijous
     203912,  -- Penny Pouch o' Paragons
     203959,  -- Gurubashi Tribute
+    204222,  -- Conductive Ametrine Shard
+    204224,  -- Speck of Arcane Awareness
+    204225,  -- Perfect Windfeather
+    204226,  -- Blazehoof Ashes
+    204227,  -- Everflowing Antifreeze
+    204228,  -- Undigested Hochenblume Petal
+    204229,  -- Glimmering Rune of Arcantrix
+    204230,  -- Dense Seaforged Javelin
+    204231,  -- Kingly Sheepskin Pelt
+    204232,  -- Slyvern Alpha Claw
+    204233,  -- Impenetrable Elemental Core
+    204339,  -- Satchel of Coalescing Chaos
     204346,  -- Arclight Rumble Foil Box
     204359,  -- Reach Racer's Purse
     204378,  -- Brimming Dragonscale Expedition Supply Pack
@@ -585,6 +643,12 @@ local dfIDs = {
     204381,  -- Brimming Valdrakken Accord Supply Pack
     204383,  -- Sack of Oddities
     204403,  -- Sack of Sack of Oddities
+    204469,  -- Misplaced Aberrus Outflow Blueprints
+    204470,  -- Haphazardly Discarded Bomb
+    204471,  -- Defective Survival Pack
+    204475,  -- Busted Wyrmhole Generator
+    204480,  -- Inconspicuous Data Miner
+    204632,  -- Tectonic Rock Fragment
     204636,  -- Snarfang's Stomach Sac
     204712,  -- Brimming Loamm Niffen Supply Satchel
     204721,  -- Whelpling's Small Chest
@@ -593,8 +657,19 @@ local dfIDs = {
     204724,  -- Drake's Small Chest
     204725,  -- Drake's Hefty Chest
     204726,  -- Drake's Bountiful Chest
+    204850,  -- Handful of Khaz'gorite Bolts
+    204853,  -- Discarded Dracothyst Drill
+    204855,  -- Overclocked Determination Core
     204911,  -- Propagated Spore
+    204986,  -- Flame-Infused Scale Oil
+    204987,  -- Lava-Forged Leatherworker's "Knife"
+    204988,  -- Sulfur-Soaked Skins
+    205211,  -- Nutrient Diluted Protofluid
     205212,  -- Marrow-Ripened Slime
+    205213,  -- Suspicious Mold
+    205214,  -- Snubbed Snail Shells
+    205216,  -- Gently Jostled Jewels
+    205219,  -- Broken Barter Boulder
     205226,  -- Cavern Racer's Purse
     205247,  -- Clinking Dirt-Covered Pouch
     205248,  -- Clanging Dirt-Covered Pouch
@@ -608,13 +683,17 @@ local dfIDs = {
     205342,  -- Loamm Niffen Insignia
     205346,  -- Hidden Niffen Treasure
     205347,  -- Gathered Niffen Resources
+    205348,  -- Niffen Notebook of Jewelcrafting Knowledge
     205349,  -- Niffen Notebook of Engineering Knowledge
+    205350,  -- Niffen Notebook of Leatherworking Knowledge
     205351,  -- Niffen Notebook of Enchanting Knowledge
     205352,  -- Niffen Notebook of Blacksmithing Knowledge
     205353,  -- Niffen Notebook of Alchemy Knowledge
     205354,  -- Niffen Notebook of Inscription Knowledge
     205355,  -- Niffen Notebook of Tailoring Knowledge
     205356,  -- Niffen Notebook of Mining Knowledge
+    205357,  -- Niffen Notebook of Skinning Knowledge
+    205358,  -- Niffen Notebook of Herbalism Knowledge
     205367,  -- Indebted Researcher's Gift
     205368,  -- Thankful Researcher's Gift
     205369,  -- Appreciative Researcher's Gift
@@ -624,22 +703,55 @@ local dfIDs = {
     205373,  -- Researcher's Scrounged Goods
     205374,  -- Thankful Researcher's Scrounged Goods
     205423,  -- Shadowflame Residue Sack
+    205424,  -- Bartered Jewelcrafting Notes
+    205425,  -- Bartered Engineering Notes
+    205426,  -- Bartered Leatherworking Notes
+    205427,  -- Bartered Enchanting Notes
+    205428,  -- Bartered Blacksmithing Notes
+    205429,  -- Bartered Alchemy Notes
+    205430,  -- Bartered Inscription Notes
+    205431,  -- Bartered Tailoring Notes
+    205432,  -- Bartered Mining Notes
+    205433,  -- Bartered Skinning Notes
+    205434,  -- Bartered Herbalism Notes
+    205435,  -- Bartered Jewelcrafting Journal
+    205436,  -- Bartered Engineering Journal
+    205437,  -- Bartered Leatherworking Journal
+    205438,  -- Bartered Enchanting Journal
+    205439,  -- Bartered Blacksmithing Journal
+    205440,  -- Bartered Alchemy Journal
+    205441,  -- Bartered Inscription Journal
+    205442,  -- Bartered Tailoring Journal
+    205443,  -- Bartered Mining Journal
+    205444,  -- Bartered Skinning Journal
+    205445,  -- Bartered Herbalism Journal
+    205451,  -- Flawless Crystal Scale
     205682,  -- Large Shadowflame Residue Sack
     205877,  -- Adventurer's Footlocker
     205962,  -- Echoing Storm Flightstone
     205964,  -- Small Loammian Supply Pack
     205965,  -- Large Loammian Supply Pack
+    205966,  -- Cache of Aberrus Treasures
+    205967,  -- Cache of Aberrus Treasures
     205968,  -- Overflowing Loammian Supply Pack
     205970,  -- Azure Flightstone
     205983,  -- Scentsational Niffen Treasures
     205985,  -- Loamm Niffen Insignia
+    205986,  -- Well-Worn Kiln
+    205987,  -- Brimstone Rescue Ring
+    205988,  -- Zaqali Elder Spear
     205989,  -- Symbol of Friendship
     205991,  -- Shiny Token of Gratitude
     205992,  -- Regurgitated Half-Digested Fish
     205998,  -- Sign of Respect
     206006,  -- Earth-Warder's Thanks
+    206019,  -- Abandoned Reserve Chute
+    206025,  -- Used Medical Wrap Kit
     206028,  -- Chest of Gold
     206030,  -- Exquisitely Embroidered Banner
+    206031,  -- Intricate Zaqali Runes
+    206034,  -- Hissing Rune Draft
+    206035,  -- Ancient Research
     206037,  -- Ruby Flightstone
     206039,  -- Enmity Bundle
     206135,  -- Heroic Dungeon Delver's Trophy Chest
@@ -689,6 +801,7 @@ local dfIDs = {
     208390,  -- Bronze Archive Stone
     208691,  -- Argunite Cluster
     208878,  -- Adventurer's Footlocker
+    208945,  -- Paracausal Crate
     208951,  -- Paracausal Cluster
     208952,  -- Soridormi's Letter of Commendation
     209024,  -- Loot-Filled Pumpkin
@@ -697,24 +810,54 @@ local dfIDs = {
     209037,  -- Cache of Amirdrassil Treasures
     209831,  -- Wyrm's Bountiful Chest
     209832,  -- Crate of Dreambound Leather
+    209833,  -- Crate of Dreambound Armor
+    209834,  -- Crate of Dreambound Mail
     209835,  -- Crate of Dreambound Plate
     209871,  -- Winter Veil Gift
     210062,  -- Ironbound Satchel of Helpful Goods
     210063,  -- Invader's Satchel of Helpful Goods
     210180,  -- Emerald Flightstone
+    210184,  -- Half-Filled Dreamless Sleep Potion
+    210185,  -- Splash Potion of Narcolepsy
+    210190,  -- Blazeroot
+    210193,  -- Experimental Dreamcatcher
+    210194,  -- Insomniotron
+    210197,  -- Unhatched Battery
+    210198,  -- Depleted Battery
+    210200,  -- Petrified Hope
+    210201,  -- Handful of Tiny Pebbles
+    210202,  -- Coalesced Dreamstone
+    210208,  -- Tuft of Dreamsaber Fur
+    210211,  -- Molted Faerie Dragon Scales
+    210215,  -- Dreamtalon Claw
     210217,  -- Small Dreamy Bounty
     210218,  -- Plump Dreamy Bounty
     210219,  -- Gigantic Dreamy Bounty
     210224,  -- Small Emerald Bloom
     210225,  -- Medium Emerald Bloom
     210226,  -- Large Emerald Bloom
+    210458,  -- Winnie's Notes on Flora and Fauna
+    210459,  -- Grove Keeper's Pillar
+    210460,  -- Primalist Shadowbinding Rune
+    210461,  -- Exceedingly Soft Wildercloth
+    210462,  -- Plush Pillow
+    210463,  -- Snuggle Buddy
+    210464,  -- Amirdrassil Defender's Shield
+    210465,  -- Deathstalker Chassis
+    210466,  -- Flamesworn Render
     210549,  -- Dream Racer's Purse
     210657,  -- Gently Shaken Gift
     210726,  -- Ruby Flightstone
+    210756,  -- Gleaming Satchel of Drake's Dreaming Crests
     210758,  -- Honorable Satchel of Fabrics
     210759,  -- Honorable Satchel of Ore
     210760,  -- Honorable Satchel of Herbs
+    210762,  -- Shimmering Clutch of Wyrm's Dreaming Crests
+    210768,  -- Viridescent Bouquet of Aspect's Dreaming Crests
+    210770,  -- Satchel of Drake's Dreaming Crests
     210872,  -- Satchel of Dreams
+    210917,  -- Pouch of Whelpling's Dreaming Crests
+    210923,  -- Clutch of Wyrm's Dreaming Crests
     210982,  -- Thread of Power
     210983,  -- Thread of Stamina
     210984,  -- Thread of Critical Strike
@@ -737,7 +880,13 @@ local dfIDs = {
     211414,  -- Blossoming Dreamtrove
     211429,  -- Bundle of Love Tokens
     211430,  -- Bundle of Love Tokens
+    211950,  -- Lively Clutch of Wyrm's Awakened Crests
+    211951,  -- Pouch of Whelpling's Awakened Crests
+    211952,  -- Satchel of Drake's Awakened Crests
     212157,  -- An Invitation
+    212367,  -- Clutch of Wyrm's Awakened Crests
+    212383,  -- Yawning Basket of Aspect's Awakened Crests
+    212384,  -- Restless Satchel of Drake's Awakened Crests
     212458,  -- Awakened Flightstone
     212924,  -- Stolen Hearthstone Card
     212979,  -- Hearthstone Starter Pack
@@ -754,6 +903,7 @@ local dfIDs = {
     213429,  -- Meticulous Archivist's Appendix
     213541,  -- Whelpling's Bountiful Chest
     215160,  -- The Big Dig Rig
+    215362,  -- Cache of Storms
     215363,  -- Cache of Embers
     215364,  -- Cache of Dreams
     216638,  -- Timerunner's Intro Kit
@@ -766,6 +916,8 @@ local dfIDs = {
     217382,  -- Ruby Flightstone
     217411,  -- Blackened Flightstone
     217412,  -- Blackened Flightstone
+    217419,  -- Large Satchel of Drake's Dreaming Crests
+    217420,  -- Large Pouch of Whelpling's Awakened Crests
     217705,  -- Pirate's Booty
     217722,  -- Thread of Experience
     217728,  -- Cache of Awakened Treasures
@@ -847,3 +999,5 @@ openables[194700] = { questId = 74113 }  -- Draconic Treatise on Leatherworking
 openables[194708] = { questId = 74106 }  -- Draconic Treatise on Mining
 openables[201023] = { questId = 74114 }  -- Draconic Treatise on Skinning
 openables[194698] = { questId = 74115 }  -- Draconic Treatise on Tailoring
+openables[208396] = { threshold = 2 }  -- Splintered Spark of Dreams
+openables[211515] = { threshold = 2 }  -- Splintered Spark of Awakening

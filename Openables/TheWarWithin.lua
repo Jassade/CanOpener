@@ -17,6 +17,7 @@ local twwIDs = {
     213791,  -- Algari Sapphire Prism
     213792,  -- Algari Sapphire Prism
     213793,  -- Algari Sapphire Prism
+    215359,  -- Very Large Valdrakken Accord Supply Pack
     217011,  -- Amateur Actor's Chest
     217012,  -- Novice Actor's Chest
     217013,  -- Expert Actor's Chest
@@ -93,6 +94,8 @@ local twwIDs = {
     224725,  -- Waxy Bundle of Herbs
     224726,  -- Waxy Box of Rocks
     224780,  -- Toughened Tempest Pelt
+    224781,  -- Abyssal Fur
+    224782,  -- Razor Talon
     224784,  -- Pinnacle Cache
     224807,  -- Algari Skinner's Notes
     224817,  -- Algari Herbalist's Notes
@@ -125,6 +128,9 @@ local twwIDs = {
     225571,  -- The Weaver's Gratuity
     225572,  -- The General's War Chest
     225573,  -- The Vizier's Capital
+    225739,  -- Algari Distinguishment
+    225768,  -- Crusty Darkmoon Card
+    225881,  -- Big Bag of Barter Boulders
     225896,  -- Void-Touched Valorstone
     226045,  -- The General's Trove
     226100,  -- The Vizier's Trove
@@ -148,9 +154,14 @@ local twwIDs = {
     226199,  -- Silk Kej Purse
     226256,  -- Token of the Remembrancers
     226257,  -- Delver's Pouch of Valorstones
+    226258,  -- Delver's Pouch of Reagents
+    226259,  -- Delver's Pouch of Resonance Crystals
+    226260,  -- Delver's Pouch of Gold
     226263,  -- Theater Troupe's Trove
     226264,  -- Radiant Cache
     226265,  -- Earthen Iron Powder
+    226266,  -- Metal Dornogal Frame
+    226267,  -- Reinforced Beaker
     226268,  -- Engraved Stirring Rod
     226269,  -- Chemist's Purified Water
     226270,  -- Sanctified Mortar and Pestle
@@ -244,6 +255,8 @@ local twwIDs = {
     227409,  -- Faded Alchemist's Research
     227410,  -- Faded Tailor's Diagrams
     227411,  -- Faded Enchanter's Research
+    227412,  -- Faded Engineer's Scribblings
+    227413,  -- Faded Jeweler's Illustrations
     227414,  -- Faded Leatherworker's Diagrams
     227415,  -- Faded Herbalist's Notes
     227416,  -- Faded Miner's Notes
@@ -344,6 +357,14 @@ local twwIDs = {
     231267,  -- Pouch of Weathered Undermine Crests
     231269,  -- Satchel of Carved Undermine Crests
     231270,  -- Pack of Runed Undermine Crests
+    232068,  -- Adventurer's Warbound Chestpiece
+    232069,  -- Adventurer's Warbound Boots
+    232070,  -- Adventurer's Warbound Gloves
+    232071,  -- Adventurer's Warbound Headpiece
+    232072,  -- Adventurer's Warbound Legs
+    232073,  -- Adventurer's Warbound Shoulders
+    232074,  -- Adventurer's Warbound Waist
+    232075,  -- Adventurer's Warbound Wrists
     232076,  -- Adventurer's Warbound Battlegear Drop
     232372,  -- Crate of Bygone Riches
     232382,  -- Golden Valorstone
@@ -367,7 +388,13 @@ local twwIDs = {
     233557,  -- Sifted Pile of Scrap
     233558,  -- S.C.R.A.P. Scrubber Deluxe
     234413,  -- Satchel of Exotic Mysteries
+    234422,  -- Storm-Singed Plunder
     234425,  -- Forgotten Folio
+    234450,  -- Pirate's Booty
+    234453,  -- Swabbie's Lockbox
+    234729,  -- Cache of Undermine Treasures
+    234731,  -- Cache of Undermine Treasures
+    234743,  -- Steamwheedle's Trove
     234744,  -- Blackwater's Trove
     234745,  -- Bilgewater's Trove
     234746,  -- Venture Co.'s Trove
@@ -390,6 +417,18 @@ local twwIDs = {
     235610,  -- Seasoned Adventurer's Cache
     235631,  -- [NOT USED] Mysterious Large Satchel of Goodies
     235639,  -- Seasoned Adventurer's Cache
+    235846,  -- Undermine Clam
+    235855,  -- Ethereal Tome of Tailoring Knowledge
+    235856,  -- Ethereal Tome of Skinning Knowledge
+    235857,  -- Ethereal Tome of Mining Knowledge
+    235858,  -- Ethereal Tome of Leatherworking Knowledge
+    235859,  -- Ethereal Tome of Jewelcrafting Knowledge
+    235860,  -- Ethereal Tome of Inscription Knowledge
+    235861,  -- Ethereal Tome of Herbalism Knowledge
+    235862,  -- Ethereal Tome of Engineering Knowledge
+    235863,  -- Ethereal Tome of Enchanting Knowledge
+    235864,  -- Ethereal Tome of Blacksmithing Knowledge
+    235865,  -- Ethereal Tome of Alchemy Knowledge
     235911,  -- Weathered Mysterious Satchel
     236632,  -- Pouch of Voidbane Gems
     236756,  -- Socially Expected Tip Chest
@@ -399,6 +438,8 @@ local twwIDs = {
     236944,  -- Weathered Mysterious Satchel
     236953,  -- Crimson Valorstone
     236954,  -- Void-Touched Valorstone
+    237132,  -- Bilgewater Trove
+    237133,  -- Venture Co. Trove
     237134,  -- Steamwheedle Trove
     237135,  -- Blackwater Trove
     237743,  -- Arathi Soldier's Coffer
@@ -438,6 +479,8 @@ local twwIDs = {
     243293,  -- Bag of Brewfest Merchandise
     243347,  -- Keg of Curiosities
     243373,  -- Timerunner's Weaponry
+    243580,  -- Etheric Pylon
+    244140,  -- Ethereal Sash Cache
     244335,  -- K'aresh Box of Valorstones
     244336,  -- K'aresh Box of Resonance Crystals
     244457,  -- Keystone Container
@@ -446,6 +489,8 @@ local twwIDs = {
     244842,  -- Fabled Veteran's Cache
     244865,  -- Pinnacle Cache
     244883,  -- Seasoned Undermine Adventurer's Cache
+    244906,  -- Gently Shaken Gift
+    244908,  -- Winter Veil Gift
     245280,  -- Seasoned Khaz Algar Adventurer's Cache
     245553,  -- Heroic Cache of Infinite Treasure
     245589,  -- Hellcaller Chest
@@ -463,6 +508,7 @@ local twwIDs = {
     248126,  -- Delver's Starter Kit
     248127,  -- Delver's Cosmetic Surprise Bag
     248247,  -- Cache of Infinite Power
+    249714,  -- Timewarped Mission Supplies
     249891,  -- Mound of Artifactium Sand
     250763,  -- Theater Troupe's Trove
     250764,  -- Nanny's Surge Dividends
@@ -473,7 +519,11 @@ local twwIDs = {
     250769,  -- The Weaver's Gratuity
     250975,  -- Hellcaller Chest
     251821,  -- Cache of Infinite Power
+    252656,  -- K'areshi Scientific Expedition Supply
     253357,  -- Felscorned Arsenal
+    254323,  -- Worldsoul Satchel
+    254324,  -- Worldsoul Satchel
+    254325,  -- Worldsoul Satchel
     254847,  -- Minor Bronze Cache
     254848,  -- Minor Bronze Cache
     254849,  -- Minor Bronze Cache
@@ -511,3 +561,13 @@ openables[232506] = { questId = 85744 }  -- Undermine Treatise on Skinning
 openables[232507] = { questId = 85737 }  -- Undermine Treatise on Engineering
 openables[232508] = { questId = 85739 }  -- Undermine Treatise on Inscription
 openables[232509] = { questId = 85742 }  -- Undermine Treatise on Mining
+openables[211297] = { threshold = 2 }  -- Fractured Spark of Omens
+openables[230905] = { threshold = 2 }  -- Fractured Spark of Fortunes
+openables[231757] = { threshold = 2 }  -- Fractured Spark of Starlight
+openables[234327] = { threshold = 3 }  -- Turbulent Fragment
+openables[217707] = { threshold = 5 }  -- Imperfect Null Stone
+openables[232605] = { threshold = 5 }  -- Thunderous Fragment
+openables[234328] = { threshold = 7 }  -- Torrential Fragment
+openables[252364] = { threshold = 10 }  -- Gem of Gul'dan
+openables[253222] = { threshold = 10 }  -- Corrupted Thorn of the Dream
+openables[253223] = { threshold = 10 }  -- Fractal Felshard

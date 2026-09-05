@@ -5,8 +5,10 @@ local bfaIDs = {
     152578,  -- Sack of Herbs
     152580,  -- Pile of Cloth
     152581,  -- Bag of Jewels
+    152582,  -- Stack of Skins
     152868,  -- Anglin' Art's Mudfish Bait
     153574,  -- Plain Hat Box
+    154759,  -- Broken Isles Survival Kit
     159783,  -- Kane's Coin Purse
     160054,  -- War-Torn Satchel of Cooperation
     160268,  -- Bag of Armor (DNT)
@@ -68,6 +70,10 @@ local bfaIDs = {
     165730,  -- Cache of Dazar'alor Treasures
     165731,  -- Cache of Dazar'alor Treasures
     165732,  -- Cache of Dazar'alor Treasures
+    165839,  -- Unopened Gnomeregan Supply Box
+    165851,  -- Bag of Anchors
+    166245,  -- Tortollan Seekers Supplies
+    166282,  -- Talanji's Expedition Supplies
     166290,  -- Voldunai Supplies
     166292,  -- Zandalari Empire Supplies
     166294,  -- Storm's Wake Supplies
@@ -97,6 +103,8 @@ local bfaIDs = {
     166741,  -- Nomi's Grocery Tote
     167696,  -- Build-a-Computer Kit
     168057,  -- Rustbolt Requisitions
+    168091,  -- Severely Rusted Lockbox
+    168095,  -- Strange Coral Cluster
     168124,  -- Cache of War Resources
     168162,  -- Chronal Cache of Cloth
     168204,  -- Small Metal Box
@@ -106,6 +114,7 @@ local bfaIDs = {
     168394,  -- Box of Assorted Parts
     168395,  -- Irradiated Box of Assorted Parts
     168488,  -- Seafarer's Lost Coin Pouch
+    168496,  -- Battle Box
     168740,  -- Blingtron 7000 Gift Package
     168833,  -- Experimental Adventurer Augmentation
     169113,  -- Advanced Adventurer Augmentation
@@ -142,6 +151,7 @@ local bfaIDs = {
     169909,  -- Poen's Neat Things
     169910,  -- Vim's Scavenged Supplies
     169911,  -- Liberated Naga Cache
+    169914,  -- Neri's Smart Supplies
     169915,  -- Poen's Stashed Supplies
     169916,  -- Brew-Soaked Supplies
     169917,  -- Mysterious Azshari Chest
@@ -164,12 +174,45 @@ local bfaIDs = {
     170502,  -- Waterlogged Toolbox
     170539,  -- Plundered Supplies
     171305,  -- Salvaged Cache of Goods
+    171987,  -- Champions of Azeroth Survival Kit
     171988,  -- Adventurer's Footlocker
     172014,  -- Anniversary Gift
     172021,  -- Marks of Sanctification Purse
     172224,  -- Winter Veil Gift
     172225,  -- Gently Shaken Gift
     173372,  -- Cache of the Black Empire
+    173393,  -- Black Empire Plate Chestpiece
+    173394,  -- Black Empire Plate Boots
+    173395,  -- Black Empire Plate Gloves
+    173396,  -- Black Empire Plate Helm
+    173397,  -- Black Empire Plate Leggings
+    173398,  -- Black Empire Plate Spaulders
+    173399,  -- Black Empire Plate Belt
+    173400,  -- Black Empire Mail Chestpiece
+    173401,  -- Black Empire Mail Boots
+    173402,  -- Black Empire Mail Gloves
+    173403,  -- Black Empire Mail Helm
+    173404,  -- Black Empire Mail Leggings
+    173405,  -- Black Empire Mail Spaulders
+    173406,  -- Black Empire Mail Belt
+    173407,  -- Black Empire Leather Chestpiece
+    173408,  -- Black Empire Leather Boots
+    173409,  -- Black Empire Leather Gloves
+    173410,  -- Black Empire Leather Helm
+    173411,  -- Black Empire Leather Leggings
+    173412,  -- Black Empire Leather Spaulders
+    173413,  -- Black Empire Leather Belt
+    173414,  -- Black Empire Cloth Robes
+    173415,  -- Black Empire Cloth Boots
+    173416,  -- Black Empire Cloth Gloves
+    173417,  -- Black Empire Cloth Helm
+    173418,  -- Black Empire Cloth Leggings
+    173419,  -- Black Empire Cloth Spaulders
+    173420,  -- Black Empire Cloth Belt
+    173422,  -- Black Empire Plate Bracers
+    173423,  -- Black Empire Cloth Bracers
+    173424,  -- Black Empire Leather Bracers
+    173425,  -- Black Empire Mail Bracers
     173734,  -- Mysterious Crate
     173949,  -- Dread Chain Salvage
     173950,  -- Crestfall Salvage
@@ -197,6 +240,8 @@ local bfaIDs = {
     174484,  -- Uldum Accord Supplies
     174529,  -- Crate of Coalescing Visions
     174630,  -- Relinquished Azerite Spaulders
+    174631,  -- Relinquished Azerite Spaulders
+    174632,  -- Relinquished Azerite Spaulders
     174633,  -- Relinquished Azerite Helm
     174634,  -- Relinquished Azerite Helm
     174635,  -- Relinquished Azerite Helm

@@ -24,6 +24,7 @@ local legionIDs = {
     136359,  -- Shaman's Pouch
     136362,  -- Ancient War Remnants
     136383,  -- Ravencrest Cache
+    136926,  -- Nightmare Pod
     137414,  -- Pet Tournament Purse
     137560,  -- Dreamweaver Provisions
     137561,  -- Highmountain Tribute
@@ -114,6 +115,8 @@ local legionIDs = {
     141184,  -- Violet Hold Contraband Locker
     141344,  -- Tribute of the Broken Isles
     141350,  -- Kirin Tor Chest
+    141410,  -- Invasion Survival Kit
+    141995,  -- Unclaimed Black Market Container
     142023,  -- Adventurer's Footlocker
     142113,  -- Crate of Arakkoa Archaeology Fragments
     142114,  -- Crate of Draenor Clans Archaeology Fragments
@@ -124,6 +127,7 @@ local legionIDs = {
     142447,  -- Torn Sack of Pet Supplies
     143606,  -- Satchel of Battlefield Spoils
     143607,  -- Soldier's Footlocker
+    143753,  -- Damp Pet Supplies
     143948,  -- Chilled Satchel of Vegetables
     144291,  -- Tadpole Gift
     144330,  -- Sprocket Container
@@ -136,12 +140,23 @@ local legionIDs = {
     144378,  -- Gorestained Brawler's Purse
     144379,  -- Murderous Brawler's Purse
     146317,  -- Mr. Smite's Supplies
+    146747,  -- Dreamweaver Provisions
+    146748,  -- Highmountain Tribute
+    146749,  -- Valarjar Cache
+    146750,  -- Farondis Lockbox
+    146751,  -- Nightfallen Hoard
+    146752,  -- Warden's Field Kit
+    146753,  -- Kirin Tor Chest
     146799,  -- BUILDING CONTRIBUTION REWARD ITEM [NYI]
+    146897,  -- Farondis Chest
+    146898,  -- Dreamweaver Cache
     146899,  -- Highmountain Supplies
     146900,  -- Nightfallen Cache
     146901,  -- Valarjar Strongbox
+    146902,  -- Warden's Supply Kit
     146948,  -- Tribute of the Broken Isles
     147361,  -- Legionfall Chest
+    147384,  -- Legionfall Recompense
     147432,  -- Champion Equipment
     147446,  -- Brawler's Footlocker
     147518,  -- Cache of Fel Treasures
@@ -177,6 +192,14 @@ local legionIDs = {
     151264,  -- Clunky Brawler's Purse
     151345,  -- Gently Shaken Gift
     151350,  -- Winter Veil Gift
+    151464,  -- Dreamweaver Provisions
+    151465,  -- Highmountain Tribute
+    151466,  -- Valarjar Cache
+    151467,  -- Farondis Lockbox
+    151468,  -- Nightfallen Hoard
+    151469,  -- Warden's Field Kit
+    151470,  -- Kirin Tor Chest
+    151471,  -- Legionfall Recompense
     151482,  -- Time-Lost Wallet
     151550,  -- Time-Lost Keepsake Box
     151551,  -- Time-Lost Keepsake Box
@@ -192,7 +215,12 @@ local legionIDs = {
     152105,  -- Nightfallen Cache
     152106,  -- Valarjar Strongbox
     152107,  -- Warden's Supply Kit
+    152108,  -- Legionfall Chest
+    152649,  -- Legionfall Spoils
+    152650,  -- Scuffed Krokul Cache
+    152652,  -- Gilded Trunk
     152922,  -- Brittle Krokul Chest
+    152923,  -- Gleaming Footlocker
     153116,  -- Wyrmtongue Cache of Herbs
     153117,  -- Wyrmtongue Cache of Supplies
     153118,  -- Wyrmtongue Cache of Shiny Things
@@ -208,6 +236,16 @@ local legionIDs = {
     153502,  -- Cache of Antoran Treasures
     153503,  -- Cache of Antoran Treasures
     153504,  -- Cache of Antoran Treasures
+    154903,  -- Dreamweaver Provisions
+    154904,  -- Highmountain Tribute
+    154905,  -- Valarjar Cache
+    154906,  -- Farondis Lockbox
+    154907,  -- Nightfallen Hoard
+    154908,  -- Warden's Field Kit
+    154909,  -- Kirin Tor Chest
+    154910,  -- Legionfall Spoils
+    154911,  -- Scuffed Krokul Cache
+    154912,  -- Gilded Trunk
     154991,  -- Brawler's Footlocker
     154992,  -- Brawler's Footlocker
     156682,  -- Otherworldly Satchel of Helpful Goods
@@ -218,9 +256,15 @@ local legionIDs = {
     156707,  -- Bret's Satchel of Helpful Goods
     156836,  -- Bulging Package
     157822,  -- Dreamweaver Provisions
+    157823,  -- Highmountain Tribute
     157824,  -- Valarjar Cache
+    157825,  -- Farondis Lockbox
+    157826,  -- Nightfallen Hoard
     157827,  -- Warden's Field Kit
     157828,  -- Kirin Tor Chest
+    157829,  -- Gilded Trunk
+    157830,  -- Legionfall Spoils
+    157831,  -- Scuffed Krokul Cache
 }
 for _, id in ipairs(legionIDs) do openables[id] = {} end
 

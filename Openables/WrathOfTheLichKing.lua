@@ -13,6 +13,7 @@ local wotlkIDs = {
     41888,  -- Small Velvet Bag
     43346,  -- Large Satchel of Spoils
     43347,  -- Satchel of Spoils
+    43504,  -- Winter Veil Gift
     43556,  -- Patroller's Pack
     44113,  -- Small Spice Bag
     44142,  -- Strange Tarot
@@ -39,9 +40,11 @@ local wotlkIDs = {
     46812,  -- Northrend Mystery Gem Pouch
     49294,  -- Ashen Sack of Gems
     49631,  -- Standard Apothecary Serving Kit
+    49909,  -- Box of Chocolates
     49926,  -- Brazie's Black Book of Secrets
     50160,  -- Lovely Dress Box
     50161,  -- Dinner Suit Box
+    50301,  -- Landro's Pet Box
     51316,  -- Unsealed Chest
     51999,  -- Satchel of Helpful Goods
     52000,  -- Satchel of Helpful Goods
