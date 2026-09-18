@@ -8,6 +8,17 @@ local addonName = "Can Opener";
 CanOpenerGlobal.DebugMode = false;
 
 ------------------------------------------------
+-- Game Flavor
+------------------------------------------------
+-- WoW: Forever reports WOW_PROJECT_ID == WOW_PROJECT_MAINLINE just like retail, so the
+-- interface number (select(4, GetBuildInfo())) is the only reliable way to tell them apart:
+-- retail is 120000+, Forever is 16000-19999 (1.60.x).
+local interfaceVersion = select(4, GetBuildInfo());
+CanOpenerGlobal.InterfaceVersion = interfaceVersion;
+CanOpenerGlobal.IsForever = interfaceVersion >= 16000 and interfaceVersion < 20000;
+CanOpenerGlobal.IsRetail = WOW_PROJECT_ID == WOW_PROJECT_MAINLINE and interfaceVersion >= 120000;
+
+------------------------------------------------
 -- Debug Methods
 ------------------------------------------------
 local canOut;
@@ -243,5 +254,5 @@ CanOpenerGlobal.BagIndicies = {
 	["Bag_2"] = 2,
 	["Bag_3"] = 3,
 	["Bag_4"] = 4,
-	["ReagentBag"] = 5,
+	["ReagentBag"] = 5, -- Exists on both retail and Forever
 };

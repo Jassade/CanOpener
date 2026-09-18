@@ -12,6 +12,10 @@ Adds buttons for items that can be opened, learned, etc. Very small and responsi
 - Shift + right click a button to add that item to the ignore list
 - In-game settings panel (Escape → Options → AddOns → CanOpener) with an Ignore List sub-panel
 
+# Supported Game Versions
+- World of Warcraft (retail, 12.x)
+- World of Warcraft: Forever (1.60.x) — same package; retail-only options (e.g. Rousing elements) are hidden automatically
+
 # Chat Commands
 Use `/co` or `/canopener` followed by a command:
 - `rousing` - Toggle showing Rousing elements

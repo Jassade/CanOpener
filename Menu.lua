@@ -20,8 +20,11 @@ end
 function InitSettingsMenu()
     local category = Settings.RegisterVerticalLayoutCategory("CanOpener")
 
-    RegisterBooleanSetting(category, "showRousing", "Show Rousing Items",
-        "If Checked, Rousing Elements will be shown.", true)
+    -- Rousing elements are Dragonflight crafting reagents, so this option is retail-only
+    if CanOpenerGlobal.IsRetail then
+        RegisterBooleanSetting(category, "showRousing", "Show Rousing Items",
+            "If Checked, Rousing Elements will be shown.", true)
+    end
 
     RegisterBooleanSetting(category, "showLevelRestrictedItems", "Show Level-Restricted Items",
         "If Checked, items with a level requirement higher than your character's level will be shown.", true)

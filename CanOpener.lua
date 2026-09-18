@@ -17,7 +17,7 @@ local function slashHandler(msg)
 	command = command:lower()
 	CanOpenerGlobal.DebugLog("slashHandler - Command " .. command);
 
-	if (command == "rousing") then
+	if (command == "rousing" and CanOpenerGlobal.IsRetail) then
 		toggleSavedVar("showRousing", "Elemental Rousings");
 	elseif (command == "levelrestricted") then
 		toggleSavedVar("showLevelRestrictedItems", "Level-Restricted Items");
@@ -66,8 +66,10 @@ local function slashHandler(msg)
 	else
         CanOpenerGlobal.DebugLog("slashHandler - Unknown command " .. (command or "<None>"));
         CanOpenerGlobal.CanOut("Commands for |cffffa500/CanOpener|r :");
-        local rousingState = CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars.showRousing, "On", "Off");
-        CanOpenerGlobal.CanOut("  |cffffa500 rousing|r - Toggle showing Elemental Rousings (" .. rousingState .. ")");
+        if CanOpenerGlobal.IsRetail then
+            local rousingState = CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars.showRousing, "On", "Off");
+            CanOpenerGlobal.CanOut("  |cffffa500 rousing|r - Toggle showing Elemental Rousings (" .. rousingState .. ")");
+        end
         local levelRestrictedState = CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars.showLevelRestrictedItems, "On", "Off");
         CanOpenerGlobal.CanOut("  |cffffa500 levelrestricted|r - Toggle showing level-restricted items (" .. levelRestrictedState .. ")");
         local lockboxState = CanOpenerGlobal.PosOrNegColor(CanOpenerSavedVars.showLockboxes, "On", "Off");
