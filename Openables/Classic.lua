@@ -1,4 +1,5 @@
 local _, CanOpenerGlobal = ...
+-- Shared by retail and WoW: Forever: vanilla-era items exist on both flavors with the same item IDs.
 local openables = CanOpenerGlobal.openables
 
 local classicIDs = {

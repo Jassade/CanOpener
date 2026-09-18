@@ -20,6 +20,7 @@ Openables\Shadowlands.lua
 Openables\Dragonflight.lua
 Openables\TheWarWithin.lua
 Openables\Midnight.lua
+Openables\Forever.lua
 Criteria.lua
 Menu.lua
 CanOpener.lua

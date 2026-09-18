@@ -1,4 +1,5 @@
 local _, CanOpenerGlobal = ...
+if not CanOpenerGlobal.IsRetail then return end -- Retail-only content; never registered on WoW: Forever
 local openables = CanOpenerGlobal.openables
 
 local dfIDs = {
